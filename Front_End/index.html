@@ -17,8 +17,99 @@
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+    <link rel="stylesheet" href="assets/css/main.css">
+
 </head>
 <body>
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top box-shadow">
+    <div class="container-fluid">
+        <a class="navbar-brand pe-5 ps-4" href="#">Job-Junction</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse ms-xxl-5 ms-xl-5 ms-lg-5 ms-md-0 ms-sm-0 ms-0" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
+                    <a class="nav-link" aria-current="page" href="#">Categories</a>
+                </li>
+                <li class="nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
+                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
+                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<main id="home" class="vh-100 position-relative container-fluid d-flex justify-content-center">
+
+    <div class="position-relative bg-success col-10 h-75 row d-flex justify-content-center">
+        
+        <div class="p-0 m-0 row d-flex align-items-center justify-content-center">
+            <h1 id="main-text" class="text-white text-center" style="user-select: none">
+                Explore, Connect, and Hire Skilled
+                <br>
+                Professionals Near You
+            </h1>
+        </div>
+
+
+            <div id="search-box" style="bottom: -5%"
+                 class="col-8 position-absolute bg-white box-shadow rounded-1">
+                <div class="row pb-3 pt-3">
+
+                    <div class="col-4 ms-2">
+                        <div class="input-group">
+                            <span class="btn disabled" id="basic-addon1" style="--bs-btn-disabled-opacity: 1; border: 0">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" class="form-control noOutline ms-2" placeholder="Search for Job"
+                                   aria-label="Username" aria-describedby="basic-addon1" style="--bs-border-width:0;">
+                        </div>
+                    </div>
+
+                    <div class="col-4 ms-4">
+                        <select class="form-select noOutline" aria-label="Default select example">
+                            <option selected>select type</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+
+                    <div class="col-1 ms-5">
+                        <button type="button" class="btn btn-outline-success">Search</button>
+                    </div>
+
+                </div>
+            </div>
+
+    </div>
+
+    <!--<div class="row position-relative">
+        <img src="assets/images/bg.jpg" alt="" class="position-absolute z-1">
+    </div>
+
+    <div class="row h-75 z-2">
+        <h1 class="h1 fs-1 text-white">Find the job</h1>
+    </div>-->
+
+</main>
+
+<main id="as" class="vh-100 container-fluid bg-warning">
+
+</main>
 
 </body>
 </html>
