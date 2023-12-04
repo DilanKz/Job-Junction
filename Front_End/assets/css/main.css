@@ -1,0 +1,75 @@
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.box-shadow {
+    box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+}
+
+.box-shadow-2 {
+    box-shadow: rgba(50, 50, 93, 0.25) 0 2px 5px -1px, rgba(0, 0, 0, 0.3) 0 1px 3px -1px;
+}
+
+.box-shadow-3 {
+    box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+}
+
+.box-shadow-4 {
+    box-shadow: rgba(17, 12, 46, 0.15) 0 48px 100px 0;
+}
+
+.box-shadow-5 {
+    box-shadow: rgba(50, 50, 93, 0.25) 0 2px 5px -1px, rgba(0, 0, 0, 0.3) 0 1px 3px -1px;
+}
+
+.bg-blur-1 {
+    backdrop-filter: blur(8px);
+}
+
+#main-text{
+    font-weight: 600;
+    letter-spacing: 3px;
+    font-size: 50px;
+}
+
+.noOutline{
+    border: none;
+    outline:none;
+}
+
+.noOutline:focus {
+    outline:none!important;
+    border: none!important;
+    box-shadow:transparent;
+}
+
+.noOutline:focus,
+.noOutline.form-control:focus,
+.noOutline.form-control:focus,
+.noOutline[type=text]:focus,
+.noOutline[type=password]:focus,
+.noOutline[type=email]:focus,
+.noOutline[type=number]:focus,
+.noOutline[type=text].form-control:focus,
+.noOutline[type=password].form-control:focus,
+.noOutline[type=email].form-control:focus,
+.noOutline[type=tel].form-control:focus,
+.noOutline[contenteditable].form-control:focus {
+    box-shadow: inset 0 -1px 0 #ffffff;
+}
+
+.noOutline option {
+    background-color: #ffffff;
+}
+
+.noOutline option :hover,
+.noOutline option :focus {
+    background-color: #ffffff!important;
+}
