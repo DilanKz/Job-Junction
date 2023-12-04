@@ -36,7 +36,8 @@ body {
 #main-text{
     font-weight: 600;
     letter-spacing: 3px;
-    font-size: 50px;
+    font-size: 4vw;
+    max-font-size: 40px;
 }
 
 .noOutline{
