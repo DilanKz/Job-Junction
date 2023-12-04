@@ -41,10 +41,7 @@
                     <a class="nav-link" aria-current="page" href="#">Categories</a>
                 </li>
                 <li class="nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" aria-current="page" href="#">Map</a>
                 </li>
             </ul>
 
@@ -52,10 +49,10 @@
     </div>
 </nav>
 
-<main id="home" class="vh-100 position-relative container-fluid d-flex justify-content-center">
+<main id="home-frame" class="position-relative container-fluid d-flex justify-content-center" style="height: 80vh">
 
     <div class="position-relative bg-success col-10 h-75 row d-flex justify-content-center">
-        
+
         <div class="p-0 m-0 row d-flex align-items-center justify-content-center">
             <h1 id="main-text" class="text-white text-center" style="user-select: none">
                 Explore, Connect, and Hire Skilled
@@ -107,9 +104,67 @@
 
 </main>
 
-<main id="as" class="vh-100 container-fluid bg-warning">
+<main id="map-frame" class="vh-100 container-fluid bg-warning">
 
 </main>
+
+<script>
+    let map;
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById("map-frame"), {
+            center: { lat: 6.0422, lng: 80.2204 },
+            zoom: 14,
+            mapId: "db10ffe6d52d340b",
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true,
+            zoomControl: true,
+            rotateControl:true
+        });
+
+        map.setOptions({draggableCursor:'default'});
+
+        /*map.addListener("click", (event) => {
+
+            const clickedLat = event.latLng.lat();
+            const clickedLng = event.latLng.lng();
+
+            console.log(`Latitude: ${clickedLat}, Longitude: ${clickedLng}`);
+
+            addMarker(event.latLng);
+        });*/
+
+        /*let styles = [
+            {
+                "featureType": "transit.station.bus",
+                "stylers": [{ "visibility": "off" }]
+            }
+        ];
+
+        map.setOptions({ styles: styles });*/
+
+        let previousMarker = null;
+
+        function addMarker(position) {
+            if (previousMarker) {
+                previousMarker.setMap(null);
+            }
+            const marker = new google.maps.Marker({
+                position,
+                map,
+            });
+            previousMarker = marker;
+        }
+
+
+    }
+
+    window.initMap = initMap;
+</script>
+
+<script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZNZQO6dL8olaDj8R6qNYv7ZsywV1Dwk8&callback=initMap">
+</script>
 
 </body>
 </html>
