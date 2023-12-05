@@ -49,17 +49,17 @@
     </div>
 </nav>
 
-<main id="home-frame" class="w-100 overflow-hidden position-relative container-fluid d-flex justify-content-center" style="height: 80vh">
+<main id="home-frame" class="p-0 w-100 vh-100 overflow-hidden position-relative container-fluid d-flex justify-content-center" style="">
 
     <div class="position-relative bg-success
      col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12
-     h-75 row d-flex justify-content-center">
+      row d-flex justify-content-center" style="height: 65%">
 
         <div class="p-0 m-0 row d-flex align-items-center justify-content-center">
             <h1 id="main-text" class="text-white text-center" style="user-select: none">
-                Explore, Connect, and Hire Skilled
+                Navigate Your Career Path
                 <br>
-                Professionals Near You
+                with Confidence
             </h1>
         </div>
 
@@ -70,25 +70,26 @@
 
                     <div class="col-4 ms-2">
                         <div class="input-group">
-                            <span class="btn disabled" id="basic-addon1" style="--bs-btn-disabled-opacity: 1; border: 0">
+                            <span class="btn disabled d-flex align-items-center" id="basic-addon1" style="--bs-btn-disabled-opacity: 1; border: 0">
                                 <i class="bi bi-search"></i>
                             </span>
-                            <input type="text" class="form-control noOutline ms-2" placeholder="Search for Job"
+                            <input type="text" class="form-control form-control-lg noOutline ms-2" placeholder="Search for Job"
                                    aria-label="Username" aria-describedby="basic-addon1" style="--bs-border-width:0;">
                         </div>
                     </div>
 
                     <div class="col-4 ms-4">
-                        <select class="form-select noOutline" aria-label="Default select example">
-                            <option selected>select type</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
+                        <div class="input-group">
+                            <span class="btn disabled d-flex align-items-center" id="basic-addon2" style="--bs-btn-disabled-opacity: 1; border: 0">
+                                <i class="bi bi-geo-alt"></i>
+                            </span>
+                            <input type="text" class="form-control form-control-lg noOutline ms-2" placeholder="City"
+                                   aria-label="Username" aria-describedby="basic-addon1" style="--bs-border-width:0;">
+                        </div>
                     </div>
 
                     <div class="col-1 ms-5">
-                        <button type="button" class="btn btn-outline-success">Search</button>
+                        <button type="button" class="btn btn-lg btn-outline-success">Search</button>
                     </div>
 
                 </div>
@@ -98,9 +99,206 @@
 
 </main>
 
-<main id="map-frame" class="w-100 overflow-hidden vh-100 container-fluid bg-warning">
+<main id="popular-frame" class="p-0 w-100 vh-100 overflow-hidden position-relative container-fluid ">
+    <h3 class="h3 mt-5 b-5 text-center">Popular Job Categories</h3>
+    <p class="text-center fs-6 pb-5">Trending Searches - Explore Hot Job Opportunities Now!</p>
 
+    <div class="row text-center mt-5 p-0 justify-content-evenly gap-3 ms-xxl-5 ms-xl-5 ms-lg-5 ms-md-2 ms-sm-2 ms-1">
+
+        <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+            <div class="row my-3">
+
+                <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                    <i class="text-success bi bi-laptop fs-1 job-card-icon px-2 rounded-2"></i>
+                </div>
+
+                <div class="col-8">
+                    <h5 class="mt-2 ms-2 h5 fs-6 job-card-title text-start w-auto">Information Technology</h5>
+                    <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+            <div class="row my-3">
+
+                <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                    <i class="text-success bi bi-heart fs-1 job-card-icon px-2 rounded-2"></i>
+                </div>
+
+                <div class="col-8">
+                    <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Healthcare</h5>
+                    <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+            <div class="row my-3">
+
+                <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                    <i class="text-success bi bi-currency-dollar fs-1 job-card-icon px-2 rounded-2"></i>
+                </div>
+
+                <div class="col-8">
+                    <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Finance</h5>
+                    <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+            <div class="row my-3">
+
+                <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                    <i class="text-success bi bi-book fs-1 job-card-icon px-2 rounded-2"></i>
+                </div>
+
+                <div class="col-8">
+                    <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Education</h5>
+                    <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+            <div class="row my-3">
+
+                <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                    <i class="text-success bi bi-tools fs-1 job-card-icon px-2 rounded-2"></i>
+                </div>
+
+                <div class="col-8">
+                    <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Engineering</h5>
+                    <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+            <div class="row my-3">
+
+                <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                    <i class="text-success bi bi-megaphone fs-1 job-card-icon px-2 rounded-2"></i>
+                </div>
+
+                <div class="col-8">
+                    <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Marketing</h5>
+                    <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+            <div class="row my-3">
+
+                <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                    <i class="text-success bi bi-paint-bucket fs-1 job-card-icon px-2 rounded-2"></i>
+                </div>
+
+                <div class="col-8">
+                    <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Design</h5>
+                    <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+            <div class="row my-3">
+
+                <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                    <i class="text-success bi bi-headset fs-1 job-card-icon px-2 rounded-2"></i>
+                </div>
+
+                <div class="col-8">
+                    <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Customer Service</h5>
+                    <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+            <div class="row my-3">
+
+                <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                    <i class="text-success bi bi-basket fs-1 job-card-icon px-2 rounded-2"></i>
+                </div>
+
+                <div class="col-8">
+                    <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Sales</h5>
+                    <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+            <div class="row my-3">
+
+                <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                    <i class="text-success bi bi-person fs-1 job-card-icon px-2 rounded-2"></i>
+                </div>
+
+                <div class="col-8">
+                    <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Human Resources</h5>
+                    <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+            <div class="row my-3">
+
+                <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                    <i class="text-success bi bi-hammer fs-1 job-card-icon px-2 rounded-2"></i>
+                </div>
+
+                <div class="col-8">
+                    <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Construction</h5>
+                    <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+            <div class="row my-3">
+
+                <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                    <i class="text-success bi bi-bar-chart fs-1 job-card-icon px-2 rounded-2"></i>
+                </div>
+
+                <div class="col-8">
+                    <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Project Management</h5>
+                    <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
 </main>
+
+<main id="about-frame" class="p-0 w-100 vh-100 overflow-hidden position-relative container-fluid ">
+    <h3 class="h3 mt-5 b-5 text-center">Our Mission</h3>
+    <p class="text-center fs-6 pb-5">Empowering Careers, Connecting Aspirations</p>
+
+    <div class="row mt-5 p-0 d-grid">
+
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 bg-success">
+        </div>
+
+        <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-11 col-sm-11 col-11 text-start" style="justify-self: end">
+            <p>
+                At Job-junction, our mission is to connect talented individuals with meaningful employment opportunities. We strive to make the job search process seamless and rewarding by providing a platform that empowers both job seekers and employers.
+                Join us on this journey as we revolutionize the way people discover and pursue their professional paths.
+            </p>
+        </div>
+
+    </div>
+</main>
+
+<!--<main id="map-frame" class="w-100 overflow-hidden vh-100 container-fluid bg-warning">
+
+</main>-->
 
 <main id="contact-frame" style="box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;">
     <div class="container">
@@ -142,7 +340,7 @@
     </div>
 </main>
 
-<script>
+<!--<script>
     let map;
 
     function initMap() {
@@ -158,7 +356,7 @@
 
         map.setOptions({draggableCursor:'default'});
 
-        /*map.addListener("click", (event) => {
+        map.addListener("click", (event) => {
 
             const clickedLat = event.latLng.lat();
             const clickedLng = event.latLng.lng();
@@ -166,16 +364,33 @@
             console.log(`Latitude: ${clickedLat}, Longitude: ${clickedLng}`);
 
             addMarker(event.latLng);
-        });*/
 
-        /*let styles = [
+            const geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ location: event.latLng }, (results, status) => {
+                if (status === "OK") {
+                    if (results[0]) {
+                        const address = results[0].formatted_address;
+                        console.log(`Address: ${address}`);
+                        // Do something with the address if needed
+                    } else {
+                        console.error("No results found");
+                    }
+                } else {
+                    console.error(`Geocoder failed due to: ${status}`);
+                }
+            });
+
+
+        });
+
+        let styles = [
             {
                 "featureType": "transit.station.bus",
                 "stylers": [{ "visibility": "off" }]
             }
         ];
 
-        map.setOptions({ styles: styles });*/
+        map.setOptions({ styles: styles });
 
         let previousMarker = null;
 
@@ -194,7 +409,7 @@
     }
 
     window.initMap = initMap;
-</script>
+</script>-->
 
 <script async
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZNZQO6dL8olaDj8R6qNYv7ZsywV1Dwk8&callback=initMap">
