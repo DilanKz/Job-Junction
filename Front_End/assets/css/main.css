@@ -94,3 +94,7 @@ body {
     cursor: pointer;
 }
 
+.glass{
+    filter: blur(3px);
+}
+
