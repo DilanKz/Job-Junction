@@ -33,6 +33,10 @@ body {
     backdrop-filter: blur(8px);
 }
 
+#navbar{
+    transition: top 0.3s;
+}
+
 #main-text{
     font-weight: 600;
     letter-spacing: 3px;
