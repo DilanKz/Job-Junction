@@ -23,7 +23,7 @@
 <body>
 
 
-<nav class="w-100 overflow-hidden navbar navbar-expand-lg bg-body-tertiary fixed-top box-shadow">
+<nav id="navbar" class="w-100 overflow-hidden navbar navbar-expand-lg bg-body-tertiary fixed-top box-shadow">
     <div class="container-fluid">
         <a class="navbar-brand pe-5 ps-4" href="#">Job-Junction</a>
 
@@ -484,6 +484,28 @@
 
 <script async
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZNZQO6dL8olaDj8R6qNYv7ZsywV1Dwk8&callback=initMap">
+</script>
+
+
+<script>
+
+    $(document).ready(function() {
+        let prevScrollPos = $(window).scrollTop();
+
+        $(window).scroll(function() {
+            let currentScrollPos = $(window).scrollTop();
+
+            if (prevScrollPos > currentScrollPos) {
+                $("#navbar").css("top", "0");
+            } else {
+                $("#navbar").css("top", "-100px");
+            }
+
+            prevScrollPos = currentScrollPos;
+        });
+    });
+
+
 </script>
 
 </body>
