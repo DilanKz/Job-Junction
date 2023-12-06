@@ -22,7 +22,6 @@
 </head>
 <body>
 
-
 <nav id="navbar" class="w-100 overflow-hidden navbar navbar-expand-lg bg-body-tertiary fixed-top box-shadow">
     <div class="container-fluid">
         <a class="navbar-brand pe-5 ps-4" href="#">Job-Junction</a>
@@ -48,6 +47,8 @@
         </div>
     </div>
 </nav>
+
+<main id="home-page" class="d-none">
 
 <main id="home-frame"
       class="p-0 w-100 vh-100 overflow-hidden position-relative container-fluid d-flex justify-content-center" style="">
@@ -309,7 +310,8 @@
                     </h2>
                     <br>
                     <p>
-                        Discover countless job openings across the web, personalize your salary estimate, and access reviews for over 600,000 global companies. Your next career move begins here.
+                        Discover countless job openings across the web, personalize your salary estimate, and access
+                        reviews for over 600,000 global companies. Your next career move begins here.
                     </p>
 
                     <button type="button" class="btn btn-secondary mt-4">
@@ -357,6 +359,119 @@
 
 </main>
 
+</main>
+
+<main id="jobs-frame"
+      class="min-vh-100 w-100 overflow-hidden mt-5">
+
+    <h3 class="h3 mt-5 b-5 text-center">Find Jobs</h3>
+    <p class="text-center fs-6 pb-5">Empowering Careers, Connecting Aspirations</p>
+
+    <div class="row p-0  justify-content-end d-flex">
+        <div class="col-11 p-0 m-0">
+
+            <div class="row p-0 gap-5">
+
+                <div class="col-4 pt-5 rounded-4"
+                     style="height: max-content; background-color: #eeeeee">
+
+                    <h6 class="h6 ms-3 fs-6 fw-bold">Select Industry</h6>
+                    <div class="col-11 ms-3 mb-4 p-2 bg-white rounded-2">
+                        <div class="row p-0 m-0">
+                            <span class="btn disabled d-flex align-items-center col-1 me-3" id="basic-addon4"
+                                  style="--bs-btn-disabled-opacity: 1; border: 0">
+                            <i class="bi bi-briefcase"></i>
+                        </span>
+                            <select class="noOutline h-100 w-75 p-2 rounded-2 col-8" aria-label="Default select example">
+                                <option selected>Open this select menu</option>
+                                <option value="1">IT Industry</option>
+                                <option value="2">Health & Care Industry</option>
+                                <option value="2">Engineering Industry</option>
+                                <option value="2">Finance Industry</option>
+                                <option value="2">Education Industry</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <h6 class="h6 ms-3 fs-6 fw-bold">Search Location</h6>
+                    <div class="col-11 ms-3 mb-4 p-2 bg-white rounded-2">
+                        <div class="input-group">
+                            <span class="btn disabled d-flex align-items-center" id="basic-addon3"
+                                  style="--bs-btn-disabled-opacity: 1; border: 0">
+                                <i class="bi bi-search"></i>
+                            </span>
+                            <input type="text" class="form-control form-control-sm noOutline ms-2"
+                                   placeholder="Search Location"
+                                   aria-label="Username" aria-describedby="basic-addon1" style="--bs-border-width:0;">
+                        </div>
+                    </div>
+
+                    <h6 class="h6 ms-3 fs-6 fw-bold">Job type</h6>
+                    <div class="col-11 ms-3 mb-4 p-2 rounded-2">
+                        <div class="form-check form-switch mt-3 mb-2">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault1">
+                            <label class="form-check-label" for="flexSwitchCheckDefault1">Full time</label>
+                        </div>
+
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault2">
+                            <label class="form-check-label" for="flexSwitchCheckDefault2">Part time</label>
+                        </div>
+
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault3">
+                            <label class="form-check-label" for="flexSwitchCheckDefault3">Intern</label>
+                        </div>
+
+                    </div>
+
+                    <h6 class="h6 ms-3 fs-6 fw-bold">Posted</h6>
+                    <div class="col-11 ms-3 mb-4 p-2 rounded-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                All
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Last Hour
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                            <label class="form-check-label" for="flexRadioDefault3">
+                                Last 24 Hours
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                            <label class="form-check-label" for="flexRadioDefault3">
+                                Last 7 Days
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-11 col-sm-11 col-11 rounded-4 d-flex justify-content-center overflow-y-scroll no-scroll"
+                     style="height: max-content;min-height: 100vh;">
+
+                    <div class="row p-0 m-0 w-100 pt-3">
+                        <div class="col-10 box-shadow-3 p-3 w-100 rounded-2" style="height: max-content">
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</main>
 
 <!--<main id="map-frame" class="w-100 overflow-hidden vh-100 container-fluid bg-warning">
 
@@ -489,10 +604,10 @@
 
 <script>
 
-    $(document).ready(function() {
+    $(document).ready(function () {
         let prevScrollPos = $(window).scrollTop();
 
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             let currentScrollPos = $(window).scrollTop();
 
             if (prevScrollPos > currentScrollPos) {
