@@ -71,7 +71,7 @@ body {
 }
 
 .noOutline option {
-    background-color: #ffffff;
+    background-color: #ffffff !important;
 }
 
 .noOutline option :hover,
@@ -100,5 +100,9 @@ body {
 
 .glass{
     filter: blur(3px);
+}
+
+.no-scroll::-webkit-scrollbar{
+    display: none;
 }
 
