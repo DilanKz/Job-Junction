@@ -393,7 +393,7 @@
                         </span>
                                 <select class="noOutline h-100 w-75 p-2 rounded-2 col-8"
                                         aria-label="Default select example">
-                                    <option selected>Open this select menu</option>
+                                    <option selected disabled>Open this select menu</option>
                                     <option value="1">IT Industry</option>
                                     <option value="2">Health & Care Industry</option>
                                     <option value="2">Engineering Industry</option>
@@ -620,6 +620,7 @@
 
 <main id="employer-home-frame" class="vh-100 vw-100 overflow-x-hidden d-flex overflow-y-scroll no-scroll">
 
+    <!--Dashboard Menu-->
     <div class="d-flex flex-column flex-shrink-0 p-3 box-shadow" style="width: 280px;">
         <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
             <span class="fs-4">Employer Dashboard</span>
@@ -667,9 +668,11 @@
         </div>
     </div>
 
+    <!--Dashboard Frame-->
     <main id="dashboard-frame" class="vh-100 vw-100 bg-body-tertiary">
 
-        <h3 class="ms-2 mt-3 pb-1 border-bottom border-black mb-4 fw-bold text-primary" style="width: max-content">Dashboard</h3>
+        <h3 class="ms-2 mt-3 pb-1 border-bottom border-black mb-4 fw-bold text-primary" style="width: max-content">
+            Dashboard</h3>
 
         <div class="row p-0 m-0 justify-content-center mb-4">
             <div class="col-11 p-0 m-0">
@@ -751,12 +754,150 @@
         </div>
 
     </main>
+    <!--Post Frame-->
+    <main id="post-frame" class="vh-100 bg-body-tertiary vw-100 overflow-hidden">
+        <h3 class="ms-2 mt-3 pb-1 border-bottom border-danger mb-4 fw-bold text-danger" style="width: max-content">
+            Posts</h3>
 
-    <main id="post-frame" class="vh-100 bg-body-tertiary vw-100 overflow-y-scroll no-scroll">
-        <h3 class="ms-2 mt-3 pb-1 border-bottom border-danger mb-4 fw-bold text-danger" style="width: max-content">Posts</h3>
+        <div class="row p-0 m-0 justify-content-center">
+            <div class="col-11 m-0 p-0">
+
+                <ul class="nav nav-tabs" id="post-tab-pane">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Requests</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">N/A</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">N/A</a>
+                    </li>
+                </ul>
+
+                <section class="w-100 h-100 bg-white overflow-y-scroll no-scroll d-flex justify-content-center">
+
+                    <div class="col-11 p-0 ">
+
+                        <form class="row p-0 m-0 mt-5">
+
+                            <div class="col-md-4">
+                                <label for="validationCustom01" class="form-label">First name</label>
+                                <input type="text" class="form-control" id="validationCustom01" required>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="validationCustom02" class="form-label">Last name</label>
+                                <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="validationCustomUsername" class="form-label">Username</label>
+                                <div class="input-group has-validation">
+                                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                    <input type="text" class="form-control" id="validationCustomUsername"
+                                           aria-describedby="inputGroupPrepend" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="validationCustom03" class="form-label">City</label>
+                                <input type="text" class="form-control" id="validationCustom03" required>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="validationCustom04" class="form-label">Industry</label>
+                                <select class="form-select" id="validationCustom04" required>
+                                    <option selected disabled value="">Choose...</option>
+                                    <option value="1">IT Industry</option>
+                                    <option value="2">Health & Care Industry</option>
+                                    <option value="2">Engineering Industry</option>
+                                    <option value="2">Finance Industry</option>
+                                    <option value="2">Education Industry</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3">
+                                <label for="validationCustom05" class="form-label">Zip</label>
+                                <input type="text" class="form-control" id="validationCustom05">
+                            </div>
+
+                            <div class="col-12">
+                                <button class="btn btn-success mt-2" type="button">Add Post</button>
+                            </div>
+                        </form>
+
+
+                        <div class="row justify-content-center mt-5">
+
+                            <table class="table-primary col-11 ">
+                                <thead>
+                                    <tr style="background-color: #abc8ff">
+                                        <th scope="col">Post ID</th>
+                                        <th scope="col">Post Title</th>
+                                        <th scope="col">Industry</th>
+                                        <th scope="col">Date Posted</th>
+                                        <th scope="col">Count</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+
+                                    <tr>
+                                        <td>P001</td>
+                                        <td>Software Engineering</td>
+                                        <td>IT industry</td>
+                                        <td>23-12-10</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P001</td>
+                                        <td>Software Engineering</td>
+                                        <td>IT industry</td>
+                                        <td>23-12-10</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P001</td>
+                                        <td>Software Engineering</td>
+                                        <td>IT industry</td>
+                                        <td>23-12-10</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P001</td>
+                                        <td>Software Engineering</td>
+                                        <td>IT industry</td>
+                                        <td>23-12-10</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P001</td>
+                                        <td>Software Engineering</td>
+                                        <td>IT industry</td>
+                                        <td>23-12-10</td>
+                                        <td>10</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <!--<section class="w-100 h-100 bg-info"></section>
+                <section class="w-100 h-100 bg-secondary"></section>-->
+
+            </div>
+        </div>
 
     </main>
-
+    <!--Profile Frame-->
     <main id="profile-frame" class="vh-100 bg-success vw-100">
 
     </main>
@@ -880,7 +1021,6 @@
             $('#sidebar-menu .nav-link').not('.active').addClass('link-body-emphasis');
         });
     });
-
     $('#dashboard-frame').css('display', 'block');
     $('#post-frame').css('display', 'none');
     $('#profile-frame').css('display', 'none');
@@ -929,6 +1069,16 @@
     }
 
     chart()
+
+
+    /*$(document).ready(function () {
+        $('#post-tab-pane .nav-item').on('click', function () {
+            $('#post-tab-pane .nav-link').removeClass('active');
+            $(this).find('.nav-link').addClass('active');
+        });
+    });*/
+
+
 </script>
 
 </body>
