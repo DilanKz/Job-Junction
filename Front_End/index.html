@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
     <link rel="stylesheet" href="assets/css/main.css">
 
@@ -619,28 +620,28 @@
 
 <main id="employer-home-frame" class="vh-100 vw-100 overflow-x-hidden d-flex flex-nowrap">
 
-    <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px;">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+    <div class="d-flex flex-column flex-shrink-0 p-3 box-shadow" style="width: 280px;">
+        <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
             <span class="fs-4">Employer Dashboard</span>
         </a>
         <hr>
         <ul id="sidebar-menu" class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="#" class="nav-link active" aria-current="page">
+                <a href="#" class="nav-link active" aria-current="page" onclick="showDB()">
                     <i class="bi bi-speedometer me-2"></i>
 
                     Dashboard
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link link-body-emphasis">
+                <a href="#" class="nav-link link-body-emphasis" onclick="showPosts()">
                     <i class="bi bi-file-earmark-text me-2"></i>
 
                     Manage Posts
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link link-body-emphasis">
+                <a href="#" class="nav-link link-body-emphasis" onclick="showProfile()">
                     <i class="bi bi-person me-2"></i>
 
                     Manage Profile
@@ -665,6 +666,99 @@
             </ul>
         </div>
     </div>
+
+    <main id="dashboard-frame" class="vh-100 vw-100 bg-body-tertiary">
+
+        <h3 class="ms-2 mt-3 pb-1 border-bottom border-black mb-4" style="width: max-content">Dashboard</h3>
+
+        <div class="row p-0 m-0 justify-content-center mb-4">
+            <div class="col-11 p-0 m-0">
+
+                <div class="row p-0 m-0 justify-content-between">
+
+                    <div class="col-2 box-shadow-3">
+                        <div class="row py-2">
+                            <div class="ms-3 p-0 col-3 d-flex justify-content-center align-items-center">
+                                <i class="text-primary fw-bold bi bi-person fs-1 px-2 rounded-2"></i>
+                            </div>
+                            <div class="col-8">
+                                <h2 class="m-0 ms-2 h3 text-primary fw-bold fs-2 w-auto text-end">10</h2>
+                                <p class="text-end m-0 ms-2">Followers</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2 box-shadow-3">
+                        <div class="row py-2">
+                            <div class="ms-3 p-0 col-3 d-flex justify-content-center align-items-center">
+                                <i class="text-warning fw-bold bi bi-file-earmark-text fs-1 px-2 rounded-2"></i>
+                            </div>
+                            <div class="col-8">
+                                <h2 class="m-0 ms-2 h3 text-warning fw-bold fs-2 w-auto text-end">41</h2>
+                                <p class="text-end m-0 ms-2">Posts</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2 box-shadow-3">
+                        <div class="row py-2">
+                            <div class="ms-3 p-0 col-3 d-flex justify-content-center align-items-center">
+                                <i class="text-danger fw-bold bi bi-star fs-1 px-2 rounded-2"></i>
+                            </div>
+                            <div class="col-8">
+                                <h2 class="m-0 ms-2 h3 text-danger fw-bold fs-2 w-auto text-end">10</h2>
+                                <p class="text-end m-0 ms-2">Stars</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2 box-shadow-3">
+                        <div class="row py-2">
+                            <div class="ms-3 p-0 col-3 d-flex justify-content-center align-items-center">
+                                <i class="text-primary fw-bold bi bi-mouse fs-1 px-2 rounded-2"></i>
+                            </div>
+                            <div class="col-8">
+                                <h2 class="m-0 ms-2 h3 text-primary fw-bold fs-2 w-auto text-end">10</h2>
+                                <p class="text-end m-0 ms-2">Clicks</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="row p-0 m-0 justify-content-center mb-4">
+            <div class="col-11 p-0 m-0">
+                <div class="row p-0 m-0 justify-content-between">
+
+                    <div class="col-6 p-0 box-shadow">
+
+
+                    </div>
+
+                    <div class="col-5 p-0 box-shadow p-2">
+                        <h6 class="text-primary h6 mb-2 ms-2 fw-bold">Profile views</h6>
+                        <canvas id="myChart"></canvas>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <main id="post-frame" class="vh-100 bg-info vw-100">
+
+    </main>
+
+    <main id="profile-frame" class="vh-100 bg-success vw-100">
+
+    </main>
 
 </main>
 
@@ -786,6 +880,54 @@
         });
     });
 
+    $('#dashboard-frame').css('display', 'block');
+    $('#post-frame').css('display', 'none');
+    $('#profile-frame').css('display', 'none');
+
+    function showDB() {
+        $('#dashboard-frame').css('display', 'block');
+        $('#post-frame').css('display', 'none');
+        $('#profile-frame').css('display', 'none');
+    }
+
+    function showPosts() {
+        $('#dashboard-frame').css('display', 'none');
+        $('#post-frame').css('display', 'block');
+        $('#profile-frame').css('display', 'none');
+    }
+
+    function showProfile() {
+        $('#dashboard-frame').css('display', 'none');
+        $('#post-frame').css('display', 'none');
+        $('#profile-frame').css('display', 'block');
+    }
+
+    function chart() {
+        const xValues = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
+        const yValues = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
+
+        new Chart("myChart", {
+            type: "line",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    fill: false,
+                    lineTension: 0,
+                    backgroundColor: "rgba(0,0,255,1.0)",
+                    borderColor: "rgba(0,0,255,0.1)",
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: {display: false},
+                scales: {
+                    yAxes: [{ticks: {min: 6, max: 16}}],
+                }
+            }
+        });
+    }
+
+    chart()
 </script>
 
 </body>
