@@ -1,0 +1,29 @@
+package com.job_junction.model;
+
+/**
+ * @author Dilan
+ * @created 11/12/2023 - 06:42 pm
+ */
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Document(collection = "companies")
+public class Company {
+
+    @Id
+    private String id;
+    private String name;
+    private String industry;
+    private String email;
+    private String password;
+    private Location location;
+    private String description;
+    private String profilePicture;
+
+}
