@@ -38,7 +38,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public EmployeeDTO getEmployeeById(String id) {
-        Employee employee = repo.findById(id).orElse(null);
+        Employee employee = repo.findById(id).get();
         return modelMapper.map(employee, EmployeeDTO.class);
     }
 
