@@ -788,52 +788,77 @@
 
                         <form class="row p-0 m-0 mt-5">
 
-                            <div class="col-md-4">
-                                <label for="validationCustom01" class="form-label">First name</label>
-                                <input type="text" class="form-control" id="validationCustom01" required>
-                            </div>
-
-                            <div class="col-md-4">
-                                <label for="validationCustom02" class="form-label">Last name</label>
-                                <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-                            </div>
-
-                            <div class="col-md-4">
-                                <label for="validationCustomUsername" class="form-label">Username</label>
-                                <div class="input-group has-validation">
-                                    <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                    <input type="text" class="form-control" id="validationCustomUsername"
-                                           aria-describedby="inputGroupPrepend" required>
+                            <div class="col-md-12 p-0">
+                                <div class="row p-0 m-0 justify-content-between">
+                                    <h3 class="h3 mb-4 col-4 p-0"
+                                        style="width: max-content;">
+                                        Manage Post
+                                    </h3>
+                                    <div class="col-1 d-flex justify-content-end align-items-center">
+                                        <i class="accordion-c-button btn fs-2 bi bi-chevron-double-down"></i>
+                                    </div>
                                 </div>
                             </div>
+                            <div id="add-post-accordion" class="row p-0 d-none">
+                                <div class="col-md-4">
+                                    <label for="validationCustom01" class="form-label">First name</label>
+                                    <input type="text" class="form-control" id="validationCustom01" required>
+                                </div>
 
-                            <div class="col-md-6">
-                                <label for="validationCustom03" class="form-label">City</label>
-                                <input type="text" class="form-control" id="validationCustom03" required>
-                            </div>
+                                <div class="col-md-4">
+                                    <label for="validationCustom02" class="form-label">Last name</label>
+                                    <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                                </div>
 
-                            <div class="col-md-3">
-                                <label for="validationCustom04" class="form-label">Industry</label>
-                                <select class="form-select" id="validationCustom04" required>
-                                    <option selected disabled value="">Choose...</option>
-                                    <option value="1">IT Industry</option>
-                                    <option value="2">Health & Care Industry</option>
-                                    <option value="2">Engineering Industry</option>
-                                    <option value="2">Finance Industry</option>
-                                    <option value="2">Education Industry</option>
-                                </select>
-                            </div>
+                                <div class="col-md-4">
+                                    <label for="validationCustomUsername" class="form-label">Username</label>
+                                    <div class="input-group has-validation">
+                                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                                        <input type="text" class="form-control" id="validationCustomUsername"
+                                               aria-describedby="inputGroupPrepend" required>
+                                    </div>
+                                </div>
 
-                            <div class="col-md-3">
-                                <label for="validationCustom05" class="form-label">Zip</label>
-                                <input type="text" class="form-control" id="validationCustom05">
-                            </div>
+                                <div class="col-md-6">
+                                    <label for="validationCustom03" class="form-label">City</label>
+                                    <input type="text" class="form-control" id="validationCustom03" required>
+                                </div>
 
-                            <div class="col-12">
-                                <button class="btn btn-success mt-2" type="button">Add Post</button>
+                                <div class="col-md-3">
+                                    <label for="validationCustom04" class="form-label">Industry</label>
+                                    <select class="form-select" id="validationCustom04" required>
+                                        <option selected disabled value="">Choose...</option>
+                                        <option value="1">IT Industry</option>
+                                        <option value="2">Health & Care Industry</option>
+                                        <option value="2">Engineering Industry</option>
+                                        <option value="2">Finance Industry</option>
+                                        <option value="2">Education Industry</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="validationCustom05" class="form-label">Zip</label>
+                                    <input type="text" class="form-control" id="validationCustom05">
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn-success btn-sm mt-2 me-2" type="button">
+                                        Add Post
+                                        <i class="bi bi-file-earmark-plus ms-2"></i>
+                                    </button>
+                                    <button class="btn btn-warning btn-sm mt-2 me-2" type="button">
+                                        Update Post
+                                        <i class="bi bi-file-earmark-arrow-up ms-2"></i>
+                                    </button>
+                                    <button class="btn btn-danger btn-sm mt-2 me-2" type="button">
+                                        Delete Post
+                                        <i class="bi bi-file-earmark-minus ms-2"></i>
+                                    </button>
+                                </div>
                             </div>
                         </form>
 
+                        <hr class="my-1 mt-3">
 
                         <div class="row justify-content-center mt-5">
 
@@ -1078,6 +1103,11 @@
 
     $('#toggleButton').click(function() {
         $('#job-filter-menu').toggleClass('job-filter-hidden job-filter-shown');
+    });
+    $('.accordion-c-button').click(function() {
+        $('.accordion-c-button').toggleClass('bi-chevron-double-down bi-chevron-double-up');
+        $('#add-post-accordion').toggleClass('d-none');
+
     });
 
 
