@@ -381,7 +381,7 @@
 
                 <div class="row p-0 gap-5">
 
-                    <div class="col-4 pt-5 rounded-4"
+                    <div id="job-filter-menu" class="col-4 pt-5 rounded-4 d-xxl-block job-filter-hidden"
                          style="height: max-content; background-color: #eeeeee">
 
                         <h6 class="h6 ms-3 fs-6 fw-bold">Select Industry</h6>
@@ -475,9 +475,14 @@
 
                     <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-11 col-sm-11 col-11 rounded-4">
 
-                        <h5 class="h5 fw-bold">Found 10 Jobs</h5>
+                        <div class="row p-0 m-0 justify-content-between">
+                            <h5 class="h5 fw-bold w-auto col-4">Found 10 Jobs</h5>
+                            <span class="col-1 d-flex justify-content-end align-items-center">
+                                <i id="toggleButton" class="btn bi bi-funnel"></i>
+                            </span>
+                        </div>
 
-                        <div class="row p-0 m-0 w-100 pt-3 gap-3 overflow-y-scroll no-scroll"
+                        <div class="card-scale row p-0 m-0 w-100 pt-3 gap-3 overflow-y-scroll no-scroll"
                              style="height: max-content;max-height: 100vh;">
 
                             <div class="col-10 box-shadow-3 p-3 w-100 rounded-2" style="height: max-content">
@@ -834,52 +839,52 @@
 
                             <table class="table-primary col-11 ">
                                 <thead>
-                                    <tr style="background-color: #abc8ff">
-                                        <th scope="col">Post ID</th>
-                                        <th scope="col">Post Title</th>
-                                        <th scope="col">Industry</th>
-                                        <th scope="col">Date Posted</th>
-                                        <th scope="col">Count</th>
-                                    </tr>
+                                <tr style="background-color: #abc8ff">
+                                    <th scope="col">Post ID</th>
+                                    <th scope="col">Post Title</th>
+                                    <th scope="col">Industry</th>
+                                    <th scope="col">Date Posted</th>
+                                    <th scope="col">Count</th>
+                                </tr>
                                 </thead>
 
                                 <tbody>
 
-                                    <tr>
-                                        <td>P001</td>
-                                        <td>Software Engineering</td>
-                                        <td>IT industry</td>
-                                        <td>23-12-10</td>
-                                        <td>10</td>
-                                    </tr>
-                                    <tr>
-                                        <td>P001</td>
-                                        <td>Software Engineering</td>
-                                        <td>IT industry</td>
-                                        <td>23-12-10</td>
-                                        <td>10</td>
-                                    </tr>
-                                    <tr>
-                                        <td>P001</td>
-                                        <td>Software Engineering</td>
-                                        <td>IT industry</td>
-                                        <td>23-12-10</td>
-                                        <td>10</td>
-                                    </tr>
-                                    <tr>
-                                        <td>P001</td>
-                                        <td>Software Engineering</td>
-                                        <td>IT industry</td>
-                                        <td>23-12-10</td>
-                                        <td>10</td>
-                                    </tr>
-                                    <tr>
-                                        <td>P001</td>
-                                        <td>Software Engineering</td>
-                                        <td>IT industry</td>
-                                        <td>23-12-10</td>
-                                        <td>10</td>
-                                    </tr>
+                                <tr>
+                                    <td>P001</td>
+                                    <td>Software Engineering</td>
+                                    <td>IT industry</td>
+                                    <td>23-12-10</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>P001</td>
+                                    <td>Software Engineering</td>
+                                    <td>IT industry</td>
+                                    <td>23-12-10</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>P001</td>
+                                    <td>Software Engineering</td>
+                                    <td>IT industry</td>
+                                    <td>23-12-10</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>P001</td>
+                                    <td>Software Engineering</td>
+                                    <td>IT industry</td>
+                                    <td>23-12-10</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>P001</td>
+                                    <td>Software Engineering</td>
+                                    <td>IT industry</td>
+                                    <td>23-12-10</td>
+                                    <td>10</td>
+                                </tr>
 
                                 </tbody>
                             </table>
@@ -999,7 +1004,7 @@
         });
     });
 
-    $('#jobs-frame').css('display', 'none');
+    //$('#jobs-frame').css('display', 'none');
 
     function showHome() {
         $('#home-page').css('display', 'block');
@@ -1068,7 +1073,12 @@
         });
     }
 
-    chart()
+    chart();
+    var toggleButton = document.getElementById('toggleButton');
+
+    $('#toggleButton').click(function() {
+        $('#job-filter-menu').toggleClass('job-filter-hidden job-filter-shown');
+    });
 
 
     /*$(document).ready(function () {
