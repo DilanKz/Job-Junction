@@ -1264,6 +1264,19 @@
 
 <script>
 
+    $(document).ready(function () {
+        $('#sidebar-menu .nav-item').on('click', function () {
+            $('#sidebar-menu .nav-link').removeClass('active');
+
+            $(this).find('.nav-link').removeClass('link-body-emphasis');
+            $(this).find('.nav-link').addClass('active');
+            $('#sidebar-menu .nav-link').not('.active').addClass('link-body-emphasis');
+        });
+    });
+    $('#dashboard-frame').css('display', 'block');
+    $('#post-frame').css('display', 'none');
+    $('#profile-frame').css('display', 'none');
+
     $('#login-back-ground').click(function () {
         $('#login-frame').addClass('d-none');
         $('#register').toggleClass('d-none');
@@ -1313,20 +1326,6 @@
         $('#home-page').css('display', 'none');
         $('#jobs-frame').css('display', 'block');
     }
-
-
-    $(document).ready(function () {
-        $('#sidebar-menu .nav-item').on('click', function () {
-            $('#sidebar-menu .nav-link').removeClass('active');
-
-            $(this).find('.nav-link').removeClass('link-body-emphasis');
-            $(this).find('.nav-link').addClass('active');
-            $('#sidebar-menu .nav-link').not('.active').addClass('link-body-emphasis');
-        });
-    });
-    $('#dashboard-frame').css('display', 'block');
-    $('#post-frame').css('display', 'none');
-    $('#profile-frame').css('display', 'none');
 
     function showDB() {
         $('#dashboard-frame').css('display', 'block');
