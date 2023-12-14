@@ -26,6 +26,6 @@ public class Company {
     private String state;
     private Location location;
     private String description;
-    private String profilePicture;
+    private byte[] profilePicture;
 
 }
