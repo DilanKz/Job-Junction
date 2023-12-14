@@ -24,7 +24,7 @@ public class Employee {
     private String email;
     private String password;
     private String industry;
-    private String profilePicture;
+    private byte[] profilePicture;
 
 }
 
