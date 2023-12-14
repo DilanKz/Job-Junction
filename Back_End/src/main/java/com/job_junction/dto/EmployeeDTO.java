@@ -22,6 +22,6 @@ public class EmployeeDTO {
     private String email;
     private String industry;
     private LocationDTO location;
-    private String profilePicture;
+    private byte[] profilePicture;
 
 }
