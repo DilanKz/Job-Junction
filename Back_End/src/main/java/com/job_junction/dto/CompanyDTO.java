@@ -21,6 +21,6 @@ public class CompanyDTO {
     private String state;
     private LocationDTO location;
     private String description;
-    private String profilePicture;
+    private byte[] profilePicture;
 }
 
