@@ -23,9 +23,9 @@
 </head>
 <body>
 
-<main id="login-frame" class="d-none position-fixed " style="z-index: 2000">
+<main id="login-frame" class=" position-fixed " style="z-index: 2000">
     <section id="login-back-ground" class="position-absolute top-0 start-0 vh-100 vw-100 bg-blur-1"></section>
-    <section id="login" class="vh-100 vw-100">
+    <section id="login" class="d-none vh-100 vw-100">
         <section class="vh-100">
             <div class="container py-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
@@ -86,7 +86,7 @@
             </div>
         </section>
     </section>
-    <section id="register" class="d-none vh-100 vw-100 position-absolute p-0 m-0 bg-blur-8 d-flex">
+    <section id="register" class="vh-100 vw-100">
         <div class="container h-100 d-flex justify-content-center" style="transform: scale(0.9);">
             <div class="row d-flex h-100">
                 <div class="col-12 p-0 rounded-4" style="height: 100%;overflow: hidden">
@@ -96,6 +96,18 @@
                                 <div class="col-lg-6">
                                     <div class="p-5">
                                         <h3 class="fw-normal mb-5" style="color: #222831;">General Information</h3>
+
+                                        <div class="mb-4 pb-2">
+                                            <div class="form-outline form-white">
+                                                <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>
+                                                <label class="btn btn-outline-success" for="success-outlined">Employee</label>
+
+                                                <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
+                                                <label class="btn btn-outline-success" for="danger-outlined">Company</label>
+                                                <label class="form-label d-block pt-1">Account Type</label>
+                                            </div>
+                                        </div>
+
                                         <div class="mb-4 pb-2">
                                             <div class="form-outline">
                                                 <input name="name" type="text" id="txtName"
@@ -130,14 +142,6 @@
 
                                     <div class="p-5">
                                         <h3 class="fw-normal mb-5">Account Information</h3>
-
-                                        <div class="mb-4 pb-2">
-                                            <div class="form-outline form-white">
-                                                <input name="userName" type="text" id="txtUN"
-                                                       class="form-control form-control-lg"/>
-                                                <label class="form-label" for="txtUN">UserName</label>
-                                            </div>
-                                        </div>
 
                                         <div class="mb-4 pb-2">
                                             <div class="form-outline form-white">
@@ -1255,12 +1259,9 @@
 
     window.initMap = initMap;
 </script>
-
 <script async
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZNZQO6dL8olaDj8R6qNYv7ZsywV1Dwk8&callback=initMap">
 </script>
-
-
 <script>
 
     $(document).ready(function () {
@@ -1278,11 +1279,13 @@
 
     $('#login-back-ground').click(function () {
         $('#login-frame').addClass('d-none');
-        $('#register').toggleClass('d-none');
+        $('#register').addClass('d-none');
+        $('#login').addClass('d-none');
     });
 
     $('#btn-login-main').click(function () {
         $('#login-frame').removeClass('d-none');
+        $('#login').removeClass('d-none');
         $('#register').addClass('d-none');
     });
 
@@ -1293,9 +1296,8 @@
     });
 
     $('#btn-login-second').click(function () {
-        $('#login').toggleClass('d-none');
-        $('#register').toggleClass('d-none');
-
+        $('#login').addClass('d-none');
+        $('#register').removeClass('d-none');
     });
 
     $(document).ready(function () {
