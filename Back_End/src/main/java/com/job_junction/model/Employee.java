@@ -6,8 +6,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.List;
-
 /**
  * @author Dilan
  * @created 11/12/2023 - 06:36 pm
@@ -25,9 +23,8 @@ public class Employee {
     private String lastName;
     private String email;
     private String password;
-    private List<String> skills;
+    private String industry;
     private String profilePicture;
-    private String category;
 
 }
 
