@@ -23,7 +23,7 @@ public class Company {
     private String name;
     private String industry;
     private String email;
-    private String password;
+    private String state;
     private Location location;
     private String description;
     private String profilePicture;
