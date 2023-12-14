@@ -20,9 +20,8 @@ public class EmployeeDTO {
     private String firstName;
     private String lastName;
     private String email;
-    private List<String> skills;
+    private String industry;
     private LocationDTO location;
     private String profilePicture;
-    private String category;
 
 }
