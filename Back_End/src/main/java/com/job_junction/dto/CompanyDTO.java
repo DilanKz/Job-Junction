@@ -18,6 +18,7 @@ public class CompanyDTO {
     private String name;
     private String industry;
     private String email;
+    private String state;
     private LocationDTO location;
     private String description;
     private String profilePicture;
