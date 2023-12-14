@@ -23,9 +23,9 @@
 </head>
 <body>
 
-<main id="login-frame" class=" position-fixed " style="z-index: 2000">
+<main id="login-frame" class="d-none position-fixed " style="z-index: 2000">
     <section id="login-back-ground" class="position-absolute top-0 start-0 vh-100 vw-100 bg-blur-1"></section>
-    <section id="login" class="d-none vh-100 vw-100">
+    <section id="login" class=" vh-100 vw-100">
         <section class="vh-100">
             <div class="container py-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
@@ -86,7 +86,7 @@
             </div>
         </section>
     </section>
-    <section id="register" class="vh-100 vw-100">
+    <section id="register" class="d-none vh-100 vw-100">
         <div class="container h-100 d-flex justify-content-center" style="transform: scale(0.9);">
             <div class="row d-flex h-100">
                 <div class="col-12 p-0 rounded-4" style="height: 100%;overflow: hidden">
@@ -118,12 +118,16 @@
                                         </div>
 
                                         <div class="mb-4 pb-2">
-                                            <div class="form-outline">
-                                                <input name="address" type="text" id="txtAddress"
-                                                       class="form-control form-control-lg"/>
-                                                <label class="form-label" for="txtAddress">Address</label>
-                                                <!--                                            <span id="txtAddressAlert" class="position-absolute end-0 text-danger">this is a massage</span>-->
-                                            </div>
+                                            <select class="form-select h-100 p-3 rounded-2 col-8"
+                                                    aria-label="Default select example">
+                                                <option selected disabled> </option>
+                                                <option value="1">IT Industry</option>
+                                                <option value="2">Health & Care Industry</option>
+                                                <option value="2">Engineering Industry</option>
+                                                <option value="2">Finance Industry</option>
+                                                <option value="2">Education Industry</option>
+                                            </select>
+                                            <label class="form-label" for="txtTp">Select Industry</label>
                                         </div>
 
                                         <div class="form-outline">
@@ -1315,7 +1319,7 @@
             prevScrollPos = currentScrollPos;
         });
     });
-
+    $('#jobs-frame').css('display', 'none');
     function showHome() {
         $('#home-page').css('display', 'block');
         $('#jobs-frame').css('display', 'none');
