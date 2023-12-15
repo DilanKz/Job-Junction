@@ -54,5 +54,28 @@ public class UserServiceImpl implements UserService{
     public void deleteUser(String id) {
         userRepository.deleteById(id);
     }
+
+    @Override
+    public String generateNextID() {
+        User user = userRepository.findTopByOrderByIdDesc();
+
+        return generateNextId(user);
+    }
+
+    @Override
+    public String generateNextId(User user) {
+        System.err.println(user);
+        if (user == null) {
+            return "U0001";
+        }
+
+        String lastId = user.getId();
+        String prefix = lastId.substring(0, 1);
+        int lastNumber = Integer.parseInt(lastId.substring(1));
+
+        lastNumber++;
+
+        return prefix + String.format("%04d", lastNumber);
+    }
 }
 

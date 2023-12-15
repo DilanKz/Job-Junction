@@ -1,6 +1,7 @@
 package com.job_junction.service;
 
 import com.job_junction.dto.UserDTO;
+import com.job_junction.model.User;
 
 import java.util.List;
 
@@ -18,4 +19,8 @@ public interface UserService {
     UserDTO saveUser(UserDTO userDTO);
 
     void deleteUser(String id);
+
+    String generateNextID();
+
+    String generateNextId(User user);
 }
