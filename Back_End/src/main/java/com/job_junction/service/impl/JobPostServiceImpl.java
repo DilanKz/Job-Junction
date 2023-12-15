@@ -51,5 +51,27 @@ public class JobPostServiceImpl implements JobPostService {
     public void deleteJobPost(String id) {
         repo.deleteById(id);
     }
+
+    @Override
+    public String generateNextID() {
+        JobPost jobPost = repo.findTopByOrderByIdDesc();
+
+        return generateNextId(jobPost);
+    }
+
+    @Override
+    public String generateNextId(JobPost jobPost) {
+        if (jobPost == null) {
+            return "J0001";
+        }
+
+        String lastId = jobPost.getId();
+        String prefix = lastId.substring(0, 1);
+        int lastNumber = Integer.parseInt(lastId.substring(1));
+
+        lastNumber++;
+
+        return prefix + String.format("%04d", lastNumber);
+    }
 }
 

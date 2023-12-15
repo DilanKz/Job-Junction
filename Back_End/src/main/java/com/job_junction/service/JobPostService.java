@@ -1,6 +1,7 @@
 package com.job_junction.service;
 
 import com.job_junction.dto.JobPostDTO;
+import com.job_junction.model.JobPost;
 
 import java.util.List;
 
@@ -16,4 +17,8 @@ public interface JobPostService {
     JobPostDTO saveJobPost(JobPostDTO jobPostDTO);
 
     void deleteJobPost(String id);
+
+    String generateNextID();
+
+    String generateNextId(JobPost jobPost);
 }
