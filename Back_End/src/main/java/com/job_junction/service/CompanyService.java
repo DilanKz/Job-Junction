@@ -1,6 +1,7 @@
 package com.job_junction.service;
 
 import com.job_junction.dto.CompanyDTO;
+import com.job_junction.model.Company;
 
 import java.util.List;
 
@@ -16,4 +17,8 @@ public interface CompanyService {
     CompanyDTO saveCompany(CompanyDTO companyDTO);
 
     void deleteCompany(String id);
+
+    String generateNextID();
+
+    String generateNextId(Company company);
 }

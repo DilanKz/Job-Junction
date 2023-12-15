@@ -50,5 +50,28 @@ public class CompanyServiceImpl implements CompanyService {
     public void deleteCompany(String id) {
         repo.deleteById(id);
     }
+
+    @Override
+    public String generateNextID() {
+        Company company = repo.findTopByOrderByIdDesc();
+
+        return generateNextId(company);
+    }
+
+    @Override
+    public String generateNextId(Company company) {
+        System.err.println(company);
+        if (company == null) {
+            return "E0001";
+        }
+
+        String lastId = company.getId();
+        String prefix = lastId.substring(0, 1);
+        int lastNumber = Integer.parseInt(lastId.substring(1));
+
+        lastNumber++;
+
+        return prefix + String.format("%04d", lastNumber);
+    }
 }
 
