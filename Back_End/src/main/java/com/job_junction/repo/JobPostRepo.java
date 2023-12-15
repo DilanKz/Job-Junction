@@ -9,6 +9,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
  */
 
 public interface JobPostRepo extends MongoRepository<JobPost, String> {
-
+    JobPost findTopByOrderByIdDesc();
 }
 
