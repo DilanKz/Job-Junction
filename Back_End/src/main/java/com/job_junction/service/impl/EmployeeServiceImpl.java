@@ -45,6 +45,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public EmployeeDTO saveEmployee(EmployeeDTO employeeDTO) {
         Employee employee = modelMapper.map(employeeDTO, Employee.class);
+        employee.setId(generateNextID());
         employee = repo.save(employee);
         return modelMapper.map(employee, EmployeeDTO.class);
     }
@@ -52,6 +53,29 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void deleteEmployee(String id) {
         repo.deleteById(id);
+    }
+
+    @Override
+    public String generateNextID() {
+        Employee lastEmployee = repo.findTopByOrderByIdDesc();
+
+        return generateNextId(lastEmployee);
+    }
+
+    @Override
+    public String generateNextId(Employee lastEmployee) {
+        System.err.println(lastEmployee);
+        if (lastEmployee == null) {
+            return "E0001";
+        }
+
+        String lastId = lastEmployee.getId();
+        String prefix = lastId.substring(0, 1);
+        int lastNumber = Integer.parseInt(lastId.substring(1));
+
+        lastNumber++;
+
+        return prefix + String.format("%04d", lastNumber);
     }
 }
 

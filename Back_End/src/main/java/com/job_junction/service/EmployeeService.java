@@ -1,6 +1,7 @@
 package com.job_junction.service;
 
 import com.job_junction.dto.EmployeeDTO;
+import com.job_junction.model.Employee;
 
 import java.util.List;
 
@@ -16,4 +17,9 @@ public interface EmployeeService {
     EmployeeDTO saveEmployee(EmployeeDTO employeeDTO);
 
     void deleteEmployee(String id);
+
+
+    String generateNextID();
+
+    String generateNextId(Employee lastEmployee);
 }
