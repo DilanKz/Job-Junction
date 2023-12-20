@@ -7,18 +7,42 @@ $("#btnCustomerReg").click(function() {
 
         if (selectedText === 'Employee') {
 
-            let data = userData();
-            data.id='U001';data.username='Dilan';data.password='1234';data.entityid='E00-001'
-
             let employee = employeeData();
-            employee.id='E00-001';employee.name='Tharindu DIlan';employee.email='abc.email.com';employee.industry='IT';
+            employee.id='';
+            employee.name=$('#txtName').val();
+            employee.email=$('#txtEmail').val();
+            employee.industry= $("#txtIndustry").val();
 
+
+            let data = userData();
+            data.id='';
+            data.username=$('#txtUsername').val();
+            data.password=$('#txtPass').val();
+            data.type='employee';
+            data.entityid='';
 
             console.log(data);
             console.log(employee);
 
         }else if (selectedText==='Company'){
-            console.log('Com');
+
+            let company = companyData();
+            company.id='';
+            company.name=$('#txtName').val();
+            company.email=$('#txtEmail').val();
+            company.industry= $("#txtIndustry").val();
+            company.state= 'new';
+
+
+            let data = userData();
+            data.id='';
+            data.username=$('#txtUsername').val();
+            data.password=$('#txtPass').val();
+            data.type='company';
+            data.entityid='';
+
+            console.log(data);
+            console.log(company);
         }
 
 
