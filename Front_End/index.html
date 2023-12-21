@@ -113,19 +113,18 @@
                                                 <input name="name" type="text" id="txtName"
                                                        class="form-control form-control-lg"/>
                                                 <label class="form-label" for="txtName">Name</label>
-                                                <!--<span id="txtNameAlert" class="position-absolute end-0 text-danger">this is a massage</span>-->
                                             </div>
                                         </div>
 
                                         <div class="mb-4 pb-2">
-                                            <select class="form-select h-100 p-3 rounded-2 col-8"
+                                            <select id="txtIndustry" class="form-select h-100 p-3 rounded-2 col-8"
                                                     aria-label="Default select example">
-                                                <option selected disabled> </option>
-                                                <option value="1">IT Industry</option>
-                                                <option value="2">Health & Care Industry</option>
-                                                <option value="2">Engineering Industry</option>
-                                                <option value="2">Finance Industry</option>
-                                                <option value="2">Education Industry</option>
+                                                <option value="1" selected disabled> </option>
+                                                <option value="IT Industry">IT Industry</option>
+                                                <option value="Health & Care Industry">Health & Care Industry</option>
+                                                <option value="Engineering Industry">Engineering Industry</option>
+                                                <option value="Finance Industry">Finance Industry</option>
+                                                <option value="Education Industry">Education Industry</option>
                                             </select>
                                             <label class="form-label" for="txtTp">Select Industry</label>
                                         </div>
@@ -134,7 +133,6 @@
                                             <input name="contact" type="text" id="txtTp"
                                                    class="form-control form-control-lg"/>
                                             <label class="form-label" for="txtTp">Contact</label>
-<!--                                            <span id="txtTpAlert" class="position-absolute end-0 text-danger">this is a massage</span>-->
                                         </div>
                                         <div class="row position-relative">
 
@@ -146,6 +144,14 @@
 
                                     <div class="p-5">
                                         <h3 class="fw-normal mb-5">Account Information</h3>
+
+                                        <div class="mb-4 pb-2">
+                                            <div class="form-outline form-white">
+                                                <input name="username" type="text" id="txtUsername"
+                                                       class="form-control form-control-lg"/>
+                                                <label class="form-label" for="txtUsername">UserName</label>
+                                            </div>
+                                        </div>
 
                                         <div class="mb-4 pb-2">
                                             <div class="form-outline form-white">
@@ -1129,6 +1135,9 @@
 
 </main>
 
+<script>
+    const baseURL='http://localhost:8080/app/';
+</script>
 
 <script src="forms/loginForm.js"></script>
 <script src="controllers/loginController.js"></script>
