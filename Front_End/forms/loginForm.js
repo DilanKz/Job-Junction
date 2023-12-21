@@ -3,6 +3,7 @@ let txtEmail = $('#txtEmail');
 let txtIndustry = $('#txtIndustry');
 let txtUsername = $('#txtUsername');
 let txtPass = $('#txtPass');
+let txtTp = $('#txtTp');
 
 function userData() {
     return {
@@ -35,7 +36,6 @@ function companyData() {
 
 const nameRegex = /^[a-zA-Z\s]+$/;
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const industryRegex = /^[a-zA-Z\s]+$/;
 const usernameRegex = /^[a-zA-Z0-9]+$/;
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
 
@@ -51,4 +51,14 @@ function validateRegisterFields() {
     const passwordValid = validateField(txtPass.val(), passwordRegex);
 
     return nameValid && emailValid && industryValid && usernameValid && passwordValid;
+}
+
+function clearFields() {
+    txtName.val('')
+    txtEmail.val('')
+    txtIndustry.val('')
+    txtUsername.val('')
+    txtPass.val('')
+    txtTp.val('')
+    txtIndustry.val('1')
 }
