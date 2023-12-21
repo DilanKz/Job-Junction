@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/job-posts")
+@CrossOrigin
 public class JobPostController {
 
     @Autowired
