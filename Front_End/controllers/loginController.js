@@ -1,52 +1,85 @@
 $("#btnCustomerReg").click(function() {
     let selectedRadioButton = $("input[name='options-outlined']:checked");
 
-    if (selectedRadioButton) {
+    if (validateRegisterFields()) {
 
-        let selectedText = selectedRadioButton.next('label').text();
+        if (selectedRadioButton) {
 
-        if (selectedText === 'Employee') {
+            let selectedText = selectedRadioButton.next('label').text();
 
-            let employee = employeeData();
-            employee.id='';
-            employee.name=$('#txtName').val();
-            employee.email=$('#txtEmail').val();
-            employee.industry= $("#txtIndustry").val();
+            if (selectedText === 'Employee') {
 
-
-            let data = userData();
-            data.id='';
-            data.username=$('#txtUsername').val();
-            data.password=$('#txtPass').val();
-            data.type='employee';
-            data.entityid='';
-
-            console.log(data);
-            console.log(employee);
-
-        }else if (selectedText==='Company'){
-
-            let company = companyData();
-            company.id='';
-            company.name=$('#txtName').val();
-            company.email=$('#txtEmail').val();
-            company.industry= $("#txtIndustry").val();
-            company.state= 'new';
+                let employee = employeeData();
+                employee.id='';
+                employee.name=$('#txtName').val();
+                employee.email=$('#txtEmail').val();
+                employee.industry= $("#txtIndustry").val();
 
 
-            let data = userData();
-            data.id='';
-            data.username=$('#txtUsername').val();
-            data.password=$('#txtPass').val();
-            data.type='company';
-            data.entityid='';
+                let data = userData();
+                data.id='';
+                data.username=$('#txtUsername').val();
+                data.password=$('#txtPass').val();
+                data.type='employee';
+                data.entityid='';
 
-            console.log(data);
-            console.log(company);
+                makeAccount('employees',data,employee);
+
+            }else if (selectedText==='Company'){
+
+                let company = companyData();
+                company.id='';
+                company.name=$('#txtName').val();
+                company.email=$('#txtEmail').val();
+                company.industry= $("#txtIndustry").val();
+                company.state= 'new';
+
+
+                let data = userData();
+                data.id='';
+                data.username=$('#txtUsername').val();
+                data.password=$('#txtPass').val();
+                data.type='company';
+                data.entityid='';
+
+                makeAccount('companies',data,company);
+            }
+
+
+        } else {
+            console.log("No radio button selected.");
         }
 
-
-    } else {
-        console.log("No radio button selected.");
+    }else {
+        console.log("invalid")
     }
 });
+
+function makeAccount(url,user,account) {
+    $.ajax({
+        url:baseURL+url+'/save',
+        data:JSON.stringify(account),
+        method:'POST',
+        contentType: 'application/json',
+        success:function (response) {
+            console.log(response.id);
+            user.id=response.id;
+
+            $.ajax({
+                url:baseURL+'users/register',
+                data:JSON.stringify(user),
+                method:'POST',
+                contentType: 'application/json',
+                success:function (response) {
+                    clearFields();
+                },
+                error:function (e) {
+
+                }
+            });
+        },
+        error:function (e) {
+
+        }
+    });
+}
