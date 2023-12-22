@@ -20,7 +20,7 @@ $("#btnCustomerReg").click(function() {
                 data.id='';
                 data.username=$('#txtUsername').val();
                 data.password=$('#txtPass').val();
-                data.type='employee';
+                data.type='employees';
                 data.entityid='';
 
                 makeAccount('employees',data,employee);
@@ -39,7 +39,7 @@ $("#btnCustomerReg").click(function() {
                 data.id='';
                 data.username=$('#txtUsername').val();
                 data.password=$('#txtPass').val();
-                data.type='company';
+                data.type='companies';
                 data.entityid='';
 
                 makeAccount('companies',data,company);
@@ -54,6 +54,16 @@ $("#btnCustomerReg").click(function() {
         console.log("invalid")
     }
 });
+$("#btnLogin").click(function() {
+    let username = $('#txtUN').val();
+    let password = $('#txtPW').val();
+
+    loginIn(username,password);
+
+});
+
+
+
 
 function makeAccount(url,user,account) {
     $.ajax({
@@ -62,8 +72,8 @@ function makeAccount(url,user,account) {
         method:'POST',
         contentType: 'application/json',
         success:function (response) {
-            console.log(response.id);
-            user.id=response.id;
+            console.log(response);
+            user.entityId=response.id;
 
             $.ajax({
                 url:baseURL+'users/register',
@@ -71,15 +81,56 @@ function makeAccount(url,user,account) {
                 method:'POST',
                 contentType: 'application/json',
                 success:function (response) {
+                    console.log(response);
                     clearFields();
+                    toastShower('1','bg-success','text-light','successfully registered');
                 },
                 error:function (e) {
-
+                    toastShower('1','bg-danger','text-light','Try again');
                 }
             });
         },
         error:function (e) {
-
+            toastShower('1','bg-danger','text-light','Try again');
         }
     });
+}
+
+
+
+function loginIn(user,password) {
+
+    $.ajax({
+        url:baseURL+'users/login?user='+user,
+        contentType: 'application/json',
+        // async:false,
+        success:function (response) {
+
+            console.log()
+            if (response.password === password) {
+
+                $.ajax({
+                    url:baseURL+response.type+'/'+response.entityId,
+                    contentType: 'application/json',
+                    // async:false,
+                    success:function (response) {
+                        console.log(response);
+                        toastShower('1','bg-success','text-light','successfully logged in');
+                    },
+                    error:function (e) {
+                        toastShower('1','bg-danger','text-light','Try again');
+                    }
+                });
+
+            }else {
+                toastShower('1','bg-danger','text-light','Wrong Password try again');
+            }
+
+            console.log(response);
+        },
+        error:function (e) {
+            toastShower('1','bg-danger','text-light','Try again');
+        }
+    });
+
 }
