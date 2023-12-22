@@ -30,7 +30,7 @@ public class JobPostController {
         return jobPostService.getJobPostById(id);
     }
 
-    @PostMapping
+    @PostMapping("/save")
     public JobPostDTO saveJobPost(@RequestBody JobPostDTO jobPostDTO) {
         return jobPostService.saveJobPost(jobPostDTO);
     }
