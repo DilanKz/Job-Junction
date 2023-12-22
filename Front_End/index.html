@@ -23,6 +23,7 @@
 </head>
 <body>
 
+
 <main id="login-frame" class="d-none position-fixed " style="z-index: 2000">
     <section id="login-back-ground" class="position-absolute top-0 start-0 vh-100 vw-100 bg-blur-1"></section>
     <section id="login" class=" vh-100 vw-100">
@@ -51,19 +52,20 @@
                                                 account</h5>
 
                                             <div class="form-outline mb-4">
-                                                <input type="email" id="form2Example17"
+                                                <input type="email" id="txtUN"
                                                        class="form-control form-control-lg"/>
-                                                <label class="form-label" for="form2Example17">Email address</label>
+                                                <label class="form-label" for="txtUN">Username</label>
                                             </div>
 
                                             <div class="form-outline mb-4">
-                                                <input type="password" id="form2Example27"
+                                                <input type="password" id="txtPW"
                                                        class="form-control form-control-lg"/>
-                                                <label class="form-label" for="form2Example27">Password</label>
+                                                <label class="form-label" for="txtPW">Password</label>
                                             </div>
 
                                             <div class="pt-1 mb-4">
-                                                <button class="btn btn-dark btn-lg btn-block" type="button">Login
+                                                <button id="btnLogin" class="btn btn-dark btn-lg btn-block"
+                                                        type="button">Login
                                                 </button>
                                             </div>
 
@@ -99,11 +101,15 @@
 
                                         <div class="mb-4 pb-2">
                                             <div class="form-outline form-white">
-                                                <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off" checked>
-                                                <label class="btn btn-outline-success" for="success-outlined">Employee</label>
+                                                <input type="radio" class="btn-check" name="options-outlined"
+                                                       id="success-outlined" autocomplete="off" checked>
+                                                <label class="btn btn-outline-success"
+                                                       for="success-outlined">Employee</label>
 
-                                                <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
-                                                <label class="btn btn-outline-success" for="danger-outlined">Company</label>
+                                                <input type="radio" class="btn-check" name="options-outlined"
+                                                       id="danger-outlined" autocomplete="off">
+                                                <label class="btn btn-outline-success"
+                                                       for="danger-outlined">Company</label>
                                                 <label class="form-label d-block pt-1">Account Type</label>
                                             </div>
                                         </div>
@@ -119,7 +125,7 @@
                                         <div class="mb-4 pb-2">
                                             <select id="txtIndustry" class="form-select h-100 p-3 rounded-2 col-8"
                                                     aria-label="Default select example">
-                                                <option value="1" selected disabled> </option>
+                                                <option value="1" selected disabled></option>
                                                 <option value="IT Industry">IT Industry</option>
                                                 <option value="Health & Care Industry">Health & Care Industry</option>
                                                 <option value="Engineering Industry">Engineering Industry</option>
@@ -196,7 +202,8 @@
                                         </button>
 
                                         <p class="mb-3 mt-5 pb-lg-2" style="color: #DBE2EF;">Already have an account?
-                                            <a id="btn-login-second" href="#!" style="color: #DBE2EF;">Sign in from here</a>
+                                            <a id="btn-login-second" href="#!" style="color: #DBE2EF;">Sign in from
+                                                here</a>
                                         </p>
 
                                     </div>
@@ -1135,8 +1142,52 @@
 
 </main>
 
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 2500">
+
+    <div id="1" class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="z-index: 2500">
+        <div class="toast-header">
+            <strong class="me-auto">Job-Junction</strong>
+            <small>now</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body 1">
+            Hello, world! This is a toast message.
+        </div>
+    </div>
+
+    <div id="2" class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="z-index: 2500">
+        <div class="toast-header">
+            <strong class="me-auto">Job-Junction</strong>
+            <small>now</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body 2">
+        </div>
+    </div>
+</div>
+
 <script>
-    const baseURL='http://localhost:8080/app/';
+    const baseURL = 'http://localhost:8080/app/';
+
+    let userAccount = {
+        user: '',
+        account: ''
+    }
+
+    function toastShower(number, color,text,message) {
+        let liveToast = $('#'+number);
+        liveToast.removeClass();
+        liveToast.addClass('toast');
+        liveToast.addClass(color);
+        $('.'+number).addClass(text);
+        $('.'+number).text(message);
+
+
+        const toastLiveExample = document.getElementById(number)
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+        toastBootstrap.show();
+    }
 </script>
 
 <script src="forms/loginForm.js"></script>
@@ -1314,8 +1365,8 @@
     });
 
     $('#btn-login-second').click(function () {
-        $('#login').addClass('d-none');
-        $('#register').removeClass('d-none');
+        $('#login').toggleClass('d-none');
+        $('#register').toggleClass('d-none');
     });
 
     $(document).ready(function () {
@@ -1334,6 +1385,7 @@
         });
     });
     $('#jobs-frame').css('display', 'none');
+
     function showHome() {
         $('#home-page').css('display', 'block');
         $('#jobs-frame').css('display', 'none');
