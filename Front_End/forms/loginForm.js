@@ -3,7 +3,9 @@ let txtEmail = $('#txtEmail');
 let txtIndustry = $('#txtIndustry');
 let txtUsername = $('#txtUsername');
 let txtPass = $('#txtPass');
+let txtConfirmPass = $('#txtConfirmPass');
 let txtTp = $('#txtTp');
+let txtCode = $('#txtCode');
 
 function userData() {
     return {
@@ -61,4 +63,6 @@ function clearFields() {
     txtPass.val('')
     txtTp.val('')
     txtIndustry.val('1')
+    txtConfirmPass.val('')
+    txtCode.val('')
 }
