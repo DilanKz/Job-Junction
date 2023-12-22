@@ -64,7 +64,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public String generateNextId(Employee lastEmployee) {
-        System.err.println(lastEmployee);
         if (lastEmployee == null) {
             return "E0001";
         }

@@ -46,6 +46,7 @@ public class UserServiceImpl implements UserService{
     public UserDTO saveUser(UserDTO userDTO) {
         userDTO.setPassword(userDTO.getPassword());
         User user = modelMapper.map(userDTO, User.class);
+        user.setId(generateNextID());
         user = userRepository.save(user);
         return modelMapper.map(user, UserDTO.class);
     }
@@ -64,7 +65,6 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public String generateNextId(User user) {
-        System.err.println(user);
         if (user == null) {
             return "U0001";
         }
