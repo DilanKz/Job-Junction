@@ -239,7 +239,7 @@
                         <a class="nav-link" aria-current="page" href="#" onclick="showJobs()">Find a job</a>
                     </li>
                     <li class="nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
-                        <a class="nav-link" aria-current="page" href="#">Map</a>
+                        <a class="nav-link" aria-current="page" href="#" onclick="showDashboard()">Dashboard</a>
                     </li>
                 </ul>
 
@@ -764,7 +764,319 @@
 
     </main>
 
-    <footer class="mt-5">
+    <main id="employer-home-frame" class=" vh-100 vw-100 overflow-x-hidden d-flex overflow-y-scroll no-scroll">
+
+        <!--Dashboard Menu-->
+        <div class="d-flex flex-column flex-shrink-0 p-3 box-shadow" style="width: 280px;">
+            <a href="#"
+               class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <span class="fs-4">Employer Dashboard</span>
+            </a>
+            <hr>
+            <ul id="sidebar-menu" class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" aria-current="page" onclick="showDB()">
+                        <i class="bi bi-speedometer me-2"></i>
+
+                        Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link link-body-emphasis" onclick="showPosts()">
+                        <i class="bi bi-file-earmark-text me-2"></i>
+
+                        Manage Posts
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link link-body-emphasis" onclick="showProfile()">
+                        <i class="bi bi-person me-2"></i>
+
+                        Manage Profile
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
+                   data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                    <strong>Name</strong>
+                </a>
+                <ul class="dropdown-menu text-small shadow" style="">
+                    <li><a class="dropdown-item" href="#">New project...</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--Dashboard Frame-->
+        <main id="dashboard-frame" class="vh-100 vw-100 bg-body-tertiary">
+
+            <h3 class="ms-2 mt-3 pb-1 border-bottom border-black mb-4 fw-bold text-primary" style="width: max-content">
+                Dashboard</h3>
+
+            <div class="row p-0 m-0 justify-content-center mb-4">
+                <div class="col-11 p-0 m-0">
+
+                    <div class="row p-0 m-0 justify-content-between">
+
+                        <div class="col-2 box-shadow-3 rounded-3">
+                            <div class="row py-2">
+                                <div class="ms-3 p-0 col-3 d-flex justify-content-center align-items-center">
+                                    <i class="text-primary fw-bold bi bi-person fs-1 px-2 rounded-2"></i>
+                                </div>
+                                <div class="col-8">
+                                    <h2 class="m-0 ms-2 h3 text-primary fw-bold fs-2 w-auto text-end">10</h2>
+                                    <p class="text-end m-0 ms-2">Followers</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-2 box-shadow-3 rounded-3">
+                            <div class="row py-2">
+                                <div class="ms-3 p-0 col-3 d-flex justify-content-center align-items-center">
+                                    <i class="text-warning fw-bold bi bi-file-earmark-text fs-1 px-2 rounded-2"></i>
+                                </div>
+                                <div class="col-8">
+                                    <h2 class="m-0 ms-2 h3 text-warning fw-bold fs-2 w-auto text-end">41</h2>
+                                    <p class="text-end m-0 ms-2">Posts</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-2 box-shadow-3 rounded-3">
+                            <div class="row py-2">
+                                <div class="ms-3 p-0 col-3 d-flex justify-content-center align-items-center">
+                                    <i class="text-danger fw-bold bi bi-star fs-1 px-2 rounded-2"></i>
+                                </div>
+                                <div class="col-8">
+                                    <h2 class="m-0 ms-2 h3 text-danger fw-bold fs-2 w-auto text-end">10</h2>
+                                    <p class="text-end m-0 ms-2">Stars</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-2 box-shadow-3 rounded-3">
+                            <div class="row py-2">
+                                <div class="ms-3 p-0 col-3 d-flex justify-content-center align-items-center">
+                                    <i class="text-primary fw-bold bi bi-mouse fs-1 px-2 rounded-2"></i>
+                                </div>
+                                <div class="col-8">
+                                    <h2 class="m-0 ms-2 h3 text-primary fw-bold fs-2 w-auto text-end">10</h2>
+                                    <p class="text-end m-0 ms-2">Clicks</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="row p-0 m-0 justify-content-center mb-4">
+                <div class="col-11 p-0 m-0">
+                    <div class="row p-0 m-0 justify-content-between">
+
+                        <div class="col-6 p-0 box-shadow">
+
+
+                        </div>
+
+                        <div class="col-5 p-0 box-shadow p-2">
+                            <h6 class="text-primary h6 mb-2 ms-2 fw-bold">Profile views</h6>
+                            <canvas id="myChart"></canvas>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        <!--Post Frame-->
+        <main id="post-frame" class="vh-100 bg-body-tertiary vw-100 overflow-hidden">
+            <h3 class="ms-2 mt-3 pb-1 border-bottom border-danger mb-4 fw-bold text-danger" style="width: max-content">
+                Posts</h3>
+
+            <div class="row p-0 m-0 justify-content-center">
+                <div class="col-11 m-0 p-0">
+
+                    <ul class="nav nav-tabs" id="post-tab-pane">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Active</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">Requests</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">N/A</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">N/A</a>
+                        </li>
+                    </ul>
+
+                    <section class="w-100 h-100 bg-white overflow-y-scroll no-scroll d-flex justify-content-center">
+
+                        <div class="col-11 p-0 ">
+
+                            <form class="row p-0 m-0 mt-5">
+
+                                <div class="col-md-12 p-0">
+                                    <div class="row p-0 m-0 justify-content-between">
+                                        <h3 class="h3 mb-4 col-4 p-0"
+                                            style="width: max-content;">
+                                            Manage Post
+                                        </h3>
+                                        <div class="col-1 d-flex justify-content-end align-items-center">
+                                            <i class="accordion-c-button btn fs-2 bi bi-chevron-double-down"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="add-post-accordion" class="row p-0 d-none">
+                                    <div class="col-md-8">
+                                        <label for="txtJobTitle" class="form-label">Job title</label>
+                                        <input type="text" class="form-control" id="txtJobTitle" required>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <label for="validationCustom06" class="form-label">Industry</label>
+                                        <select class="form-select" id="validationCustom06" required>
+                                            <option selected disabled value="">Choose...</option>
+                                            <option value="1">Full time</option>
+                                            <option value="2">Part time</option>
+                                            <option value="2">Intern</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="txtSalary" class="form-label">Salary Per Year</label>
+                                        <input type="text" class="form-control" id="txtSalary" required>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="validationCustom04" class="form-label">Industry</label>
+                                        <select class="form-select" id="validationCustom04" required>
+                                            <option selected disabled value="">Choose...</option>
+                                            <option value="1">IT Industry</option>
+                                            <option value="2">Health & Care Industry</option>
+                                            <option value="2">Engineering Industry</option>
+                                            <option value="2">Finance Industry</option>
+                                            <option value="2">Education Industry</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-12 py-2">
+                                        <label for="txtJobDescription" class="form-label col-12">
+                                            Job description
+                                            <textarea id="txtJobDescription" class="form-control">
+
+                                            </textarea>
+                                        </label>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <button id="btnAddPost" class="btn btn-success btn-sm mt-2 me-2" type="button">
+                                            Add Post
+                                            <i class="bi bi-file-earmark-plus ms-2"></i>
+                                        </button>
+                                        <button id="btnUpdatePost" class="btn btn-warning btn-sm mt-2 me-2" type="button">
+                                            Update Post
+                                            <i class="bi bi-file-earmark-arrow-up ms-2"></i>
+                                        </button>
+                                        <button id="btnDeletePost" class="btn btn-danger btn-sm mt-2 me-2" type="button">
+                                            Delete Post
+                                            <i class="bi bi-file-earmark-minus ms-2"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <hr class="my-1 mt-3">
+
+                            <div class="row justify-content-center mt-5">
+
+                                <table class="table-primary col-11 ">
+                                    <thead>
+                                    <tr style="background-color: #abc8ff">
+                                        <th scope="col">Post ID</th>
+                                        <th scope="col">Post Title</th>
+                                        <th scope="col">Industry</th>
+                                        <th scope="col">Date Posted</th>
+                                        <th scope="col">Count</th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+
+                                    <tr>
+                                        <td>P001</td>
+                                        <td>Software Engineering</td>
+                                        <td>IT industry</td>
+                                        <td>23-12-10</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P001</td>
+                                        <td>Software Engineering</td>
+                                        <td>IT industry</td>
+                                        <td>23-12-10</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P001</td>
+                                        <td>Software Engineering</td>
+                                        <td>IT industry</td>
+                                        <td>23-12-10</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P001</td>
+                                        <td>Software Engineering</td>
+                                        <td>IT industry</td>
+                                        <td>23-12-10</td>
+                                        <td>10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>P001</td>
+                                        <td>Software Engineering</td>
+                                        <td>IT industry</td>
+                                        <td>23-12-10</td>
+                                        <td>10</td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                    <!--<section class="w-100 h-100 bg-info"></section>
+                    <section class="w-100 h-100 bg-secondary"></section>-->
+
+                </div>
+            </div>
+
+        </main>
+        <!--Profile Frame-->
+        <main id="profile-frame" class="vh-100 bg-success vw-100">
+
+        </main>
+
+    </main>
+
+    <footer id="footer" class="mt-5">
         <main id="contact-frame" style="box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;">
             <div class="container">
                 <div class="py-5">
@@ -819,318 +1131,6 @@
     </footer>
 </main>
 
-<main id="employer-home-frame" class="d-none vh-100 vw-100 overflow-x-hidden d-flex overflow-y-scroll no-scroll">
-
-    <!--Dashboard Menu-->
-    <div class="d-flex flex-column flex-shrink-0 p-3 box-shadow" style="width: 280px;">
-        <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <span class="fs-4">Employer Dashboard</span>
-        </a>
-        <hr>
-        <ul id="sidebar-menu" class="nav nav-pills flex-column mb-auto">
-            <li class="nav-item">
-                <a href="#" class="nav-link active" aria-current="page" onclick="showDB()">
-                    <i class="bi bi-speedometer me-2"></i>
-
-                    Dashboard
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link link-body-emphasis" onclick="showPosts()">
-                    <i class="bi bi-file-earmark-text me-2"></i>
-
-                    Manage Posts
-                </a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link link-body-emphasis" onclick="showProfile()">
-                    <i class="bi bi-person me-2"></i>
-
-                    Manage Profile
-                </a>
-            </li>
-        </ul>
-        <hr>
-        <div class="dropdown">
-            <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
-               data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                <strong>Name</strong>
-            </a>
-            <ul class="dropdown-menu text-small shadow" style="">
-                <li><a class="dropdown-item" href="#">New project...</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Sign out</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <!--Dashboard Frame-->
-    <main id="dashboard-frame" class="vh-100 vw-100 bg-body-tertiary">
-
-        <h3 class="ms-2 mt-3 pb-1 border-bottom border-black mb-4 fw-bold text-primary" style="width: max-content">
-            Dashboard</h3>
-
-        <div class="row p-0 m-0 justify-content-center mb-4">
-            <div class="col-11 p-0 m-0">
-
-                <div class="row p-0 m-0 justify-content-between">
-
-                    <div class="col-2 box-shadow-3 rounded-3">
-                        <div class="row py-2">
-                            <div class="ms-3 p-0 col-3 d-flex justify-content-center align-items-center">
-                                <i class="text-primary fw-bold bi bi-person fs-1 px-2 rounded-2"></i>
-                            </div>
-                            <div class="col-8">
-                                <h2 class="m-0 ms-2 h3 text-primary fw-bold fs-2 w-auto text-end">10</h2>
-                                <p class="text-end m-0 ms-2">Followers</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-2 box-shadow-3 rounded-3">
-                        <div class="row py-2">
-                            <div class="ms-3 p-0 col-3 d-flex justify-content-center align-items-center">
-                                <i class="text-warning fw-bold bi bi-file-earmark-text fs-1 px-2 rounded-2"></i>
-                            </div>
-                            <div class="col-8">
-                                <h2 class="m-0 ms-2 h3 text-warning fw-bold fs-2 w-auto text-end">41</h2>
-                                <p class="text-end m-0 ms-2">Posts</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-2 box-shadow-3 rounded-3">
-                        <div class="row py-2">
-                            <div class="ms-3 p-0 col-3 d-flex justify-content-center align-items-center">
-                                <i class="text-danger fw-bold bi bi-star fs-1 px-2 rounded-2"></i>
-                            </div>
-                            <div class="col-8">
-                                <h2 class="m-0 ms-2 h3 text-danger fw-bold fs-2 w-auto text-end">10</h2>
-                                <p class="text-end m-0 ms-2">Stars</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-2 box-shadow-3 rounded-3">
-                        <div class="row py-2">
-                            <div class="ms-3 p-0 col-3 d-flex justify-content-center align-items-center">
-                                <i class="text-primary fw-bold bi bi-mouse fs-1 px-2 rounded-2"></i>
-                            </div>
-                            <div class="col-8">
-                                <h2 class="m-0 ms-2 h3 text-primary fw-bold fs-2 w-auto text-end">10</h2>
-                                <p class="text-end m-0 ms-2">Clicks</p>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-
-            </div>
-        </div>
-
-
-        <div class="row p-0 m-0 justify-content-center mb-4">
-            <div class="col-11 p-0 m-0">
-                <div class="row p-0 m-0 justify-content-between">
-
-                    <div class="col-6 p-0 box-shadow">
-
-
-                    </div>
-
-                    <div class="col-5 p-0 box-shadow p-2">
-                        <h6 class="text-primary h6 mb-2 ms-2 fw-bold">Profile views</h6>
-                        <canvas id="myChart"></canvas>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-    </main>
-    <!--Post Frame-->
-    <main id="post-frame" class="vh-100 bg-body-tertiary vw-100 overflow-hidden">
-        <h3 class="ms-2 mt-3 pb-1 border-bottom border-danger mb-4 fw-bold text-danger" style="width: max-content">
-            Posts</h3>
-
-        <div class="row p-0 m-0 justify-content-center">
-            <div class="col-11 m-0 p-0">
-
-                <ul class="nav nav-tabs" id="post-tab-pane">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Active</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Requests</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">N/A</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">N/A</a>
-                    </li>
-                </ul>
-
-                <section class="w-100 h-100 bg-white overflow-y-scroll no-scroll d-flex justify-content-center">
-
-                    <div class="col-11 p-0 ">
-
-                        <form class="row p-0 m-0 mt-5">
-
-                            <div class="col-md-12 p-0">
-                                <div class="row p-0 m-0 justify-content-between">
-                                    <h3 class="h3 mb-4 col-4 p-0"
-                                        style="width: max-content;">
-                                        Manage Post
-                                    </h3>
-                                    <div class="col-1 d-flex justify-content-end align-items-center">
-                                        <i class="accordion-c-button btn fs-2 bi bi-chevron-double-down"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="add-post-accordion" class="row p-0 d-none">
-                                <div class="col-md-4">
-                                    <label for="validationCustom01" class="form-label">First name</label>
-                                    <input type="text" class="form-control" id="validationCustom01" required>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <label for="validationCustom02" class="form-label">Last name</label>
-                                    <input type="text" class="form-control" id="validationCustom02" value="Otto"
-                                           required>
-                                </div>
-
-                                <div class="col-md-4">
-                                    <label for="validationCustomUsername" class="form-label">Username</label>
-                                    <div class="input-group has-validation">
-                                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                        <input type="text" class="form-control" id="validationCustomUsername"
-                                               aria-describedby="inputGroupPrepend" required>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <label for="validationCustom03" class="form-label">City</label>
-                                    <input type="text" class="form-control" id="validationCustom03" required>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label for="validationCustom04" class="form-label">Industry</label>
-                                    <select class="form-select" id="validationCustom04" required>
-                                        <option selected disabled value="">Choose...</option>
-                                        <option value="1">IT Industry</option>
-                                        <option value="2">Health & Care Industry</option>
-                                        <option value="2">Engineering Industry</option>
-                                        <option value="2">Finance Industry</option>
-                                        <option value="2">Education Industry</option>
-                                    </select>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <label for="validationCustom05" class="form-label">Zip</label>
-                                    <input type="text" class="form-control" id="validationCustom05">
-                                </div>
-
-                                <div class="col-12">
-                                    <button class="btn btn-success btn-sm mt-2 me-2" type="button">
-                                        Add Post
-                                        <i class="bi bi-file-earmark-plus ms-2"></i>
-                                    </button>
-                                    <button class="btn btn-warning btn-sm mt-2 me-2" type="button">
-                                        Update Post
-                                        <i class="bi bi-file-earmark-arrow-up ms-2"></i>
-                                    </button>
-                                    <button class="btn btn-danger btn-sm mt-2 me-2" type="button">
-                                        Delete Post
-                                        <i class="bi bi-file-earmark-minus ms-2"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-
-                        <hr class="my-1 mt-3">
-
-                        <div class="row justify-content-center mt-5">
-
-                            <table class="table-primary col-11 ">
-                                <thead>
-                                <tr style="background-color: #abc8ff">
-                                    <th scope="col">Post ID</th>
-                                    <th scope="col">Post Title</th>
-                                    <th scope="col">Industry</th>
-                                    <th scope="col">Date Posted</th>
-                                    <th scope="col">Count</th>
-                                </tr>
-                                </thead>
-
-                                <tbody>
-
-                                <tr>
-                                    <td>P001</td>
-                                    <td>Software Engineering</td>
-                                    <td>IT industry</td>
-                                    <td>23-12-10</td>
-                                    <td>10</td>
-                                </tr>
-                                <tr>
-                                    <td>P001</td>
-                                    <td>Software Engineering</td>
-                                    <td>IT industry</td>
-                                    <td>23-12-10</td>
-                                    <td>10</td>
-                                </tr>
-                                <tr>
-                                    <td>P001</td>
-                                    <td>Software Engineering</td>
-                                    <td>IT industry</td>
-                                    <td>23-12-10</td>
-                                    <td>10</td>
-                                </tr>
-                                <tr>
-                                    <td>P001</td>
-                                    <td>Software Engineering</td>
-                                    <td>IT industry</td>
-                                    <td>23-12-10</td>
-                                    <td>10</td>
-                                </tr>
-                                <tr>
-                                    <td>P001</td>
-                                    <td>Software Engineering</td>
-                                    <td>IT industry</td>
-                                    <td>23-12-10</td>
-                                    <td>10</td>
-                                </tr>
-
-                                </tbody>
-                            </table>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-                <!--<section class="w-100 h-100 bg-info"></section>
-                <section class="w-100 h-100 bg-secondary"></section>-->
-
-            </div>
-        </div>
-
-    </main>
-    <!--Profile Frame-->
-    <main id="profile-frame" class="vh-100 bg-success vw-100">
-
-    </main>
-
-</main>
-
 <main class="position-relative col-10 d-none" style="height: 90vw">
 
     <section id="map-frame" class="w-100 overflow-hidden vh-100 container-fluid bg-warning">
@@ -1172,16 +1172,17 @@
 
     let userAccount = {
         user: '',
-        account: ''
+        account: '',
+        token: ''
     }
 
-    function toastShower(number, color,text,message) {
-        let liveToast = $('#'+number);
+    function toastShower(number, color, text, message) {
+        let liveToast = $('#' + number);
         liveToast.removeClass();
         liveToast.addClass('toast');
         liveToast.addClass(color);
-        $('.'+number).addClass(text);
-        $('.'+number).text(message);
+        $('.' + number).addClass(text);
+        $('.' + number).text(message);
 
 
         const toastLiveExample = document.getElementById(number)
@@ -1342,9 +1343,11 @@
             $('#sidebar-menu .nav-link').not('.active').addClass('link-body-emphasis');
         });
     });
+
     $('#dashboard-frame').css('display', 'block');
     $('#post-frame').css('display', 'none');
     $('#profile-frame').css('display', 'none');
+    $('#employer-home-frame').addClass('d-none');
 
     $('#login-back-ground').click(function () {
         $('#login-frame').addClass('d-none');
@@ -1384,16 +1387,28 @@
             prevScrollPos = currentScrollPos;
         });
     });
+
     $('#jobs-frame').css('display', 'none');
+
+    $('#footer').removeClass('d-none');
 
     function showHome() {
         $('#home-page').css('display', 'block');
         $('#jobs-frame').css('display', 'none');
+        $('#footer').removeClass('d-none');
     }
 
     function showJobs() {
         $('#home-page').css('display', 'none');
         $('#jobs-frame').css('display', 'block');
+        $('#footer').removeClass('d-none');
+    }
+
+    function showDashboard() {
+        $('#home-page').css('display', 'none');
+        $('#jobs-frame').css('display', 'none');
+        $('#employer-home-frame').removeClass('d-none');
+        $('#footer').addClass('d-none');
     }
 
     function showDB() {
@@ -1444,6 +1459,7 @@
     $('#toggleButton').click(function () {
         $('#job-filter-menu').toggleClass('job-filter-hidden job-filter-shown');
     });
+
     $('.accordion-c-button').click(function () {
         $('.accordion-c-button').toggleClass('bi-chevron-double-down bi-chevron-double-up');
         $('#add-post-accordion').toggleClass('d-none');
