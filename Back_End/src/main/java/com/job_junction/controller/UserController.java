@@ -29,5 +29,10 @@ public class UserController {
         userDTO.setPassword((userDTO.getPassword()));
         return userService.saveUser(userDTO);
     }
+
+    @GetMapping("/login")
+    public UserDTO loginUser(String user){
+        return userService.getUserByUsername(user);
+    }
 }
 
