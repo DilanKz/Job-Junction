@@ -72,8 +72,13 @@ function makeAccount(url,user,account) {
         method:'POST',
         contentType: 'application/json',
         success:function (response) {
-            console.log(response);
-            user.entityId=response.id;
+            if (url==='employees'){
+                user.employee=response;
+                user.company=null;
+            }else if (url==='companies'){
+                user.company=response;
+                user.employee=null;
+            }
 
             $.ajax({
                 url:baseURL+'users/register',
@@ -106,24 +111,17 @@ function loginIn(user,password) {
         // async:false,
         success:function (response) {
 
-            console.log()
-            if (response.password === password) {
+            if (response){
+                console.log()
+                if (response.password === password) {
 
-                $.ajax({
-                    url:baseURL+response.type+'/'+response.entityId,
-                    contentType: 'application/json',
-                    // async:false,
-                    success:function (response) {
-                        console.log(response);
-                        toastShower('1','bg-success','text-light','successfully logged in');
-                    },
-                    error:function (e) {
-                        toastShower('1','bg-danger','text-light','Try again');
-                    }
-                });
+                    toastShower('1','bg-success','text-light','successfully logged in');
 
+                }else {
+                    toastShower('1','bg-danger','text-light','Wrong Password try again');
+                }
             }else {
-                toastShower('1','bg-danger','text-light','Wrong Password try again');
+                toastShower('1','bg-danger','text-light','No Account found');
             }
 
             console.log(response);
