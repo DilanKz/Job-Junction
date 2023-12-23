@@ -764,7 +764,7 @@
 
     </main>
 
-    <main id="employer-home-frame" class=" vh-100 vw-100 overflow-x-hidden d-flex overflow-y-scroll no-scroll">
+    <main id="employer-home-frame" class="d-none vh-100 vw-100 overflow-x-hidden d-flex overflow-y-scroll no-scroll">
 
         <!--Dashboard Menu-->
         <div class="d-flex flex-column flex-shrink-0 p-3 box-shadow" style="width: 280px;">
@@ -1396,12 +1396,14 @@
         $('#home-page').css('display', 'block');
         $('#jobs-frame').css('display', 'none');
         $('#footer').removeClass('d-none');
+        $('#employer-home-frame').addClass('d-none');
     }
 
     function showJobs() {
         $('#home-page').css('display', 'none');
         $('#jobs-frame').css('display', 'block');
         $('#footer').removeClass('d-none');
+        $('#employer-home-frame').addClass('d-none');
     }
 
     function showDashboard() {
