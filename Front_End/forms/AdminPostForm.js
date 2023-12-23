@@ -14,10 +14,10 @@ function validateAllFields() {
     return jobTitleValid && jobDescriptionValid && salaryValid;
 }
 
-function post() {
+function postData() {
     return {
         id:'',
-        companyId:'',
+        companyId:userAccount.company,
         title:$('#txtJobTitle').val(),
         description:$('#txtJobDescription').val(),
         skillsRequired:'',
