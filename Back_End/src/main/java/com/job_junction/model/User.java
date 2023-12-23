@@ -22,6 +22,7 @@ public class User {
     private String username;
     private String password;
     private String type;
-    private String entityId;
+    private Employee employee;
+    private Company company;
 
 }
