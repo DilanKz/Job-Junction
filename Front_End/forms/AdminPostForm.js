@@ -23,7 +23,8 @@ function post() {
         skillsRequired:'',
         salary:$('#txtSalary'),
         applicationDeadline:'',
-        category:'',
+        type:$('#txtSelectType').val(),
+        industry:$('#txtSelectIndustry').val(),
         totalPositions:'',
     }
 }
