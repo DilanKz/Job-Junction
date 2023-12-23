@@ -218,540 +218,537 @@
 
 </main>
 
-<main class="">
-    <nav id="navbar" class="w-100 overflow-hidden navbar navbar-expand-lg bg-body-tertiary fixed-top box-shadow">
-        <div class="container-fluid">
-            <a class="navbar-brand pe-5 ps-4" href="#">Job-Junction</a>
+<nav id="navbar" class="w-100 overflow-hidden navbar navbar-expand-lg bg-body-tertiary fixed-top box-shadow">
+    <div class="container-fluid">
+        <a class="navbar-brand pe-5 ps-4" href="#">Job-Junction</a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse ms-xxl-5 ms-xl-5 ms-lg-5 ms-md-0 ms-sm-0 ms-0"
+             id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
+                    <a class="nav-link active" aria-current="page" href="#" onclick="showHome()">Home</a>
+                </li>
+                <li class="nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
+                    <a class="nav-link" aria-current="page" href="#" onclick="showJobs()">Find a job</a>
+                </li>
+                <li class="nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
+                    <a class="nav-link" aria-current="page" href="#" onclick="showDashboard()">Dashboard</a>
+                </li>
+            </ul>
+
+            <button id="btn-login-main" class="btn btn-sm btn-outline-success me-3">
+                Sign In
+                <i class="bi bi-person-fill ps-2"></i>
             </button>
 
-            <div class="collapse navbar-collapse ms-xxl-5 ms-xl-5 ms-lg-5 ms-md-0 ms-sm-0 ms-0"
-                 id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
-                        <a class="nav-link active" aria-current="page" href="#" onclick="showHome()">Home</a>
-                    </li>
-                    <li class="nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
-                        <a class="nav-link" aria-current="page" href="#" onclick="showJobs()">Find a job</a>
-                    </li>
-                    <li class="nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
-                        <a class="nav-link" aria-current="page" href="#" onclick="showDashboard()">Dashboard</a>
-                    </li>
-                </ul>
-
-                <button id="btn-login-main" class="btn btn-sm btn-outline-success me-3">
-                    Sign In
-                    <i class="bi bi-person-fill ps-2"></i>
-                </button>
-
-            </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <main id="home-page" class="">
+<main id="home-page" class="">
 
-        <main id="home-frame"
-              class="p-0 w-100 vh-100 overflow-hidden position-relative container-fluid d-flex justify-content-center"
-              style="">
+    <main id="home-frame"
+          class="p-0 w-100 vh-100 overflow-hidden position-relative container-fluid d-flex justify-content-center"
+          style="">
 
-            <div class="position-relative p-0
+        <div class="position-relative p-0
      col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12
       row d-flex justify-content-center" style="height: 65%">
 
-                <img src="assets/images/bg.jpg" alt="" class="w-100 h-100 position-absolute p-0 glass">
+            <img src="assets/images/bg.jpg" alt="" class="w-100 h-100 position-absolute p-0 glass">
 
-                <div class="p-0 m-0 row d-flex align-items-center z-2 justify-content-center">
-                    <h1 id="main-text" class="text-white text-center" style="user-select: none">
-                        Navigate Your Career Path
-                        <br>
-                        with Confidence
-                    </h1>
-                </div>
+            <div class="p-0 m-0 row d-flex align-items-center z-2 justify-content-center">
+                <h1 id="main-text" class="text-white text-center" style="user-select: none">
+                    Navigate Your Career Path
+                    <br>
+                    with Confidence
+                </h1>
+            </div>
 
 
-                <div id="search-box" style="bottom: -5%"
-                     class="col-8 position-absolute bg-white box-shadow rounded-1 z-2">
-                    <div class="row pb-3 pt-3">
+            <div id="search-box" style="bottom: -5%"
+                 class="col-8 position-absolute bg-white box-shadow rounded-1 z-2">
+                <div class="row pb-3 pt-3">
 
-                        <div class="col-4 ms-2">
-                            <div class="input-group">
+                    <div class="col-4 ms-2">
+                        <div class="input-group">
                             <span class="btn disabled d-flex align-items-center" id="basic-addon1"
                                   style="--bs-btn-disabled-opacity: 1; border: 0">
                                 <i class="bi bi-search"></i>
                             </span>
-                                <input type="text" class="form-control form-control-lg noOutline ms-2"
-                                       placeholder="Search for Job"
-                                       aria-label="Username" aria-describedby="basic-addon1"
-                                       style="--bs-border-width:0;">
-                            </div>
+                            <input type="text" class="form-control form-control-lg noOutline ms-2"
+                                   placeholder="Search for Job"
+                                   aria-label="Username" aria-describedby="basic-addon1"
+                                   style="--bs-border-width:0;">
                         </div>
+                    </div>
 
-                        <div class="col-4 ms-4">
-                            <div class="input-group">
+                    <div class="col-4 ms-4">
+                        <div class="input-group">
                             <span class="btn disabled d-flex align-items-center" id="basic-addon2"
                                   style="--bs-btn-disabled-opacity: 1; border: 0">
                                 <i class="bi bi-geo-alt"></i>
                             </span>
-                                <input type="text" class="form-control form-control-lg noOutline ms-2"
-                                       placeholder="City"
-                                       aria-label="Username" aria-describedby="basic-addon1"
-                                       style="--bs-border-width:0;">
-                            </div>
+                            <input type="text" class="form-control form-control-lg noOutline ms-2"
+                                   placeholder="City"
+                                   aria-label="Username" aria-describedby="basic-addon1"
+                                   style="--bs-border-width:0;">
                         </div>
-
-                        <div class="col-1 ms-5">
-                            <button type="button" class="btn btn-lg btn-outline-success">Search</button>
-                        </div>
-
                     </div>
-                </div>
 
-            </div>
-
-        </main>
-
-        <main id="popular-frame"
-              class="p-0 w-100 min-vh-100 overflow-hidden position-relative container-fluid ">
-            <h3 class="h3 mt-5 b-5 text-center">Popular Job Categories</h3>
-            <p class="text-center fs-6 pb-4">Trending Searches - Explore Hot Job Opportunities Now!</p>
-
-            <div class="row text-center mt-5 p-0 justify-content-evenly gap-3 ms-xxl-5 ms-xl-5 ms-lg-5 ms-md-2 ms-sm-2 ms-1">
-
-                <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
-                    <div class="row my-3">
-
-                        <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
-                            <i class="text-success bi bi-laptop fs-1 job-card-icon px-2 rounded-2"></i>
-                        </div>
-
-                        <div class="col-8">
-                            <h5 class="mt-2 ms-2 h5 fs-6 job-card-title text-start w-auto">Information Technology</h5>
-                            <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
-                    <div class="row my-3">
-
-                        <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
-                            <i class="text-success bi bi-heart fs-1 job-card-icon px-2 rounded-2"></i>
-                        </div>
-
-                        <div class="col-8">
-                            <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Healthcare</h5>
-                            <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
-                    <div class="row my-3">
-
-                        <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
-                            <i class="text-success bi bi-currency-dollar fs-1 job-card-icon px-2 rounded-2"></i>
-                        </div>
-
-                        <div class="col-8">
-                            <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Finance</h5>
-                            <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
-                    <div class="row my-3">
-
-                        <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
-                            <i class="text-success bi bi-book fs-1 job-card-icon px-2 rounded-2"></i>
-                        </div>
-
-                        <div class="col-8">
-                            <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Education</h5>
-                            <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
-                    <div class="row my-3">
-
-                        <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
-                            <i class="text-success bi bi-tools fs-1 job-card-icon px-2 rounded-2"></i>
-                        </div>
-
-                        <div class="col-8">
-                            <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Engineering</h5>
-                            <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
-                    <div class="row my-3">
-
-                        <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
-                            <i class="text-success bi bi-megaphone fs-1 job-card-icon px-2 rounded-2"></i>
-                        </div>
-
-                        <div class="col-8">
-                            <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Marketing</h5>
-                            <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
-                    <div class="row my-3">
-
-                        <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
-                            <i class="text-success bi bi-paint-bucket fs-1 job-card-icon px-2 rounded-2"></i>
-                        </div>
-
-                        <div class="col-8">
-                            <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Design</h5>
-                            <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
-                    <div class="row my-3">
-
-                        <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
-                            <i class="text-success bi bi-headset fs-1 job-card-icon px-2 rounded-2"></i>
-                        </div>
-
-                        <div class="col-8">
-                            <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Customer Service</h5>
-                            <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
-                    <div class="row my-3">
-
-                        <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
-                            <i class="text-success bi bi-basket fs-1 job-card-icon px-2 rounded-2"></i>
-                        </div>
-
-                        <div class="col-8">
-                            <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Sales</h5>
-                            <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
-                    <div class="row my-3">
-
-                        <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
-                            <i class="text-success bi bi-person fs-1 job-card-icon px-2 rounded-2"></i>
-                        </div>
-
-                        <div class="col-8">
-                            <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Human Resources</h5>
-                            <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
-                    <div class="row my-3">
-
-                        <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
-                            <i class="text-success bi bi-hammer fs-1 job-card-icon px-2 rounded-2"></i>
-                        </div>
-
-                        <div class="col-8">
-                            <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Construction</h5>
-                            <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
-                    <div class="row my-3">
-
-                        <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
-                            <i class="text-success bi bi-bar-chart fs-1 job-card-icon px-2 rounded-2"></i>
-                        </div>
-
-                        <div class="col-8">
-                            <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Project Management</h5>
-                            <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </main>
-
-        <main id="about-frame"
-              class="p-0 w-100 min-vh-100 overflow-hidden position-relative container-fluid ">
-
-            <h3 class="h3 mt-5 b-5 text-center">Our Mission</h3>
-            <p class="text-center fs-6 pb-5">Empowering Careers, Connecting Aspirations</p>
-
-            <div class="row justify-content-center mb-5 p-0">
-                <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12 p-0">
-
-                    <div class="row mt-5 p-0 gap-5 mb-5">
-
-                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-10 col-sm-10 col-10 overflow-hidden p-0
-                ms-xxl-0 ms-xl-0 ms-lg-0 ms-md-5 ms-sm-5 ms-4">
-
-                            <img src="assets/images/bg2.jpg" alt="" class="rounded-3 w-100 h-100 z-2 p-0">
-                        </div>
-
-                        <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-10 col-sm-10 col-10 text-start
-                ms-xxl-4 ms-xl-4 ms-lg-3 ms-md-5 ms-sm-5 ms-4">
-
-                            <h2 class="h2 fs-2">
-                                Explore, Apply, Succeed
-                            </h2>
-                            <br>
-                            <p>
-                                Discover countless job openings across the web, personalize your salary estimate, and
-                                access
-                                reviews for over 600,000 global companies. Your next career move begins here.
-                            </p>
-
-                            <button type="button" class="btn btn-secondary mt-4">
-                                <i class="bi bi-person pe-2"></i> Seek Jobs
-                            </button>
-
-                            <button type="button"
-                                    class="btn btn-success ms-xxl-4 ms-xl-4 ms-lg-1 ms-md-1 ms-sm-1 ms-1 mt-4">
-                                <i class="bi bi-briefcase pe-3"></i> Post Jobs
-                            </button>
-
-
-                        </div>
-
+                    <div class="col-1 ms-5">
+                        <button type="button" class="btn btn-lg btn-outline-success">Search</button>
                     </div>
 
                 </div>
             </div>
 
-
-            <div class="row justify-content-center mt-5 mb-5 ">
-                <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12">
-                    <div class="row p-0 justify-content-evenly mt-3 gap-5">
-
-                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-10 col-sm-10 col-10 box-shadow-3 rounded-2">
-                            <i class="bi bi-person fs-1 d-block text-center mt-3 text-success"></i>
-                            <h2 class="h2 fs-1 text-center" style="user-select: none">212K</h2>
-                            <p class="text-center" style="user-select: none">Active members</p>
-                        </div>
-
-                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-10 col-sm-10 col-10 box-shadow-3 rounded-2">
-                            <i class="bi bi-briefcase fs-1 d-block text-center mt-3 text-success"></i>
-                            <h2 class="h2 fs-1 text-center" style="user-select: none">15K</h2>
-                            <p class="text-center" style="user-select: none">Job Opportunities</p>
-                        </div>
-
-                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-10 col-sm-10 col-10 box-shadow-3 rounded-2">
-                            <i class="bi bi-check-circle fs-1 d-block text-center mt-3 text-success"></i>
-                            <h2 class="h2 fs-1 text-center" style="user-select: none">23K</h2>
-                            <p class="text-center" style="user-select: none">Successful Placements</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-        </main>
+        </div>
 
     </main>
 
-    <main id="jobs-frame"
-          class="min-vh-100 w-100 overflow-hidden mt-5">
+    <main id="popular-frame"
+          class="p-0 w-100 min-vh-100 overflow-hidden position-relative container-fluid ">
+        <h3 class="h3 mt-5 b-5 text-center">Popular Job Categories</h3>
+        <p class="text-center fs-6 pb-4">Trending Searches - Explore Hot Job Opportunities Now!</p>
 
-        <h3 class="h3 mt-5 b-5 text-center">Find Jobs</h3>
+        <div class="row text-center mt-5 p-0 justify-content-evenly gap-3 ms-xxl-5 ms-xl-5 ms-lg-5 ms-md-2 ms-sm-2 ms-1">
+
+            <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+                <div class="row my-3">
+
+                    <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                        <i class="text-success bi bi-laptop fs-1 job-card-icon px-2 rounded-2"></i>
+                    </div>
+
+                    <div class="col-8">
+                        <h5 class="mt-2 ms-2 h5 fs-6 job-card-title text-start w-auto">Information Technology</h5>
+                        <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+                <div class="row my-3">
+
+                    <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                        <i class="text-success bi bi-heart fs-1 job-card-icon px-2 rounded-2"></i>
+                    </div>
+
+                    <div class="col-8">
+                        <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Healthcare</h5>
+                        <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+                <div class="row my-3">
+
+                    <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                        <i class="text-success bi bi-currency-dollar fs-1 job-card-icon px-2 rounded-2"></i>
+                    </div>
+
+                    <div class="col-8">
+                        <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Finance</h5>
+                        <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+                <div class="row my-3">
+
+                    <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                        <i class="text-success bi bi-book fs-1 job-card-icon px-2 rounded-2"></i>
+                    </div>
+
+                    <div class="col-8">
+                        <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Education</h5>
+                        <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+                <div class="row my-3">
+
+                    <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                        <i class="text-success bi bi-tools fs-1 job-card-icon px-2 rounded-2"></i>
+                    </div>
+
+                    <div class="col-8">
+                        <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Engineering</h5>
+                        <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+                <div class="row my-3">
+
+                    <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                        <i class="text-success bi bi-megaphone fs-1 job-card-icon px-2 rounded-2"></i>
+                    </div>
+
+                    <div class="col-8">
+                        <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Marketing</h5>
+                        <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+                <div class="row my-3">
+
+                    <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                        <i class="text-success bi bi-paint-bucket fs-1 job-card-icon px-2 rounded-2"></i>
+                    </div>
+
+                    <div class="col-8">
+                        <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Design</h5>
+                        <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+                <div class="row my-3">
+
+                    <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                        <i class="text-success bi bi-headset fs-1 job-card-icon px-2 rounded-2"></i>
+                    </div>
+
+                    <div class="col-8">
+                        <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Customer Service</h5>
+                        <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+                <div class="row my-3">
+
+                    <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                        <i class="text-success bi bi-basket fs-1 job-card-icon px-2 rounded-2"></i>
+                    </div>
+
+                    <div class="col-8">
+                        <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Sales</h5>
+                        <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+                <div class="row my-3">
+
+                    <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                        <i class="text-success bi bi-person fs-1 job-card-icon px-2 rounded-2"></i>
+                    </div>
+
+                    <div class="col-8">
+                        <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Human Resources</h5>
+                        <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+                <div class="row my-3">
+
+                    <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                        <i class="text-success bi bi-hammer fs-1 job-card-icon px-2 rounded-2"></i>
+                    </div>
+
+                    <div class="col-8">
+                        <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Construction</h5>
+                        <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-10 col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-10 rounded-2 box-shadow-3 job-card me-3">
+                <div class="row my-3">
+
+                    <div class="ms-3 p-0 col-2 d-flex justify-content-center align-items-center">
+                        <i class="text-success bi bi-bar-chart fs-1 job-card-icon px-2 rounded-2"></i>
+                    </div>
+
+                    <div class="col-8">
+                        <h5 class="mt-2 ms-2 h5 fs-6 job-card-title w-auto text-start">Project Management</h5>
+                        <p class="text-start ms-2" style="font-size: 12px">10 positions available</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <main id="about-frame"
+          class="p-0 w-100 min-vh-100 overflow-hidden position-relative container-fluid ">
+
+        <h3 class="h3 mt-5 b-5 text-center">Our Mission</h3>
         <p class="text-center fs-6 pb-5">Empowering Careers, Connecting Aspirations</p>
 
-        <div class="row p-0  justify-content-end d-flex">
-            <div class="col-11 p-0 m-0">
+        <div class="row justify-content-center mb-5 p-0">
+            <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12 p-0">
 
-                <div class="row p-0 gap-5">
+                <div class="row mt-5 p-0 gap-5 mb-5">
 
-                    <div id="job-filter-menu" class="col-4 pt-5 rounded-4 d-xxl-block job-filter-hidden"
-                         style="height: max-content; background-color: #eeeeee">
+                    <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-10 col-sm-10 col-10 overflow-hidden p-0
+                ms-xxl-0 ms-xl-0 ms-lg-0 ms-md-5 ms-sm-5 ms-4">
 
-                        <h6 class="h6 ms-3 fs-6 fw-bold">Select Industry</h6>
-                        <div class="col-11 ms-3 mb-4 p-2 bg-white rounded-2">
-                            <div class="row p-0 m-0">
+                        <img src="assets/images/bg2.jpg" alt="" class="rounded-3 w-100 h-100 z-2 p-0">
+                    </div>
+
+                    <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-10 col-sm-10 col-10 text-start
+                ms-xxl-4 ms-xl-4 ms-lg-3 ms-md-5 ms-sm-5 ms-4">
+
+                        <h2 class="h2 fs-2">
+                            Explore, Apply, Succeed
+                        </h2>
+                        <br>
+                        <p>
+                            Discover countless job openings across the web, personalize your salary estimate, and
+                            access
+                            reviews for over 600,000 global companies. Your next career move begins here.
+                        </p>
+
+                        <button type="button" class="btn btn-secondary mt-4">
+                            <i class="bi bi-person pe-2"></i> Seek Jobs
+                        </button>
+
+                        <button type="button"
+                                class="btn btn-success ms-xxl-4 ms-xl-4 ms-lg-1 ms-md-1 ms-sm-1 ms-1 mt-4">
+                            <i class="bi bi-briefcase pe-3"></i> Post Jobs
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="row justify-content-center mt-5 mb-5 ">
+            <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12">
+                <div class="row p-0 justify-content-evenly mt-3 gap-5">
+
+                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-10 col-sm-10 col-10 box-shadow-3 rounded-2">
+                        <i class="bi bi-person fs-1 d-block text-center mt-3 text-success"></i>
+                        <h2 class="h2 fs-1 text-center" style="user-select: none">212K</h2>
+                        <p class="text-center" style="user-select: none">Active members</p>
+                    </div>
+
+                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-10 col-sm-10 col-10 box-shadow-3 rounded-2">
+                        <i class="bi bi-briefcase fs-1 d-block text-center mt-3 text-success"></i>
+                        <h2 class="h2 fs-1 text-center" style="user-select: none">15K</h2>
+                        <p class="text-center" style="user-select: none">Job Opportunities</p>
+                    </div>
+
+                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-10 col-sm-10 col-10 box-shadow-3 rounded-2">
+                        <i class="bi bi-check-circle fs-1 d-block text-center mt-3 text-success"></i>
+                        <h2 class="h2 fs-1 text-center" style="user-select: none">23K</h2>
+                        <p class="text-center" style="user-select: none">Successful Placements</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+</main>
+
+<main id="jobs-frame"
+      class="min-vh-100 w-100 overflow-hidden mt-5">
+
+    <h3 class="h3 mt-5 b-5 text-center">Find Jobs</h3>
+    <p class="text-center fs-6 pb-5">Empowering Careers, Connecting Aspirations</p>
+
+    <div class="row p-0  justify-content-end d-flex">
+        <div class="col-11 p-0 m-0">
+
+            <div class="row p-0 gap-5">
+
+                <div id="job-filter-menu" class="col-4 pt-5 rounded-4 d-xxl-block job-filter-hidden"
+                     style="height: max-content; background-color: #eeeeee">
+
+                    <h6 class="h6 ms-3 fs-6 fw-bold">Select Industry</h6>
+                    <div class="col-11 ms-3 mb-4 p-2 bg-white rounded-2">
+                        <div class="row p-0 m-0">
                             <span class="btn disabled d-flex align-items-center col-1 me-3" id="basic-addon4"
                                   style="--bs-btn-disabled-opacity: 1; border: 0">
                             <i class="bi bi-briefcase"></i>
                         </span>
-                                <select class="noOutline h-100 w-75 p-2 rounded-2 col-8"
-                                        aria-label="Default select example">
-                                    <option selected disabled>Open this select menu</option>
-                                    <option value="1">IT Industry</option>
-                                    <option value="2">Health & Care Industry</option>
-                                    <option value="2">Engineering Industry</option>
-                                    <option value="2">Finance Industry</option>
-                                    <option value="2">Education Industry</option>
-                                </select>
-                            </div>
+                            <select class="noOutline h-100 w-75 p-2 rounded-2 col-8"
+                                    aria-label="Default select example">
+                                <option selected disabled>Open this select menu</option>
+                                <option value="1">IT Industry</option>
+                                <option value="2">Health & Care Industry</option>
+                                <option value="2">Engineering Industry</option>
+                                <option value="2">Finance Industry</option>
+                                <option value="2">Education Industry</option>
+                            </select>
                         </div>
+                    </div>
 
-                        <h6 class="h6 ms-3 fs-6 fw-bold">Search Location</h6>
-                        <div class="col-11 ms-3 mb-4 p-2 bg-white rounded-2">
-                            <div class="input-group">
+                    <h6 class="h6 ms-3 fs-6 fw-bold">Search Location</h6>
+                    <div class="col-11 ms-3 mb-4 p-2 bg-white rounded-2">
+                        <div class="input-group">
                             <span class="btn disabled d-flex align-items-center" id="basic-addon3"
                                   style="--bs-btn-disabled-opacity: 1; border: 0">
                                 <i class="bi bi-search"></i>
                             </span>
-                                <input type="text" class="form-control form-control-sm noOutline ms-2"
-                                       placeholder="Search Location"
-                                       aria-label="Username" aria-describedby="basic-addon1"
-                                       style="--bs-border-width:0;">
-                            </div>
+                            <input type="text" class="form-control form-control-sm noOutline ms-2"
+                                   placeholder="Search Location"
+                                   aria-label="Username" aria-describedby="basic-addon1"
+                                   style="--bs-border-width:0;">
+                        </div>
+                    </div>
+
+                    <h6 class="h6 ms-3 fs-6 fw-bold">Job type</h6>
+                    <div class="col-11 ms-3 mb-4 p-2 rounded-2">
+                        <div class="form-check form-switch mt-3 mb-2">
+                            <input class="form-check-input" type="checkbox" role="switch"
+                                   id="flexSwitchCheckDefault1">
+                            <label class="form-check-label" for="flexSwitchCheckDefault1">Full time</label>
                         </div>
 
-                        <h6 class="h6 ms-3 fs-6 fw-bold">Job type</h6>
-                        <div class="col-11 ms-3 mb-4 p-2 rounded-2">
-                            <div class="form-check form-switch mt-3 mb-2">
-                                <input class="form-check-input" type="checkbox" role="switch"
-                                       id="flexSwitchCheckDefault1">
-                                <label class="form-check-label" for="flexSwitchCheckDefault1">Full time</label>
-                            </div>
-
-                            <div class="form-check form-switch mb-2">
-                                <input class="form-check-input" type="checkbox" role="switch"
-                                       id="flexSwitchCheckDefault2">
-                                <label class="form-check-label" for="flexSwitchCheckDefault2">Part time</label>
-                            </div>
-
-                            <div class="form-check form-switch mb-2">
-                                <input class="form-check-input" type="checkbox" role="switch"
-                                       id="flexSwitchCheckDefault3">
-                                <label class="form-check-label" for="flexSwitchCheckDefault3">Intern</label>
-                            </div>
-
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" role="switch"
+                                   id="flexSwitchCheckDefault2">
+                            <label class="form-check-label" for="flexSwitchCheckDefault2">Part time</label>
                         </div>
 
-                        <h6 class="h6 ms-3 fs-6 fw-bold">Posted</h6>
-                        <div class="col-11 ms-3 mb-4 p-2 rounded-2">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                       id="flexRadioDefault1" checked>
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                    All
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                       id="flexRadioDefault2">
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                    Last Hour
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                       id="flexRadioDefault3">
-                                <label class="form-check-label" for="flexRadioDefault3">
-                                    Last 24 Hours
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                       id="flexRadioDefault4">
-                                <label class="form-check-label" for="flexRadioDefault3">
-                                    Last 7 Days
-                                </label>
-                            </div>
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" role="switch"
+                                   id="flexSwitchCheckDefault3">
+                            <label class="form-check-label" for="flexSwitchCheckDefault3">Intern</label>
                         </div>
 
                     </div>
 
-                    <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-11 col-sm-11 col-11 rounded-4">
+                    <h6 class="h6 ms-3 fs-6 fw-bold">Posted</h6>
+                    <div class="col-11 ms-3 mb-4 p-2 rounded-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                   id="flexRadioDefault1" checked>
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                All
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                   id="flexRadioDefault2">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Last Hour
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                   id="flexRadioDefault3">
+                            <label class="form-check-label" for="flexRadioDefault3">
+                                Last 24 Hours
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                   id="flexRadioDefault4">
+                            <label class="form-check-label" for="flexRadioDefault3">
+                                Last 7 Days
+                            </label>
+                        </div>
+                    </div>
 
-                        <div class="row p-0 m-0 justify-content-between">
-                            <h5 class="h5 fw-bold w-auto col-4">Found 10 Jobs</h5>
-                            <span class="col-1 d-flex justify-content-end align-items-center">
+                </div>
+
+                <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-11 col-sm-11 col-11 rounded-4">
+
+                    <div class="row p-0 m-0 justify-content-between">
+                        <h5 class="h5 fw-bold w-auto col-4">Found 10 Jobs</h5>
+                        <span class="col-1 d-flex justify-content-end align-items-center">
                                 <i id="toggleButton" class="btn bi bi-funnel"></i>
                             </span>
-                        </div>
+                    </div>
 
-                        <div class="card-scale row p-0 m-0 w-100 pt-3 gap-3 overflow-y-scroll no-scroll"
-                             style="height: max-content;max-height: 100vh;">
+                    <div class="card-scale row p-0 m-0 w-100 pt-3 gap-3 overflow-y-scroll no-scroll"
+                         style="height: max-content;max-height: 100vh;">
 
-                            <div class="col-10 box-shadow-3 p-3 w-100 rounded-2" style="height: max-content">
+                        <div class="col-10 box-shadow-3 p-3 w-100 rounded-2" style="height: max-content">
 
-                                <div class="row p-0 m-0">
+                            <div class="row p-0 m-0">
 
-                                    <div class="col-2 rounded-4 p-0">
-                                        <img src="assets/images/bg2.jpg" class="rounded-2 bg-secondary p-0 w-100 h-100"
-                                             alt="">
+                                <div class="col-2 rounded-4 p-0">
+                                    <img src="assets/images/bg2.jpg" class="rounded-2 bg-secondary p-0 w-100 h-100"
+                                         alt="">
+                                </div>
+
+                                <div class="col-10 p-0">
+                                    <div class="row p-0 m-0">
+                                        <h5 class="col-10 h5 fw-bold mb-0">Software Engineering</h5>
+                                        <div class="col-1 p-0"></div>
+                                        <div class="col-1 p-0 d-flex justify-content-end">
+                                            <button class="bi bi-heart p-0 noOutline"
+                                                    style="background-color: #ffffff"></button>
+                                        </div>
                                     </div>
 
-                                    <div class="col-10 p-0">
-                                        <div class="row p-0 m-0">
-                                            <h5 class="col-10 h5 fw-bold mb-0">Software Engineering</h5>
-                                            <div class="col-1 p-0"></div>
-                                            <div class="col-1 p-0 d-flex justify-content-end">
-                                                <button class="bi bi-heart p-0 noOutline"
-                                                        style="background-color: #ffffff"></button>
-                                            </div>
+                                    <div class="row p-0 m-0 mt-3">
+                                        <div class="col-2"
+                                             style="font-size: 15px ;cursor: pointer;user-select: none">
+                                            <i class="bi bi-building pe-2"></i>
+                                            <span class="company fw-bold">IJSE</span>
                                         </div>
 
-                                        <div class="row p-0 m-0 mt-3">
-                                            <div class="col-2"
-                                                 style="font-size: 15px ;cursor: pointer;user-select: none">
-                                                <i class="bi bi-building pe-2"></i>
-                                                <span class="company fw-bold">IJSE</span>
-                                            </div>
-
-                                            <div class="col-3" style="font-size: 15px">
-                                                <i class="bi bi-geo-alt pe-2"></i>
-                                                Galle
-                                            </div>
-
-                                            <div class="col-3" style="font-size: 15px">
-                                                <i class="bi bi-clock pe-2"></i>
-                                                3 Days
-                                            </div>
-
-                                            <div class="col-3" style="font-size: 15px">
-                                                <i class="bi bi-cash-stack pe-2"></i>
-                                                40K
-                                            </div>
-
+                                        <div class="col-3" style="font-size: 15px">
+                                            <i class="bi bi-geo-alt pe-2"></i>
+                                            Galle
                                         </div>
 
-                                        <div class="row p-0 m-0 mt-3">
+                                        <div class="col-3" style="font-size: 15px">
+                                            <i class="bi bi-clock pe-2"></i>
+                                            3 Days
+                                        </div>
 
-                                            <div class="col-3 d-flex justify-content-start">
+                                        <div class="col-3" style="font-size: 15px">
+                                            <i class="bi bi-cash-stack pe-2"></i>
+                                            40K
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row p-0 m-0 mt-3">
+
+                                        <div class="col-3 d-flex justify-content-start">
                                             <span class="border-1 border-black rounded-2"
                                                   style="border: solid;height: max-content;padding: 2px">
                                                 Full Time
                                             </span>
-                                            </div>
-
-                                            <div class="col-5"></div>
-                                            <div class="col-4 btn btn-success">
-                                                <span>Add Resume</span>
-                                                <i class="bi bi-plus"></i>
-                                            </div>
-
                                         </div>
+
+                                        <div class="col-5"></div>
+                                        <div class="col-4 btn btn-success">
+                                            <span>Add Resume</span>
+                                            <i class="bi bi-plus"></i>
+                                        </div>
+
                                     </div>
-
-
                                 </div>
 
 
                             </div>
+
 
                         </div>
 
@@ -759,377 +756,380 @@
 
                 </div>
 
+            </div>
+
+        </div>
+    </div>
+
+</main>
+
+<main id="employer-home-frame" class="d-none vh-100 vw-100 overflow-x-hidden d-flex overflow-y-scroll no-scroll">
+
+    <!--Dashboard Menu-->
+    <div class="d-flex flex-column flex-shrink-0 p-3 box-shadow" style="width: 280px;">
+        <a href="#"
+           class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <span class="fs-4">Employer Dashboard</span>
+        </a>
+        <hr>
+        <ul id="sidebar-menu" class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a href="#" class="nav-link active" aria-current="page" onclick="showDB()">
+                    <i class="bi bi-speedometer me-2"></i>
+
+                    Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link link-body-emphasis" onclick="showPosts()">
+                    <i class="bi bi-file-earmark-text me-2"></i>
+
+                    Manage Posts
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link link-body-emphasis" onclick="showProfile()">
+                    <i class="bi bi-person me-2"></i>
+
+                    Manage Profile
+                </a>
+            </li>
+        </ul>
+        <hr>
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
+               data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                <strong>Name</strong>
+            </a>
+            <ul class="dropdown-menu text-small shadow" style="">
+                <li><a class="dropdown-item" href="#">New project...</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!--Dashboard Frame-->
+    <main id="dashboard-frame" class="vh-100 vw-100 bg-body-tertiary">
+
+        <h3 class="ms-2 mt-3 pb-1 border-bottom border-black mb-4 fw-bold text-primary" style="width: max-content">
+            Dashboard</h3>
+
+        <div class="row p-0 m-0 justify-content-center mb-4">
+            <div class="col-11 p-0 m-0">
+
+                <div class="row p-0 m-0 justify-content-between">
+
+                    <div class="col-2 box-shadow-3 rounded-3">
+                        <div class="row py-2">
+                            <div class="ms-3 p-0 col-3 d-flex justify-content-center align-items-center">
+                                <i class="text-primary fw-bold bi bi-person fs-1 px-2 rounded-2"></i>
+                            </div>
+                            <div class="col-8">
+                                <h2 class="m-0 ms-2 h3 text-primary fw-bold fs-2 w-auto text-end">10</h2>
+                                <p class="text-end m-0 ms-2">Followers</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2 box-shadow-3 rounded-3">
+                        <div class="row py-2">
+                            <div class="ms-3 p-0 col-3 d-flex justify-content-center align-items-center">
+                                <i class="text-warning fw-bold bi bi-file-earmark-text fs-1 px-2 rounded-2"></i>
+                            </div>
+                            <div class="col-8">
+                                <h2 class="m-0 ms-2 h3 text-warning fw-bold fs-2 w-auto text-end">41</h2>
+                                <p class="text-end m-0 ms-2">Posts</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2 box-shadow-3 rounded-3">
+                        <div class="row py-2">
+                            <div class="ms-3 p-0 col-3 d-flex justify-content-center align-items-center">
+                                <i class="text-danger fw-bold bi bi-star fs-1 px-2 rounded-2"></i>
+                            </div>
+                            <div class="col-8">
+                                <h2 class="m-0 ms-2 h3 text-danger fw-bold fs-2 w-auto text-end">10</h2>
+                                <p class="text-end m-0 ms-2">Stars</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2 box-shadow-3 rounded-3">
+                        <div class="row py-2">
+                            <div class="ms-3 p-0 col-3 d-flex justify-content-center align-items-center">
+                                <i class="text-primary fw-bold bi bi-mouse fs-1 px-2 rounded-2"></i>
+                            </div>
+                            <div class="col-8">
+                                <h2 class="m-0 ms-2 h3 text-primary fw-bold fs-2 w-auto text-end">10</h2>
+                                <p class="text-end m-0 ms-2">Clicks</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="row p-0 m-0 justify-content-center mb-4">
+            <div class="col-11 p-0 m-0">
+                <div class="row p-0 m-0 justify-content-between">
+
+                    <div class="col-6 p-0 box-shadow">
+
+
+                    </div>
+
+                    <div class="col-5 p-0 box-shadow p-2">
+                        <h6 class="text-primary h6 mb-2 ms-2 fw-bold">Profile views</h6>
+                        <canvas id="myChart"></canvas>
+
+                    </div>
+
+                </div>
             </div>
         </div>
 
     </main>
+    <!--Post Frame-->
+    <main id="post-frame" class="vh-100 bg-body-tertiary vw-100 overflow-hidden">
+        <h3 class="ms-2 mt-3 pb-1 border-bottom border-danger mb-4 fw-bold text-danger" style="width: max-content">
+            Posts</h3>
 
-    <main id="employer-home-frame" class="d-none vh-100 vw-100 overflow-x-hidden d-flex overflow-y-scroll no-scroll">
+        <div class="row p-0 m-0 justify-content-center">
+            <div class="col-11 m-0 p-0">
 
-        <!--Dashboard Menu-->
-        <div class="d-flex flex-column flex-shrink-0 p-3 box-shadow" style="width: 280px;">
-            <a href="#"
-               class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <span class="fs-4">Employer Dashboard</span>
-            </a>
-            <hr>
-            <ul id="sidebar-menu" class="nav nav-pills flex-column mb-auto">
-                <li class="nav-item">
-                    <a href="#" class="nav-link active" aria-current="page" onclick="showDB()">
-                        <i class="bi bi-speedometer me-2"></i>
-
-                        Dashboard
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link link-body-emphasis" onclick="showPosts()">
-                        <i class="bi bi-file-earmark-text me-2"></i>
-
-                        Manage Posts
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link link-body-emphasis" onclick="showProfile()">
-                        <i class="bi bi-person me-2"></i>
-
-                        Manage Profile
-                    </a>
-                </li>
-            </ul>
-            <hr>
-            <div class="dropdown">
-                <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
-                   data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                    <strong>Name</strong>
-                </a>
-                <ul class="dropdown-menu text-small shadow" style="">
-                    <li><a class="dropdown-item" href="#">New project...</a></li>
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                    <li><a class="dropdown-item" href="#">Profile</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
+                <ul class="nav nav-tabs" id="post-tab-pane">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Active</a>
                     </li>
-                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Requests</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">N/A</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">N/A</a>
+                    </li>
                 </ul>
-            </div>
-        </div>
 
-        <!--Dashboard Frame-->
-        <main id="dashboard-frame" class="vh-100 vw-100 bg-body-tertiary">
+                <section class="w-100 h-100 bg-white overflow-y-scroll no-scroll d-flex justify-content-center">
 
-            <h3 class="ms-2 mt-3 pb-1 border-bottom border-black mb-4 fw-bold text-primary" style="width: max-content">
-                Dashboard</h3>
+                    <div class="col-11 p-0 ">
 
-            <div class="row p-0 m-0 justify-content-center mb-4">
-                <div class="col-11 p-0 m-0">
+                        <form class="row p-0 m-0 mt-5">
 
-                    <div class="row p-0 m-0 justify-content-between">
-
-                        <div class="col-2 box-shadow-3 rounded-3">
-                            <div class="row py-2">
-                                <div class="ms-3 p-0 col-3 d-flex justify-content-center align-items-center">
-                                    <i class="text-primary fw-bold bi bi-person fs-1 px-2 rounded-2"></i>
-                                </div>
-                                <div class="col-8">
-                                    <h2 class="m-0 ms-2 h3 text-primary fw-bold fs-2 w-auto text-end">10</h2>
-                                    <p class="text-end m-0 ms-2">Followers</p>
+                            <div class="col-md-12 p-0">
+                                <div class="row p-0 m-0 justify-content-between">
+                                    <h3 class="h3 mb-4 col-4 p-0"
+                                        style="width: max-content;">
+                                        Manage Post
+                                    </h3>
+                                    <div class="col-1 d-flex justify-content-end align-items-center">
+                                        <i class="accordion-c-button btn fs-2 bi bi-chevron-double-down"></i>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-2 box-shadow-3 rounded-3">
-                            <div class="row py-2">
-                                <div class="ms-3 p-0 col-3 d-flex justify-content-center align-items-center">
-                                    <i class="text-warning fw-bold bi bi-file-earmark-text fs-1 px-2 rounded-2"></i>
+                            <div id="add-post-accordion" class="row p-0 d-none">
+                                <div class="col-md-8">
+                                    <label for="txtJobTitle" class="form-label">Job title</label>
+                                    <input type="text" class="form-control" id="txtJobTitle" required>
                                 </div>
-                                <div class="col-8">
-                                    <h2 class="m-0 ms-2 h3 text-warning fw-bold fs-2 w-auto text-end">41</h2>
-                                    <p class="text-end m-0 ms-2">Posts</p>
+
+                                <div class="col-md-3">
+                                    <label for="txtSelectType" class="form-label">Type</label>
+                                    <select class="form-select" id="txtSelectType" required>
+                                        <option selected disabled value="">Choose...</option>
+                                        <option value="Full time">Full time</option>
+                                        <option value="Part time">Part time</option>
+                                        <option value="Intern">Intern</option>
+                                    </select>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="col-2 box-shadow-3 rounded-3">
-                            <div class="row py-2">
-                                <div class="ms-3 p-0 col-3 d-flex justify-content-center align-items-center">
-                                    <i class="text-danger fw-bold bi bi-star fs-1 px-2 rounded-2"></i>
+                                <div class="col-md-6">
+                                    <label for="txtSalary" class="form-label">Salary Per Year</label>
+                                    <input type="text" class="form-control" id="txtSalary" required>
                                 </div>
-                                <div class="col-8">
-                                    <h2 class="m-0 ms-2 h3 text-danger fw-bold fs-2 w-auto text-end">10</h2>
-                                    <p class="text-end m-0 ms-2">Stars</p>
+
+                                <div class="col-md-6">
+                                    <label for="txtSelectIndustry" class="form-label">Industry</label>
+                                    <select class="form-select" id="txtSelectIndustry" required>
+                                        <option selected disabled value="">Choose...</option>
+                                        <option value="1" selected disabled></option>
+                                        <option value="IT Industry">IT Industry</option>
+                                        <option value="Health & Care Industry">Health & Care Industry</option>
+                                        <option value="Engineering Industry">Engineering Industry</option>
+                                        <option value="Finance Industry">Finance Industry</option>
+                                        <option value="Education Industry">Education Industry</option>
+                                    </select>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="col-2 box-shadow-3 rounded-3">
-                            <div class="row py-2">
-                                <div class="ms-3 p-0 col-3 d-flex justify-content-center align-items-center">
-                                    <i class="text-primary fw-bold bi bi-mouse fs-1 px-2 rounded-2"></i>
-                                </div>
-                                <div class="col-8">
-                                    <h2 class="m-0 ms-2 h3 text-primary fw-bold fs-2 w-auto text-end">10</h2>
-                                    <p class="text-end m-0 ms-2">Clicks</p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                </div>
-            </div>
-
-
-            <div class="row p-0 m-0 justify-content-center mb-4">
-                <div class="col-11 p-0 m-0">
-                    <div class="row p-0 m-0 justify-content-between">
-
-                        <div class="col-6 p-0 box-shadow">
-
-
-                        </div>
-
-                        <div class="col-5 p-0 box-shadow p-2">
-                            <h6 class="text-primary h6 mb-2 ms-2 fw-bold">Profile views</h6>
-                            <canvas id="myChart"></canvas>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-        </main>
-        <!--Post Frame-->
-        <main id="post-frame" class="vh-100 bg-body-tertiary vw-100 overflow-hidden">
-            <h3 class="ms-2 mt-3 pb-1 border-bottom border-danger mb-4 fw-bold text-danger" style="width: max-content">
-                Posts</h3>
-
-            <div class="row p-0 m-0 justify-content-center">
-                <div class="col-11 m-0 p-0">
-
-                    <ul class="nav nav-tabs" id="post-tab-pane">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Active</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Requests</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">N/A</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">N/A</a>
-                        </li>
-                    </ul>
-
-                    <section class="w-100 h-100 bg-white overflow-y-scroll no-scroll d-flex justify-content-center">
-
-                        <div class="col-11 p-0 ">
-
-                            <form class="row p-0 m-0 mt-5">
-
-                                <div class="col-md-12 p-0">
-                                    <div class="row p-0 m-0 justify-content-between">
-                                        <h3 class="h3 mb-4 col-4 p-0"
-                                            style="width: max-content;">
-                                            Manage Post
-                                        </h3>
-                                        <div class="col-1 d-flex justify-content-end align-items-center">
-                                            <i class="accordion-c-button btn fs-2 bi bi-chevron-double-down"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="add-post-accordion" class="row p-0 d-none">
-                                    <div class="col-md-8">
-                                        <label for="txtJobTitle" class="form-label">Job title</label>
-                                        <input type="text" class="form-control" id="txtJobTitle" required>
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <label for="validationCustom06" class="form-label">Industry</label>
-                                        <select class="form-select" id="validationCustom06" required>
-                                            <option selected disabled value="">Choose...</option>
-                                            <option value="1">Full time</option>
-                                            <option value="2">Part time</option>
-                                            <option value="2">Intern</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label for="txtSalary" class="form-label">Salary Per Year</label>
-                                        <input type="text" class="form-control" id="txtSalary" required>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                        <label for="validationCustom04" class="form-label">Industry</label>
-                                        <select class="form-select" id="validationCustom04" required>
-                                            <option selected disabled value="">Choose...</option>
-                                            <option value="1">IT Industry</option>
-                                            <option value="2">Health & Care Industry</option>
-                                            <option value="2">Engineering Industry</option>
-                                            <option value="2">Finance Industry</option>
-                                            <option value="2">Education Industry</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-md-12 py-2">
-                                        <label for="txtJobDescription" class="form-label col-12">
-                                            Job description
-                                            <textarea id="txtJobDescription" class="form-control">
+                                <div class="col-md-12 py-2">
+                                    <label for="txtJobDescription" class="form-label col-12">
+                                        Job description
+                                        <textarea id="txtJobDescription" class="form-control">
 
                                             </textarea>
-                                        </label>
-                                    </div>
-
-                                    <div class="col-12">
-                                        <button id="btnAddPost" class="btn btn-success btn-sm mt-2 me-2" type="button">
-                                            Add Post
-                                            <i class="bi bi-file-earmark-plus ms-2"></i>
-                                        </button>
-                                        <button id="btnUpdatePost" class="btn btn-warning btn-sm mt-2 me-2" type="button">
-                                            Update Post
-                                            <i class="bi bi-file-earmark-arrow-up ms-2"></i>
-                                        </button>
-                                        <button id="btnDeletePost" class="btn btn-danger btn-sm mt-2 me-2" type="button">
-                                            Delete Post
-                                            <i class="bi bi-file-earmark-minus ms-2"></i>
-                                        </button>
-                                    </div>
+                                    </label>
                                 </div>
-                            </form>
 
-                            <hr class="my-1 mt-3">
-
-                            <div class="row justify-content-center mt-5">
-
-                                <table class="table-primary col-11 ">
-                                    <thead>
-                                    <tr style="background-color: #abc8ff">
-                                        <th scope="col">Post ID</th>
-                                        <th scope="col">Post Title</th>
-                                        <th scope="col">Industry</th>
-                                        <th scope="col">Date Posted</th>
-                                        <th scope="col">Count</th>
-                                    </tr>
-                                    </thead>
-
-                                    <tbody>
-
-                                    <tr>
-                                        <td>P001</td>
-                                        <td>Software Engineering</td>
-                                        <td>IT industry</td>
-                                        <td>23-12-10</td>
-                                        <td>10</td>
-                                    </tr>
-                                    <tr>
-                                        <td>P001</td>
-                                        <td>Software Engineering</td>
-                                        <td>IT industry</td>
-                                        <td>23-12-10</td>
-                                        <td>10</td>
-                                    </tr>
-                                    <tr>
-                                        <td>P001</td>
-                                        <td>Software Engineering</td>
-                                        <td>IT industry</td>
-                                        <td>23-12-10</td>
-                                        <td>10</td>
-                                    </tr>
-                                    <tr>
-                                        <td>P001</td>
-                                        <td>Software Engineering</td>
-                                        <td>IT industry</td>
-                                        <td>23-12-10</td>
-                                        <td>10</td>
-                                    </tr>
-                                    <tr>
-                                        <td>P001</td>
-                                        <td>Software Engineering</td>
-                                        <td>IT industry</td>
-                                        <td>23-12-10</td>
-                                        <td>10</td>
-                                    </tr>
-
-                                    </tbody>
-                                </table>
-
+                                <div class="col-12">
+                                    <button id="btnAddPost" class="btn btn-success btn-sm mt-2 me-2" type="button">
+                                        Add Post
+                                        <i class="bi bi-file-earmark-plus ms-2"></i>
+                                    </button>
+                                    <button id="btnUpdatePost" class="btn btn-warning btn-sm mt-2 me-2" type="button">
+                                        Update Post
+                                        <i class="bi bi-file-earmark-arrow-up ms-2"></i>
+                                    </button>
+                                    <button id="btnDeletePost" class="btn btn-danger btn-sm mt-2 me-2" type="button">
+                                        Delete Post
+                                        <i class="bi bi-file-earmark-minus ms-2"></i>
+                                    </button>
+                                </div>
                             </div>
+                        </form>
+
+                        <hr class="my-1 mt-3">
+
+                        <div class="row justify-content-center mt-5">
+
+                            <table class="table-primary col-11 ">
+                                <thead>
+                                <tr style="background-color: #abc8ff">
+                                    <th scope="col">Post ID</th>
+                                    <th scope="col">Post Title</th>
+                                    <th scope="col">Industry</th>
+                                    <th scope="col">Date Posted</th>
+                                    <th scope="col">Count</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+
+                                <tr>
+                                    <td>P001</td>
+                                    <td>Software Engineering</td>
+                                    <td>IT industry</td>
+                                    <td>23-12-10</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>P001</td>
+                                    <td>Software Engineering</td>
+                                    <td>IT industry</td>
+                                    <td>23-12-10</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>P001</td>
+                                    <td>Software Engineering</td>
+                                    <td>IT industry</td>
+                                    <td>23-12-10</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>P001</td>
+                                    <td>Software Engineering</td>
+                                    <td>IT industry</td>
+                                    <td>23-12-10</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>P001</td>
+                                    <td>Software Engineering</td>
+                                    <td>IT industry</td>
+                                    <td>23-12-10</td>
+                                    <td>10</td>
+                                </tr>
+
+                                </tbody>
+                            </table>
 
                         </div>
 
-                    </section>
+                    </div>
 
-                    <!--<section class="w-100 h-100 bg-info"></section>
-                    <section class="w-100 h-100 bg-secondary"></section>-->
+                </section>
 
-                </div>
+                <!--<section class="w-100 h-100 bg-info"></section>
+                <section class="w-100 h-100 bg-secondary"></section>-->
+
             </div>
+        </div>
 
-        </main>
-        <!--Profile Frame-->
-        <main id="profile-frame" class="vh-100 bg-success vw-100">
-
-        </main>
+    </main>
+    <!--Profile Frame-->
+    <main id="profile-frame" class="vh-100 bg-success vw-100">
 
     </main>
 
-    <footer id="footer" class="mt-5">
-        <main id="contact-frame" style="box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;">
-            <div class="container">
-                <div class="py-5">
-                    <div class="row justify-content-between">
-                        <div class="col-6 col-md-2 mb-3">
-                            <h5 class="text-dark">Section</h5>
-                            <ul class="nav flex-column">
-                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a>
-                                </li>
-                                <li class="nav-item mb-2"><a href="#"
-                                                             class="nav-link p-0 text-body-secondary">Features</a>
-                                </li>
-                                <li class="nav-item mb-2"><a href="#"
-                                                             class="nav-link p-0 text-body-secondary">Pricing</a>
-                                </li>
-                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
-                                </li>
-                                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a>
-                                </li>
-                            </ul>
-                        </div>
+</main>
 
-                        <div class="col-md-5 offset-md-1 mb-3">
-                            <form>
-                                <h5 class="text-dark">Need to know anything</h5>
-                                <p class="text-dark">Just enter your email.</p>
-                                <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                                    <label for="newsletter1" class="visually-hidden">Email address</label>
-                                    <input id="newsletter1" type="text" class="form-control"
-                                           placeholder="Email address">
-                                    <button class="btn btn-success" type="button">Subscribe</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-                        <p class="text-dark">&copy; 2023 Company, Inc. All rights reserved.</p>
-                        <ul class="list-unstyled d-flex">
-                            <li class="ms-4 text-dark"><a class="link-body-emphasis" href="#"><i
-                                    class="bi bi-instagram fs-4"></i></a></li>
-                            <li class="ms-4 text-dark"><a class="link-body-emphasis" href="#"><i
-                                    class="bi bi-twitter-x fs-4"></i></a></li>
-                            <li class="ms-4 text-dark"><a class="link-body-emphasis" href="#"><i
-                                    class="bi bi-facebook fs-4"></i></a></li>
+<footer id="footer" class="mt-5">
+    <main id="contact-frame" style="box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;">
+        <div class="container">
+            <div class="py-5">
+                <div class="row justify-content-between">
+                    <div class="col-6 col-md-2 mb-3">
+                        <h5 class="text-dark">Section</h5>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#"
+                                                         class="nav-link p-0 text-body-secondary">Features</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#"
+                                                         class="nav-link p-0 text-body-secondary">Pricing</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
+                            </li>
+                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a>
+                            </li>
                         </ul>
                     </div>
+
+                    <div class="col-md-5 offset-md-1 mb-3">
+                        <form>
+                            <h5 class="text-dark">Need to know anything</h5>
+                            <p class="text-dark">Just enter your email.</p>
+                            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                                <label for="newsletter1" class="visually-hidden">Email address</label>
+                                <input id="newsletter1" type="text" class="form-control"
+                                       placeholder="Email address">
+                                <button class="btn btn-success" type="button">Subscribe</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                    <p class="text-dark">&copy; 2023 Company, Inc. All rights reserved.</p>
+                    <ul class="list-unstyled d-flex">
+                        <li class="ms-4 text-dark"><a class="link-body-emphasis" href="#"><i
+                                class="bi bi-instagram fs-4"></i></a></li>
+                        <li class="ms-4 text-dark"><a class="link-body-emphasis" href="#"><i
+                                class="bi bi-twitter-x fs-4"></i></a></li>
+                        <li class="ms-4 text-dark"><a class="link-body-emphasis" href="#"><i
+                                class="bi bi-facebook fs-4"></i></a></li>
+                    </ul>
                 </div>
             </div>
-        </main>
+        </div>
+    </main>
 
-    </footer>
-</main>
+</footer>
+
 
 <main class="position-relative col-10 d-none" style="height: 90vw">
 
