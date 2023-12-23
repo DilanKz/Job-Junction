@@ -13,7 +13,8 @@ function userData() {
         username: "",
         password: "",
         type: "",
-        entityid: ""
+        employee: "",
+        company: ""
     }
 }
 
