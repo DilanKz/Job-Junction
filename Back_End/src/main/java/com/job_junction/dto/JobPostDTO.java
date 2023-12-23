@@ -17,7 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 public class JobPostDTO {
     private String id;
-    private String companyId;
+    private CompanyDTO companyId;
     private String title;
     private String description;
     private List<String> skillsRequired;
