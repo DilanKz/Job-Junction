@@ -23,7 +23,7 @@ public class JobPost {
 
     @Id
     private String id;
-    private String companyId;
+    private Company companyId;
     private String title;
     private String description;
     private List<String> skillsRequired;
