@@ -14,11 +14,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserDTO {
-
     private String id;
     private String username;
     private String password;
     private String type;
-    private String entityId;
+    private EmployeeDTO employee;
+    private CompanyDTO company;
 }
 
