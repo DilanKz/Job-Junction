@@ -2,7 +2,7 @@ $('#btnAddPost').click(function() {
     const allFieldsValid = validateAllFields();
 
     if (allFieldsValid) {
-        addPost()
+        addPost(postData())
     } else {
         toastShower('1','bg-danger','text-light','Invalid Data');
     }
