@@ -9,9 +9,9 @@ function validateField(value, regex) {
 function validateAllFields() {
     const jobTitleValid = validateField($('#txtJobTitle').val(), jobTitleRegex);
     const jobDescriptionValid = validateField($('#txtJobDescription').val(), jobDescriptionRegex);
-    const salaryValid = validateField($('#txtSalary').val(), salaryRegex);
+    // const salaryValid = validateField($('#txtSalary').val(), salaryRegex);
 
-    return jobTitleValid && jobDescriptionValid && salaryValid;
+    return jobTitleValid && jobDescriptionValid;
 }
 
 function postData() {
@@ -20,8 +20,8 @@ function postData() {
         companyId:userAccount.company,
         title:$('#txtJobTitle').val(),
         description:$('#txtJobDescription').val(),
-        skillsRequired:'',
-        salary:$('#txtSalary'),
+        skillsRequired:null,
+        salary:$('#txtSalary').val(),
         applicationDeadline:'',
         type:$('#txtSelectType').val(),
         industry:$('#txtSelectIndustry').val(),
