@@ -63,7 +63,7 @@ public class CompanyServiceImpl implements CompanyService {
     public String generateNextId(Company company) {
         System.err.println(company);
         if (company == null) {
-            return "E0001";
+            return "C0001";
         }
 
         String lastId = company.getId();
