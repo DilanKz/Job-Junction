@@ -22,7 +22,4 @@ public class JobPostDTO {
     private String description;
     private List<String> skillsRequired;
     private String salary;
-    private Date applicationDeadline;
-    private String category;
-    private int totalPositions;
 }
