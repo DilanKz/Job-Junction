@@ -115,6 +115,44 @@ function loginIn(user,password) {
                 console.log()
                 if (response.password === password) {
 
+                    userAccount.user=response
+
+                    if (response.type==='companies'){
+                        userAccount.company=response.company;
+                        userAccount.employee="";
+
+                        $('#btn-login-main').toggleClass('d-none');
+                        let button=`<button id="btn-profile" class="btn btn-sm btn-primary me-3">
+                                    ${response.username}
+                                    <i class="bi bi-person-fill ps-2"></i>
+                                </button>`
+                        $('#navbar-content').append(button);
+
+                        $('#link-DB').removeClass('d-none');
+                        $('#link-Pro').addClass('d-none');
+
+                    }else if (response.type==='employees'){
+                        userAccount.employee=response.employee;
+                        userAccount.company="";
+                        $('#link-Pro').removeClass('d-none');
+                        $('#link-DB').addClass('d-none');
+
+                        $('#btn-login-main').toggleClass('d-none');
+                        let button=`<button id="btn-profile" class="btn btn-sm btn-success me-3">
+                                    ${response.username}
+                                    <i class="bi bi-person-fill ps-2"></i>
+                                </button>`
+                        $('#navbar-content').append(button)
+
+                    }
+
+                    $('#login-frame').addClass('d-none');
+                    $('#register').addClass('d-none');
+                    $('#login').addClass('d-none');
+
+                    $('#txtUN').val("");
+                    $('#txtPW').val("");
+
                     toastShower('1','bg-success','text-light','successfully logged in');
 
                 }else {
