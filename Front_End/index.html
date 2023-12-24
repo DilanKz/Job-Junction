@@ -219,7 +219,7 @@
 </main>
 
 <nav id="navbar" class="w-100 overflow-hidden navbar navbar-expand-lg bg-body-tertiary fixed-top box-shadow">
-    <div class="container-fluid">
+    <div id="navbar-content" class="container-fluid">
         <a class="navbar-brand pe-5 ps-4" href="#">Job-Junction</a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -237,7 +237,10 @@
                 <li class="nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
                     <a class="nav-link" aria-current="page" href="#" onclick="showJobs()">Find a job</a>
                 </li>
-                <li class="nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
+                <li id="link-DB" class="d-none nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
+                    <a class="nav-link" aria-current="page" href="#" onclick="showDashboard()">Dashboard</a>
+                </li>
+                <li id="link-Pro" class="d-none nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
                     <a class="nav-link" aria-current="page" href="#" onclick="showDashboard()">Dashboard</a>
                 </li>
             </ul>
@@ -592,13 +595,13 @@
                             <i class="bi bi-briefcase"></i>
                         </span>
                             <select class="noOutline h-100 w-75 p-2 rounded-2 col-8"
-                                    aria-label="Default select example">
+                                    aria-label="Default select example" id="txtFilterIndustry">
                                 <option selected disabled>Open this select menu</option>
-                                <option value="1">IT Industry</option>
-                                <option value="2">Health & Care Industry</option>
-                                <option value="2">Engineering Industry</option>
-                                <option value="2">Finance Industry</option>
-                                <option value="2">Education Industry</option>
+                                <option value="IT Industry">IT Industry</option>
+                                <option value="Health & Care Industry">Health & Care Industry</option>
+                                <option value="Engineering Industry">Engineering Industry</option>
+                                <option value="Finance Industry">Finance Industry</option>
+                                <option value="Education Industry">Education Industry</option>
                             </select>
                         </div>
                     </div>
@@ -611,7 +614,7 @@
                                 <i class="bi bi-search"></i>
                             </span>
                             <input type="text" class="form-control form-control-sm noOutline ms-2"
-                                   placeholder="Search Location"
+                                   placeholder="Search Location" id="txtFilterPlace"
                                    aria-label="Username" aria-describedby="basic-addon1"
                                    style="--bs-border-width:0;">
                         </div>
@@ -621,20 +624,20 @@
                     <div class="col-11 ms-3 mb-4 p-2 rounded-2">
                         <div class="form-check form-switch mt-3 mb-2">
                             <input class="form-check-input" type="checkbox" role="switch"
-                                   id="flexSwitchCheckDefault1">
-                            <label class="form-check-label" for="flexSwitchCheckDefault1">Full time</label>
+                                   id="txtFilterFullTime">
+                            <label class="form-check-label" for="txtFilterFullTime">Full time</label>
                         </div>
 
                         <div class="form-check form-switch mb-2">
                             <input class="form-check-input" type="checkbox" role="switch"
-                                   id="flexSwitchCheckDefault2">
-                            <label class="form-check-label" for="flexSwitchCheckDefault2">Part time</label>
+                                   id="txtFilterPartTime">
+                            <label class="form-check-label" for="txtFilterFullTime">Part time</label>
                         </div>
 
                         <div class="form-check form-switch mb-2">
                             <input class="form-check-input" type="checkbox" role="switch"
-                                   id="flexSwitchCheckDefault3">
-                            <label class="form-check-label" for="flexSwitchCheckDefault3">Intern</label>
+                                   id="txtFilterIntern">
+                            <label class="form-check-label" for="txtFilterIntern">Intern</label>
                         </div>
 
                     </div>
@@ -643,29 +646,29 @@
                     <div class="col-11 ms-3 mb-4 p-2 rounded-2">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                   id="flexRadioDefault1" checked>
-                            <label class="form-check-label" for="flexRadioDefault1">
+                                   id="txtFilterAll" checked>
+                            <label class="form-check-label" for="txtFilterAll">
                                 All
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                   id="flexRadioDefault2">
-                            <label class="form-check-label" for="flexRadioDefault2">
+                                   id="txtFilterLastHour">
+                            <label class="form-check-label" for="txtFilterLastHour">
                                 Last Hour
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                   id="flexRadioDefault3">
-                            <label class="form-check-label" for="flexRadioDefault3">
+                                   id="txtFilterDay">
+                            <label class="form-check-label" for="txtFilterDay">
                                 Last 24 Hours
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                   id="flexRadioDefault4">
-                            <label class="form-check-label" for="flexRadioDefault3">
+                                   id="txtFilterLastWeek">
+                            <label class="form-check-label" for="txtFilterLastWeek">
                                 Last 7 Days
                             </label>
                         </div>
@@ -977,9 +980,7 @@
                                 <div class="col-md-12 py-2">
                                     <label for="txtJobDescription" class="form-label col-12">
                                         Job description
-                                        <textarea id="txtJobDescription" class="form-control">
-
-                                            </textarea>
+                                        <textarea id="txtJobDescription" class="form-control"></textarea>
                                     </label>
                                 </div>
 
@@ -1196,6 +1197,7 @@
 <script src="forms/AdminPostForm.js"></script>
 <script src="controllers/loginController.js"></script>
 <script src="controllers/companyPostController.js"></script>
+<script src="controllers/employeePostController.js"></script>
 
 
 <script>
