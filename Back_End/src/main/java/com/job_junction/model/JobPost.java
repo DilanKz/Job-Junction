@@ -28,10 +28,6 @@ public class JobPost {
     private String description;
     private List<String> skillsRequired;
     private String salary;
-    private Date applicationDeadline;
-    private String category;
-    private int totalPositions;
-    //private List<Application> applications;
 
 }
 
