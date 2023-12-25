@@ -952,7 +952,7 @@
                                 <div class="col-md-3">
                                     <label for="txtSelectType" class="form-label">Type</label>
                                     <select class="form-select" id="txtSelectType" required>
-                                        <option selected disabled value="">Choose...</option>
+                                        <option selected disabled value="1">Choose...</option>
                                         <option value="Full time">Full time</option>
                                         <option value="Part time">Part time</option>
                                         <option value="Intern">Intern</option>
@@ -967,8 +967,7 @@
                                 <div class="col-md-6">
                                     <label for="txtSelectIndustry" class="form-label">Industry</label>
                                     <select class="form-select" id="txtSelectIndustry" required>
-                                        <option selected disabled value="">Choose...</option>
-                                        <option value="1" selected disabled></option>
+                                        <option selected disabled value="1">Choose...</option>
                                         <option value="IT Industry">IT Industry</option>
                                         <option value="Health & Care Industry">Health & Care Industry</option>
                                         <option value="Engineering Industry">Engineering Industry</option>
@@ -1386,18 +1385,21 @@
         $('#dashboard-frame').css('display', 'block');
         $('#post-frame').css('display', 'none');
         $('#profile-frame').css('display', 'none');
+        clearPostFields()
     }
 
     function showPosts() {
         $('#dashboard-frame').css('display', 'none');
         $('#post-frame').css('display', 'block');
         $('#profile-frame').css('display', 'none');
+        clearPostFields()
     }
 
     function showProfile() {
         $('#dashboard-frame').css('display', 'none');
         $('#post-frame').css('display', 'none');
         $('#profile-frame').css('display', 'block');
+        clearPostFields()
     }
 
     function chart() {
@@ -1429,12 +1431,13 @@
 
     $('#toggleButton').click(function () {
         $('#job-filter-menu').toggleClass('job-filter-hidden job-filter-shown');
+        clearPostFields();
     });
 
     $('.accordion-c-button').click(function () {
         $('.accordion-c-button').toggleClass('bi-chevron-double-down bi-chevron-double-up');
         $('#add-post-accordion').toggleClass('d-none');
-
+        clearPostFields();
     });
 
 
