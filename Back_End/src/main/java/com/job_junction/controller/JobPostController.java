@@ -25,6 +25,11 @@ public class JobPostController {
         return jobPostService.getAllJobPosts();
     }
 
+    @GetMapping("/posted")
+    public List<JobPostDTO> getAllJobPosts(String id) {
+        return jobPostService.getAllCompanyJobPosts(id);
+    }
+
     @GetMapping("/{id}")
     public JobPostDTO getJobPostById(@PathVariable String id) {
         return jobPostService.getJobPostById(id);
