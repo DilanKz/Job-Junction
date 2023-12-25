@@ -12,6 +12,8 @@ import java.util.List;
 public interface JobPostService {
     List<JobPostDTO> getAllJobPosts();
 
+    List<JobPostDTO> getAllCompanyJobPosts(String id);
+
     JobPostDTO getJobPostById(String id);
 
     JobPostDTO saveJobPost(JobPostDTO jobPostDTO);
