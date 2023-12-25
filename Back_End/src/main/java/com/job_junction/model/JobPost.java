@@ -25,6 +25,8 @@ public class JobPost {
     private String id;
     private Company companyId;
     private String title;
+    private String industry;
+    private String type;
     private String description;
     private List<String> skillsRequired;
     private String salary;
