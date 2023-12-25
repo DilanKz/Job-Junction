@@ -35,6 +35,14 @@ public class JobPostServiceImpl implements JobPostService {
     }
 
     @Override
+    public List<JobPostDTO> getAllCompanyJobPosts(String id) {
+        List<JobPost> jobPosts = repo.findByCompanyId_Id(id);
+        return jobPosts.stream()
+                .map(jobPost -> modelMapper.map(jobPost, JobPostDTO.class))
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public JobPostDTO getJobPostById(String id) {
         JobPost jobPost = repo.findById(id).get();
         return modelMapper.map(jobPost, JobPostDTO.class);
@@ -43,6 +51,7 @@ public class JobPostServiceImpl implements JobPostService {
     @Override
     public JobPostDTO saveJobPost(JobPostDTO jobPostDTO) {
         JobPost jobPost = modelMapper.map(jobPostDTO, JobPost.class);
+        jobPost.setId(generateNextID());
         jobPost = repo.save(jobPost);
         return modelMapper.map(jobPost, JobPostDTO.class);
     }
