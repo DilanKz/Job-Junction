@@ -28,3 +28,11 @@ function postData() {
         totalPositions:'',
     }
 }
+
+function clearPostFields() {
+    $('#txtJobTitle').val('');
+    $('#txtSelectType').val('1');
+    $('#txtSalary').val('');
+    $('#txtSelectIndustry').val('1');
+    $('#txtJobDescription').val('');
+}
