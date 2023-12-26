@@ -2,7 +2,8 @@ let jobPosts = []
 getAllPosts();
 
 let search = {
-    type: []
+    type: [],
+    time: 'All'
 }
 
 function getAllPosts() {
@@ -150,7 +151,7 @@ function jobCard(post) {
                                         <h5 class="col-10 h5 fw-bold mb-0">Software Engineering</h5>
                                         <div class="col-1 p-0"></div>
                                         <div class="col-1 p-0 d-flex justify-content-end">
-                                            <button class="btn-fav bi bi-heart p-0 noOutline bg-body-tertiary text-success"
+                                            <button class="btn-fav bi bi-bookmark p-0 noOutline bg-body-tertiary text-success"
                                                     style="background-color: #ffffff"  jobOB='${JSON.stringify(post)}'></button>
                                         </div>
                                     </div>
