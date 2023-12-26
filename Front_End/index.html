@@ -1297,9 +1297,11 @@
         $('#register').toggleClass('d-none');
     });
 
-    $('.btn-fav').click(function () {
-        $(this).toggleClass('bi-heart-fill')
-        $(this).toggleClass('bi-heart')
+    $(document).ready(function () {
+        $('.btn-fav').click(function () {
+            $(this).toggleClass('bi-heart-fill')
+            $(this).toggleClass('bi-heart')
+        });
     });
 
     $(document).ready(function () {
