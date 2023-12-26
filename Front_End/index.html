@@ -679,81 +679,24 @@
                 <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-11 col-sm-11 col-11 rounded-4">
 
                     <div class="row p-0 m-0 justify-content-between">
-                        <h5 class="h5 fw-bold w-auto col-4">Found 10 Jobs</h5>
+                        <div class="w-auto">
+                            <h5 class="h5 fw-bold w-auto col-4">
+                                Found 10 Jobs
+                                <span class="ps-2">
+                                    <button id="btnRefreshFilter" class="rotate fs-6 bi bi-arrow-clockwise p-0 noOutline bg-body-tertiary text-success"
+                                            style="background-color: #ffffff"></button>
+                                </span>
+                            </h5>
+                        </div>
+
                         <span class="col-1 d-flex justify-content-end align-items-center">
                                 <i id="toggleButton" class="btn bi bi-funnel"></i>
                             </span>
                     </div>
 
-                    <div class="card-scale row p-0 m-0 w-100 pt-3 gap-3 overflow-y-scroll no-scroll"
+                    <div id="job-card-container" class="card-scale row p-0 m-0 w-100 pt-3 gap-3 overflow-y-scroll no-scroll"
                          style="height: max-content;max-height: 100vh;">
 
-                        <div class="col-10 box-shadow-3 p-3 w-100 rounded-2" style="height: max-content">
-
-                            <div class="row p-0 m-0">
-
-                                <div class="col-2 rounded-4 p-0">
-                                    <img src="assets/images/bg2.jpg" class="rounded-2 bg-secondary p-0 w-100 h-100"
-                                         alt="">
-                                </div>
-
-                                <div class="col-10 p-0">
-                                    <div class="row p-0 m-0">
-                                        <h5 class="col-10 h5 fw-bold mb-0">Software Engineering</h5>
-                                        <div class="col-1 p-0"></div>
-                                        <div class="col-1 p-0 d-flex justify-content-end">
-                                            <button class="bi bi-heart p-0 noOutline"
-                                                    style="background-color: #ffffff"></button>
-                                        </div>
-                                    </div>
-
-                                    <div class="row p-0 m-0 mt-3">
-                                        <div class="col-2"
-                                             style="font-size: 15px ;cursor: pointer;user-select: none">
-                                            <i class="bi bi-building pe-2"></i>
-                                            <span class="company fw-bold">IJSE</span>
-                                        </div>
-
-                                        <div class="col-3" style="font-size: 15px">
-                                            <i class="bi bi-geo-alt pe-2"></i>
-                                            Galle
-                                        </div>
-
-                                        <div class="col-3" style="font-size: 15px">
-                                            <i class="bi bi-clock pe-2"></i>
-                                            3 Days
-                                        </div>
-
-                                        <div class="col-3" style="font-size: 15px">
-                                            <i class="bi bi-cash-stack pe-2"></i>
-                                            40K
-                                        </div>
-
-                                    </div>
-
-                                    <div class="row p-0 m-0 mt-3">
-
-                                        <div class="col-3 d-flex justify-content-start">
-                                            <span class="border-1 border-black rounded-2"
-                                                  style="border: solid;height: max-content;padding: 2px">
-                                                Full Time
-                                            </span>
-                                        </div>
-
-                                        <div class="col-5"></div>
-                                        <div class="col-4 btn btn-success">
-                                            <span>Add Resume</span>
-                                            <i class="bi bi-plus"></i>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-
-                            </div>
-
-
-                        </div>
 
                     </div>
 
@@ -994,6 +937,10 @@
                                     </button>
                                     <button id="btnDeletePost" class="d-none btn btn-danger btn-sm mt-2 me-2" type="button">
                                         Delete Post
+                                        <i class="bi bi-file-earmark-minus ms-2"></i>
+                                    </button>
+                                    <button id="btnRefreshPost" class="d-none btn btn-secondary btn-sm mt-2 me-2" type="button">
+                                        Clear
                                         <i class="bi bi-file-earmark-minus ms-2"></i>
                                     </button>
                                 </div>
@@ -1312,6 +1259,16 @@
         });
     });
 
+    $(document).ready(function() {
+        $('#btnRefreshFilter').click(function() {
+            $(this).addClass('rotate');
+
+            setTimeout(function() {
+                $('#btnRefreshFilter').removeClass('rotate');
+            }, 1000);
+        });
+    });
+
     $('#dashboard-frame').css('display', 'block');
     $('#post-frame').css('display', 'none');
     $('#profile-frame').css('display', 'none');
@@ -1338,6 +1295,11 @@
     $('#btn-login-second').click(function () {
         $('#login').toggleClass('d-none');
         $('#register').toggleClass('d-none');
+    });
+
+    $('.btn-fav').click(function () {
+        $(this).toggleClass('bi-heart-fill')
+        $(this).toggleClass('bi-heart')
     });
 
     $(document).ready(function () {
