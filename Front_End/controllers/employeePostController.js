@@ -13,6 +13,7 @@ function getAllPosts() {
         success: function (response) {
             console.log(response);
             jobPosts = response;
+            bindCards(response)
         },
         error: function (e) {
             toastShower('1', 'bg-danger', 'text-light', 'Try again');
@@ -57,13 +58,25 @@ function addSwitches(filter, isChecked) {
         }
 
         selectedJobTypes=newJobPosts;
-
     }
 
+
+    if (search.type.length===0){
+        console.log('here')
+        selectedJobTypes=jobPosts;
+    }else{
+        selectedJobTypes=[];
+    }
+
+    loadCards()
+}
+
+function loadCards() {
+    //switch filter
     for (let i = 0; i < jobPosts.length; i++) {
 
         for (let j = 0; j < search.type.length; j++) {
-            if (!ifExists(search.type[j])){
+            if (!ifExists(jobPosts[i].id)){
                 if (jobPosts[i].type === search.type[j]) {
                     selectedJobTypes.push(jobPosts[i]);
                 }
@@ -74,14 +87,14 @@ function addSwitches(filter, isChecked) {
 
     console.log(selectedJobTypes);
 
-    bindCards();
+    bindCards(selectedJobTypes);
 }
 
 
-function bindCards() {
+function bindCards(list) {
     $('#job-card-container').empty();
-    for (let i = 0; i < selectedJobTypes.length; i++) {
-        jobCard(selectedJobTypes[i])
+    for (let i = 0; i < list.length; i++) {
+        jobCard(list[i])
     }
 }
 
@@ -113,7 +126,7 @@ $('#txtFilterIntern').change(function () {
 function ifExists(filter) {
 
     for (let i = 0; i < selectedJobTypes.length; i++) {
-        if (selectedJobTypes[i].type === filter) {
+        if (selectedJobTypes[i].id === filter) {
             return true;
         }
     }
@@ -143,15 +156,10 @@ function jobCard(post) {
                                     </div>
 
                                     <div class="row p-0 m-0 mt-3">
-                                        <div class="col-2"
+                                        <div class="col-3"
                                              style="font-size: 15px ;cursor: pointer;user-select: none">
                                             <i class="bi bi-building pe-2"></i>
                                             <span class="company fw-bold">${post.companyId.name}</span>
-                                        </div>
-
-                                        <div class="col-3" style="font-size: 15px">
-                                            <i class="bi bi-geo-alt pe-2"></i>
-                                            Galle
                                         </div>
 
                                         <div class="col-3" style="font-size: 15px">
@@ -161,7 +169,7 @@ function jobCard(post) {
 
                                         <div class="col-3" style="font-size: 15px">
                                             <i class="bi bi-cash-stack pe-2"></i>
-                                            ${post.companyId.salary}
+                                            ${post.salary}
                                         </div>
 
                                     </div>
@@ -169,9 +177,9 @@ function jobCard(post) {
                                     <div class="row p-0 m-0 mt-3">
 
                                         <div class="col-3 d-flex justify-content-start">
-                                            <span class="border-1 border-black rounded-2"
-                                                  style="border: solid;height: max-content;padding: 2px">
-                                                ${post.companyId.type}
+                                            <span class="bg-success py-1 px-2 text-light rounded-2"
+                                                  style="cursor: pointer;height: max-content;padding: 2px">
+                                                ${post.type}
                                             </span>
                                         </div>
 
