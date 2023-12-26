@@ -20,6 +20,9 @@ body {
 .box-shadow-3 {
     box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
 }
+.box-shadow-6 {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
 
 .box-shadow-4 {
     box-shadow: rgba(17, 12, 46, 0.15) 0 48px 100px 0;
@@ -104,6 +107,11 @@ body {
 
 .no-scroll::-webkit-scrollbar{
     display: none;
+}
+
+.rotate {
+    transition: transform 1s ease;
+    transform: rotate(360deg);
 }
 
 
