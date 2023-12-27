@@ -78,9 +78,9 @@ function loadPosts(posts) {
 
 $(document).on('click', '.post-tr', function () {
 
-    deletePost.toggleClass('d-none')
-    updatePost.toggleClass('d-none')
-    addPost.toggleClass('d-none')
+    deletePost.removeClass('d-none')
+    updatePost.removeClass('d-none')
+    addPost.addClass('d-none')
 
     let parseOB = JSON.parse($(this).attr('post'));
     console.log(parseOB);
@@ -112,9 +112,9 @@ updatePost.click(function () {
             toastShower('1', 'bg-success', 'text-light', 'Post is successfully updated');
             clearPostFields();
             selectedPost = {}
-            deletePost.toggleClass('d-none')
-            updatePost.toggleClass('d-none')
-            addPost.toggleClass('d-none')
+            deletePost.removeClass('d-none')
+            updatePost.removeClass('d-none')
+            addPost.addClass('d-none')
         },
         error: function (e) {
             toastShower('1', 'bg-danger', 'text-light', 'Error try again');
@@ -132,9 +132,9 @@ deletePost.click(function () {
             toastShower('1', 'bg-success', 'text-light', 'Post is successfully updated');
             clearPostFields();
             selectedPost = {}
-            deletePost.toggleClass('d-none')
-            updatePost.toggleClass('d-none')
-            addPost.toggleClass('d-none')
+            deletePost.removeClass('d-none')
+            updatePost.removeClass('d-none')
+            addPost.addClass('d-none')
         },
         error: function (e) {
             toastShower('1', 'bg-danger', 'text-light', 'Error try again');
