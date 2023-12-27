@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Date;
+import java.time.Instant;
 import java.util.List;
 
 /**
@@ -30,6 +30,8 @@ public class JobPost {
     private String description;
     private List<String> skillsRequired;
     private String salary;
+    private Instant createdAt;
+    private List<String> favoriteBy;
 
 }
 
