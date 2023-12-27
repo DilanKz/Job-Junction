@@ -653,30 +653,30 @@
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                   id="txtFilterLastHour">
-                            <label class="form-check-label" for="txtFilterLastHour">
-                                Last Hour
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault"
                                    id="txtFilterDay">
                             <label class="form-check-label" for="txtFilterDay">
-                                Last 24 Hours
+                                Day
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                   id="txtFilterLastWeek">
-                            <label class="form-check-label" for="txtFilterLastWeek">
-                                Last 7 Days
+                                   id="txtFilterWeek">
+                            <label class="form-check-label" for="txtFilterWeek">
+                                Week
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                   id="txtFilterMonth">
+                            <label class="form-check-label" for="txtFilterMonth">
+                                Month
                             </label>
                         </div>
                     </div>
 
                 </div>
 
-                <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12 rounded-4">
+                <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12 rounded-4">
 
                     <div class="row p-0 m-0 justify-content-between">
                         <div class="w-auto">
@@ -1299,8 +1299,9 @@
 
     $(document).ready(function () {
         $('.btn-fav').click(function () {
-            $(this).toggleClass('bi-bookmark-fill')
-            $(this).toggleClass('bi-bookmark')
+            console.log('fav')
+            $(this).toggleClass('bi-bookmark-fill');
+            $(this).toggleClass('bi-bookmark');
         });
     });
 
