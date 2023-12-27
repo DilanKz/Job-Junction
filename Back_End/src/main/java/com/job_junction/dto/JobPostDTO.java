@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.time.Instant;
 import java.util.List;
 
 /**
@@ -24,4 +24,6 @@ public class JobPostDTO {
     private String description;
     private List<String> skillsRequired;
     private String salary;
+    private Instant createdAt;
+    private List<String> favoriteBy;
 }
