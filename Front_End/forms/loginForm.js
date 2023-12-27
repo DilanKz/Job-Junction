@@ -14,7 +14,8 @@ function userData() {
         password: "",
         type: "",
         employee: "",
-        company: ""
+        company: "",
+        favorites: []
     }
 }
 
