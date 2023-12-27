@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -51,7 +52,14 @@ public class JobPostServiceImpl implements JobPostService {
     @Override
     public JobPostDTO saveJobPost(JobPostDTO jobPostDTO) {
         JobPost jobPost = modelMapper.map(jobPostDTO, JobPost.class);
-        jobPost.setId(generateNextID());
+
+        if (jobPost.getId().length()<2){
+            jobPost.setId(generateNextID());
+        }
+        if (jobPost.getCreatedAt().toString().length()<2){
+            jobPost.setCreatedAt(Instant.now());
+        }
+
         jobPost = repo.save(jobPost);
         return modelMapper.map(jobPost, JobPostDTO.class);
     }
