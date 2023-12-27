@@ -58,27 +58,44 @@ function addSwitches(filter, isChecked) {
             }
         }
 
-        selectedJobTypes=newJobPosts;
+        selectedJobTypes = newJobPosts;
     }
 
 
-    if (search.type.length===0){
+    if (search.type.length === 0) {
         console.log('here')
-        selectedJobTypes=jobPosts;
-    }else{
-        selectedJobTypes=[];
+        selectedJobTypes = jobPosts;
+    } else {
+        selectedJobTypes = [];
     }
 
     loadCards()
 }
 
 function loadCards() {
-    //switch filter
     for (let i = 0; i < jobPosts.length; i++) {
 
-        for (let j = 0; j < search.type.length; j++) {
-            if (!ifExists(jobPosts[i].id)){
-                if (jobPosts[i].type === search.type[j]) {
+        if (!ifExists(jobPosts[i].id)) {
+            if (search.type.length !== 0) {
+
+                for (let j = 0; j < search.type.length; j++) {
+
+                    if (jobPosts[i].type === search.type[j]) {
+
+                        if (getPostValidity(jobPosts[i].createdAt) && search.time!=='All' ) {
+                            selectedJobTypes.push(jobPosts[i]);
+                        }else {
+                            selectedJobTypes.push(jobPosts[i]);
+                        }
+
+                    }
+
+                }
+
+            }else {
+                if (getPostValidity(jobPosts[i].createdAt) && search.time!=='All' ) {
+                    selectedJobTypes.push(jobPosts[i]);
+                }else {
                     selectedJobTypes.push(jobPosts[i]);
                 }
             }
@@ -102,6 +119,8 @@ function bindCards(list) {
 function updateSearchTime(time) {
     search.time = time;
     console.log(search);
+
+    loadCards()
 
 }
 
@@ -137,7 +156,7 @@ function ifExists(filter) {
 
 function jobCard(post) {
 
-    let card=`<div class="col-10 bg-body-tertiary p-3 w-100 rounded-2" style="height: max-content" jobOB='${JSON.stringify(post)}'>
+    let card = `<div class="col-10 bg-body-tertiary p-3 w-100 rounded-2" style="height: max-content" jobOB='${JSON.stringify(post)}'>
 
                             <div class="row p-0 m-0">
 
@@ -148,7 +167,7 @@ function jobCard(post) {
 
                                 <div class="col-10 p-0">
                                     <div class="row p-0 m-0">
-                                        <h5 class="col-10 h5 fw-bold mb-0">Software Engineering</h5>
+                                        <h5 class="col-10 h5 fw-bold mb-0">${post.title}</h5>
                                         <div class="col-1 p-0"></div>
                                         <div class="col-1 p-0 d-flex justify-content-end">
                                             <button class="btn-fav bi bi-bookmark p-0 noOutline bg-body-tertiary text-success"
@@ -200,4 +219,39 @@ function jobCard(post) {
                         </div>`
 
     $('#job-card-container').append(card);
+}
+
+function getPostValidity(createdAt) {
+    const now = new Date();
+    const createdDate = new Date(createdAt);
+
+    const timeDifference = now - createdDate;
+
+    const seconds = Math.floor(timeDifference / 1000);
+    const minutes = Math.floor(seconds / 60);
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+    const weeks = Math.floor(days / 7);
+    const months = Math.floor(days / 30);
+
+    console.log('This was created at '+days+'D- '+hours%24+'H')
+
+    const isValid =
+        (search.time === 'All' )||
+        (search.time === 'Day' && days <= 1) ||
+        (search.time === 'Week'&&  days <= 7) ||
+        (search.time === 'Month' &&  days <= 30);
+
+    const posted = {
+        daysAgo: days,
+        hoursAgo: hours % 24,
+    };
+
+
+    console.log(isValid, posted)
+
+    return {
+        isValid,
+        posted,
+    };
 }
