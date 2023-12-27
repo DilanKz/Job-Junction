@@ -26,6 +26,8 @@ function postData() {
         type:$('#txtSelectType').val(),
         industry:$('#txtSelectIndustry').val(),
         totalPositions:'',
+        createdAt:'',
+        favoriteBy:[],
     }
 }
 
