@@ -22,5 +22,5 @@ public class EmployeeDTO {
     private String industry;
     private LocationDTO location;
     private byte[] profilePicture;
-
+    private List<String> favoriteBy;
 }
