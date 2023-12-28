@@ -12,9 +12,15 @@ function getAllPosts() {
         url: baseURL + 'job-posts',
         method: 'GET',
         success: function (response) {
-            console.log(response);
             jobPosts = response;
-            bindCards(response)
+
+
+            for (let i = 0; i < jobPosts.length; i++) {
+                jobPosts[i].createdAt=getPostValidity(jobPosts[i].createdAt).posted;
+            }
+
+            console.log(jobPosts);
+            bindCards(jobPosts);
         },
         error: function (e) {
             toastShower('1', 'bg-danger', 'text-light', 'Try again');
@@ -63,7 +69,6 @@ function addSwitches(filter, isChecked) {
 
 
     if (search.type.length === 0) {
-        console.log('here')
         selectedJobTypes = jobPosts;
     } else {
         selectedJobTypes = [];
@@ -75,6 +80,8 @@ function addSwitches(filter, isChecked) {
 function loadCards() {
     for (let i = 0; i < jobPosts.length; i++) {
 
+        let postValidity = getPostValidity(jobPosts[i].createdAt);
+
         if (!ifExists(jobPosts[i].id)) {
             if (search.type.length !== 0) {
 
@@ -82,9 +89,8 @@ function loadCards() {
 
                     if (jobPosts[i].type === search.type[j]) {
 
-                        if (getPostValidity(jobPosts[i].createdAt) && search.time!=='All' ) {
-                            selectedJobTypes.push(jobPosts[i]);
-                        }else {
+
+                        if (postValidity.isValid) {
                             selectedJobTypes.push(jobPosts[i]);
                         }
 
@@ -93,7 +99,7 @@ function loadCards() {
                 }
 
             }else {
-                if (getPostValidity(jobPosts[i].createdAt) && search.time!=='All' ) {
+                if (postValidity.isValid) {
                     selectedJobTypes.push(jobPosts[i]);
                 }else {
                     selectedJobTypes.push(jobPosts[i]);
@@ -156,6 +162,14 @@ function ifExists(filter) {
 
 function jobCard(post) {
 
+    let time;
+
+    if (post.createdAt.daysAgo>0){
+        time=post.createdAt.daysAgo+' D '+post.createdAt.hoursAgo+' H'
+    }else {
+        time=post.createdAt.hoursAgo+' H'
+    }
+
     let card = `<div class="col-10 bg-body-tertiary p-3 w-100 rounded-2" style="height: max-content" jobOB='${JSON.stringify(post)}'>
 
                             <div class="row p-0 m-0">
@@ -184,7 +198,7 @@ function jobCard(post) {
 
                                         <div class="col-3" style="font-size: 15px">
                                             <i class="bi bi-clock pe-2"></i>
-                                            3 Days
+                                            ${time}
                                         </div>
 
                                         <div class="col-3" style="font-size: 15px">
@@ -231,10 +245,6 @@ function getPostValidity(createdAt) {
     const minutes = Math.floor(seconds / 60);
     const hours = Math.floor(minutes / 60);
     const days = Math.floor(hours / 24);
-    const weeks = Math.floor(days / 7);
-    const months = Math.floor(days / 30);
-
-    console.log('This was created at '+days+'D- '+hours%24+'H')
 
     const isValid =
         (search.time === 'All' )||
@@ -246,9 +256,6 @@ function getPostValidity(createdAt) {
         daysAgo: days,
         hoursAgo: hours % 24,
     };
-
-
-    console.log(isValid, posted)
 
     return {
         isValid,
