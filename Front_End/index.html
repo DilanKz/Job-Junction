@@ -3,30 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Job-Junction</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
           rel="stylesheet">
 
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link href="assets/css/normalize.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link href="assets/css/main.css" rel="stylesheet">
 
 </head>
 <body>
 
 
-<main id="login-frame" class="d-none position-fixed " style="z-index: 2000">
-    <section id="login-back-ground" class="position-absolute top-0 start-0 vh-100 vw-100 bg-blur-1"></section>
-    <section id="login" class=" vh-100 vw-100">
+<main class="d-none position-fixed " id="login-frame" style="z-index: 2000">
+    <section class="position-absolute top-0 start-0 vh-100 vw-100 bg-blur-1" id="login-back-ground"></section>
+    <section class=" vh-100 vw-100" id="login">
         <section class="vh-100">
             <div class="container py-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
@@ -34,8 +34,8 @@
                         <div class="card" style="border-radius: 1rem;">
                             <div class="row g-0">
                                 <div class="col-md-6 col-lg-5 d-none d-md-block">
-                                    <img src="assets/images/bg2.jpg"
-                                         alt="login form" class="img-fluid h-100"
+                                    <img alt="login form"
+                                         class="img-fluid h-100" src="assets/images/bg2.jpg"
                                          style="border-radius: 1rem 0 0 1rem;"/>
                                 </div>
                                 <div class="col-md-6 col-lg-7 d-flex align-items-center">
@@ -52,31 +52,31 @@
                                                 account</h5>
 
                                             <div class="form-outline mb-4">
-                                                <input type="email" id="txtUN"
-                                                       class="form-control form-control-lg"/>
+                                                <input class="form-control form-control-lg" id="txtUN"
+                                                       type="email"/>
                                                 <label class="form-label" for="txtUN">Username</label>
                                             </div>
 
                                             <div class="form-outline mb-4">
-                                                <input type="password" id="txtPW"
-                                                       class="form-control form-control-lg"/>
+                                                <input class="form-control form-control-lg" id="txtPW"
+                                                       type="password"/>
                                                 <label class="form-label" for="txtPW">Password</label>
                                             </div>
 
                                             <div class="pt-1 mb-4">
-                                                <button id="btnLogin" class="btn btn-dark btn-lg btn-block"
+                                                <button class="btn btn-dark btn-lg btn-block" id="btnLogin"
                                                         type="button">Login
                                                 </button>
                                             </div>
 
-                                            <a class="small text-muted" href="#!">Forgot password?</a>
+                                            <a id="btnForgotPass" class="small text-muted" href="#!">Forgot password?</a>
                                             <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account?
-                                                <a id="btn-register-second" href="#!" style="color: #393f81;">Register
+                                                <a href="#!" id="btn-register-second" style="color: #393f81;">Register
                                                     here</a>
                                             </p>
 
-                                            <a href="#!" class="small text-muted">Terms of use.</a>
-                                            <a href="#!" class="small text-muted">Privacy policy</a>
+                                            <a class="small text-muted" href="#!">Terms of use.</a>
+                                            <a class="small text-muted" href="#!">Privacy policy</a>
                                         </form>
 
                                     </div>
@@ -88,26 +88,26 @@
             </div>
         </section>
     </section>
-    <section id="register" class="d-none vh-100 vw-100">
+    <section class="d-none vh-100 vw-100" id="register">
         <div class="container h-100 d-flex justify-content-center" style="transform: scale(0.9);">
             <div class="row d-flex h-100">
                 <div class="col-12 p-0 rounded-4" style="height: 100%;overflow: hidden">
                     <div class="card" style="border-radius: 15px; overflow: hidden">
                         <div class="card-body p-0">
-                            <form id="registerFormData" class="row g-0">
+                            <form class="row g-0" id="registerFormData">
                                 <div class="col-lg-6">
                                     <div class="p-5">
                                         <h3 class="fw-normal mb-5" style="color: #222831;">General Information</h3>
 
                                         <div class="mb-4 pb-2">
                                             <div class="form-outline form-white">
-                                                <input type="radio" class="btn-check" name="options-outlined"
-                                                       id="success-outlined" autocomplete="off" checked>
+                                                <input autocomplete="off" checked class="btn-check"
+                                                       id="success-outlined" name="options-outlined" type="radio">
                                                 <label class="btn btn-outline-success"
                                                        for="success-outlined">Employee</label>
 
-                                                <input type="radio" class="btn-check" name="options-outlined"
-                                                       id="danger-outlined" autocomplete="off">
+                                                <input autocomplete="off" class="btn-check" id="danger-outlined"
+                                                       name="options-outlined" type="radio">
                                                 <label class="btn btn-outline-success"
                                                        for="danger-outlined">Company</label>
                                                 <label class="form-label d-block pt-1">Account Type</label>
@@ -116,16 +116,17 @@
 
                                         <div class="mb-4 pb-2">
                                             <div class="form-outline">
-                                                <input name="name" type="text" id="txtName"
-                                                       class="form-control form-control-lg"/>
+                                                <input class="form-control form-control-lg" id="txtName" name="name"
+                                                       type="text"/>
                                                 <label class="form-label" for="txtName">Name</label>
                                             </div>
                                         </div>
 
                                         <div class="mb-4 pb-2">
-                                            <select id="txtIndustry" class="form-select h-100 p-3 rounded-2 col-8"
-                                                    aria-label="Default select example">
-                                                <option value="1" selected disabled></option>
+                                            <select aria-label="Default select example"
+                                                    class="form-select h-100 p-3 rounded-2 col-8"
+                                                    id="txtIndustry">
+                                                <option disabled selected value="1"></option>
                                                 <option value="IT Industry">IT Industry</option>
                                                 <option value="Health & Care Industry">Health & Care Industry</option>
                                                 <option value="Engineering Industry">Engineering Industry</option>
@@ -136,8 +137,8 @@
                                         </div>
 
                                         <div class="form-outline">
-                                            <input name="contact" type="text" id="txtTp"
-                                                   class="form-control form-control-lg"/>
+                                            <input class="form-control form-control-lg" id="txtTp" name="contact"
+                                                   type="text"/>
                                             <label class="form-label" for="txtTp">Contact</label>
                                         </div>
                                         <div class="row position-relative">
@@ -153,24 +154,25 @@
 
                                         <div class="mb-4 pb-2">
                                             <div class="form-outline form-white">
-                                                <input name="username" type="text" id="txtUsername"
-                                                       class="form-control form-control-lg"/>
+                                                <input class="form-control form-control-lg" id="txtUsername"
+                                                       name="username"
+                                                       type="text"/>
                                                 <label class="form-label" for="txtUsername">UserName</label>
                                             </div>
                                         </div>
 
                                         <div class="mb-4 pb-2">
                                             <div class="form-outline form-white">
-                                                <input name="email" type="text" id="txtEmail"
-                                                       class="form-control form-control-lg"/>
+                                                <input class="form-control form-control-lg" id="txtEmail" name="email"
+                                                       type="text"/>
                                                 <label class="form-label" for="txtEmail">Email</label>
                                             </div>
                                         </div>
 
                                         <div class="mb-4 pb-2">
                                             <div class="form-outline form-white">
-                                                <input type="text" id="txtCode"
-                                                       class="form-control form-control-lg"/>
+                                                <input class="form-control form-control-lg" id="txtCode"
+                                                       type="text"/>
                                                 <label class="form-label" for="txtCode">Validation Code</label>
                                             </div>
                                         </div>
@@ -179,8 +181,8 @@
                                             <div class="col-md-6 mb-4 pb-2">
 
                                                 <div class="form-outline form-white">
-                                                    <input type="password" id="txtPass"
-                                                           class="form-control form-control-lg"/>
+                                                    <input class="form-control form-control-lg" id="txtPass"
+                                                           type="password"/>
                                                     <label class="form-label" for="txtPass">Password</label>
                                                 </div>
 
@@ -188,8 +190,8 @@
                                             <div class="col-md-6 mb-4 pb-2">
 
                                                 <div class="form-outline form-white">
-                                                    <input type="password" id="txtConfirmPass"
-                                                           class="form-control form-control-lg"/>
+                                                    <input class="form-control form-control-lg" id="txtConfirmPass"
+                                                           type="password"/>
                                                     <label class="form-label" for="txtConfirmPass">Confirm
                                                         Password</label>
                                                 </div>
@@ -197,12 +199,13 @@
                                             </div>
                                         </div>
 
-                                        <button id="btnCustomerReg" type="button" class="btn btn-light btn-lg"
-                                                data-mdb-ripple-color="dark">Register
+                                        <button class="btn btn-light btn-lg" data-mdb-ripple-color="dark"
+                                                id="btnCustomerReg"
+                                                type="button">Register
                                         </button>
 
                                         <p class="mb-3 mt-5 pb-lg-2" style="color: #DBE2EF;">Already have an account?
-                                            <a id="btn-login-second" href="#!" style="color: #DBE2EF;">Sign in from
+                                            <a href="#!" id="btn-login-second" style="color: #DBE2EF;">Sign in from
                                                 here</a>
                                         </p>
 
@@ -215,16 +218,61 @@
             </div>
         </div>
     </section>
+    <section id="forgotPassword" class="d-none bg-blur-1 top-0 vh-100 vw-100 position-fixed d-flex justify-content-center align-items-center"
+         style="z-index: 2200">
+        <div class="bg-white col-5 box-shadow-3 rounded-4">
+            <div class="tab-content">
+                <form class="row p-0 m-0">
+
+                    <div class="col-12 bg-success p-2 text-light text-center position-relative rounded-top-4">
+                        <p class="pt-3">Enter your username, and you will get an otp code to your email address of your account</p>
+                        <button id="btnForgotPassClose" type="button" class="btn position-absolute bottom-100 p-0 m-0 start-100 fs-1">
+                            <i class="bi bi-x text-secondary"></i>
+                        </button>
+                    </div>
+
+                    <div class="col-12 p-5">
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="form-outline mb-4 col-10">
+                                <input class="form-control" id="loginName" placeholder="Username" type="text"/>
+                                <label class="form-label" for="loginName"></label>
+                            </div>
+                        </div>
+
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="form-outline mb-4 col-10">
+                                <input class="form-control" id="loginPOTP" placeholder="OTP" type="text"/>
+                                <label class="form-label" for="loginPOTP"></label>
+                            </div>
+                        </div>
+
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="form-outline mb-4 col-10">
+                                <input class="form-control" id="loginPassword" placeholder="New password" type="password"/>
+                                <label class="form-label" for="loginPassword"></label>
+                            </div>
+                        </div>
+
+                        <div class="col-12 d-flex justify-content-center">
+                            <button class="btn btn-success btn-block col-6" type="submit">Change password</button>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
 
 </main>
 
-<nav id="navbar" class="w-100 overflow-hidden navbar navbar-expand-lg bg-body-tertiary fixed-top box-shadow">
-    <div id="navbar-content" class="container-fluid">
+<nav class="w-100 overflow-hidden navbar navbar-expand-lg bg-body-tertiary fixed-top box-shadow" id="navbar">
+    <div class="container-fluid" id="navbar-content">
         <a class="navbar-brand pe-5 ps-4" href="#">Job-Junction</a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler"
+                data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -232,20 +280,20 @@
              id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
-                    <a class="nav-link active" aria-current="page" href="#" onclick="showHome()">Home</a>
+                    <a aria-current="page" class="nav-link active" href="#" onclick="showHome()">Home</a>
                 </li>
                 <li class="nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
-                    <a class="nav-link" aria-current="page" href="#" onclick="showJobs()">Find a job</a>
+                    <a aria-current="page" class="nav-link" href="#" onclick="showJobs()">Find a job</a>
                 </li>
-                <li id="link-DB" class="d-none nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
-                    <a class="nav-link" aria-current="page" href="#" onclick="showDashboard()">Dashboard</a>
+                <li class="d-none nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0" id="link-DB">
+                    <a aria-current="page" class="nav-link" href="#" onclick="showDashboard()">Dashboard</a>
                 </li>
-                <li id="link-Pro" class="d-none nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
-                    <a class="nav-link" aria-current="page" href="#" onclick="showDashboard()">Dashboard</a>
+                <li class="d-none nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0" id="link-Pro">
+                    <a aria-current="page" class="nav-link" href="#" onclick="showDashboard()">Dashboard</a>
                 </li>
             </ul>
 
-            <button id="btn-login-main" class="btn btn-sm btn-outline-success me-3">
+            <button class="btn btn-sm btn-outline-success me-3" id="btn-login-main">
                 Sign In
                 <i class="bi bi-person-fill ps-2"></i>
             </button>
@@ -254,20 +302,20 @@
     </div>
 </nav>
 
-<main id="home-page" class="">
+<main class="" id="home-page">
 
-    <main id="home-frame"
-          class="p-0 w-100 vh-100 overflow-hidden position-relative container-fluid d-flex justify-content-center"
+    <main class="p-0 w-100 vh-100 overflow-hidden position-relative container-fluid d-flex justify-content-center"
+          id="home-frame"
           style="">
 
         <div class="position-relative p-0
      col-xxl-10 col-xl-10 col-lg-10 col-md-10 col-sm-12 col-12
       row d-flex justify-content-center" style="height: 65%">
 
-            <img src="assets/images/bg.jpg" alt="" class="w-100 h-100 position-absolute p-0 glass">
+            <img alt="" class="w-100 h-100 position-absolute p-0 glass" src="assets/images/bg.jpg">
 
             <div class="p-0 m-0 row d-flex align-items-center z-2 justify-content-center">
-                <h1 id="main-text" class="text-white text-center" style="user-select: none">
+                <h1 class="text-white text-center" id="main-text" style="user-select: none">
                     Navigate Your Career Path
                     <br>
                     with Confidence
@@ -275,8 +323,8 @@
             </div>
 
 
-            <div id="search-box" style="bottom: -5%"
-                 class="col-8 position-absolute bg-white box-shadow rounded-1 z-2">
+            <div class="col-8 position-absolute bg-white box-shadow rounded-1 z-2" id="search-box"
+                 style="bottom: -5%">
                 <div class="row pb-3 pt-3">
 
                     <div class="col-4 ms-2">
@@ -285,10 +333,10 @@
                                   style="--bs-btn-disabled-opacity: 1; border: 0">
                                 <i class="bi bi-search"></i>
                             </span>
-                            <input type="text" class="form-control form-control-lg noOutline ms-2"
-                                   placeholder="Search for Job"
-                                   aria-label="Username" aria-describedby="basic-addon1"
-                                   style="--bs-border-width:0;">
+                            <input aria-describedby="basic-addon1" aria-label="Username"
+                                   class="form-control form-control-lg noOutline ms-2"
+                                   placeholder="Search for Job" style="--bs-border-width:0;"
+                                   type="text">
                         </div>
                     </div>
 
@@ -298,15 +346,15 @@
                                   style="--bs-btn-disabled-opacity: 1; border: 0">
                                 <i class="bi bi-geo-alt"></i>
                             </span>
-                            <input type="text" class="form-control form-control-lg noOutline ms-2"
-                                   placeholder="City"
-                                   aria-label="Username" aria-describedby="basic-addon1"
-                                   style="--bs-border-width:0;">
+                            <input aria-describedby="basic-addon1" aria-label="Username"
+                                   class="form-control form-control-lg noOutline ms-2"
+                                   placeholder="City" style="--bs-border-width:0;"
+                                   type="text">
                         </div>
                     </div>
 
                     <div class="col-1 ms-5">
-                        <button type="button" class="btn btn-lg btn-outline-success">Search</button>
+                        <button class="btn btn-lg btn-outline-success" type="button">Search</button>
                     </div>
 
                 </div>
@@ -316,8 +364,8 @@
 
     </main>
 
-    <main id="popular-frame"
-          class="p-0 w-100 min-vh-100 overflow-hidden position-relative container-fluid ">
+    <main class="p-0 w-100 min-vh-100 overflow-hidden position-relative container-fluid "
+          id="popular-frame">
         <h3 class="h3 mt-5 b-5 text-center">Popular Job Categories</h3>
         <p class="text-center fs-6 pb-4">Trending Searches - Explore Hot Job Opportunities Now!</p>
 
@@ -495,8 +543,8 @@
         </div>
     </main>
 
-    <main id="about-frame"
-          class="p-0 w-100 min-vh-100 overflow-hidden position-relative container-fluid ">
+    <main class="p-0 w-100 min-vh-100 overflow-hidden position-relative container-fluid "
+          id="about-frame">
 
         <h3 class="h3 mt-5 b-5 text-center">Our Mission</h3>
         <p class="text-center fs-6 pb-5">Empowering Careers, Connecting Aspirations</p>
@@ -509,7 +557,7 @@
                     <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-10 col-sm-10 col-10 overflow-hidden p-0
                 ms-xxl-0 ms-xl-0 ms-lg-0 ms-md-5 ms-sm-5 ms-4">
 
-                        <img src="assets/images/bg2.jpg" alt="" class="rounded-3 w-100 h-100 z-2 p-0">
+                        <img alt="" class="rounded-3 w-100 h-100 z-2 p-0" src="assets/images/bg2.jpg">
                     </div>
 
                     <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-10 col-sm-10 col-10 text-start
@@ -525,12 +573,12 @@
                             reviews for over 600,000 global companies. Your next career move begins here.
                         </p>
 
-                        <button type="button" class="btn btn-secondary mt-4">
+                        <button class="btn btn-secondary mt-4" type="button">
                             <i class="bi bi-person pe-2"></i> Seek Jobs
                         </button>
 
-                        <button type="button"
-                                class="btn btn-success ms-xxl-4 ms-xl-4 ms-lg-1 ms-md-1 ms-sm-1 ms-1 mt-4">
+                        <button class="btn btn-success ms-xxl-4 ms-xl-4 ms-lg-1 ms-md-1 ms-sm-1 ms-1 mt-4"
+                                type="button">
                             <i class="bi bi-briefcase pe-3"></i> Post Jobs
                         </button>
 
@@ -573,8 +621,8 @@
 
 </main>
 
-<main id="jobs-frame"
-      class="min-vh-100 w-100 overflow-hidden mt-5">
+<main class="min-vh-100 w-100 overflow-hidden mt-5"
+      id="jobs-frame">
 
     <h3 class="h3 mt-5 b-5 text-center">Find Jobs</h3>
     <p class="text-center fs-6 pb-5">Empowering Careers, Connecting Aspirations</p>
@@ -584,7 +632,8 @@
 
             <div class="row p-0 gap-5">
 
-                <div id="job-filter-menu" class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8 col-10 pt-5 rounded-4 d-xxl-block job-filter-hidden"
+                <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-8 col-10 pt-5 rounded-4 d-xxl-block job-filter-hidden"
+                     id="job-filter-menu"
                      style="height: max-content; background-color: #eeeeee">
 
                     <h6 class="h6 ms-3 fs-6 fw-bold">Select Industry</h6>
@@ -594,9 +643,9 @@
                                   style="--bs-btn-disabled-opacity: 1; border: 0">
                             <i class="bi bi-briefcase"></i>
                         </span>
-                            <select class="noOutline h-100 w-75 p-2 rounded-2 col-8"
-                                    aria-label="Default select example" id="txtFilterIndustry">
-                                <option selected disabled>Open this select menu</option>
+                            <select aria-label="Default select example"
+                                    class="noOutline h-100 w-75 p-2 rounded-2 col-8" id="txtFilterIndustry">
+                                <option disabled selected>Open this select menu</option>
                                 <option value="IT Industry">IT Industry</option>
                                 <option value="Health & Care Industry">Health & Care Industry</option>
                                 <option value="Engineering Industry">Engineering Industry</option>
@@ -613,30 +662,30 @@
                                   style="--bs-btn-disabled-opacity: 1; border: 0">
                                 <i class="bi bi-search"></i>
                             </span>
-                            <input type="text" class="form-control form-control-sm noOutline ms-2"
-                                   placeholder="Search Location" id="txtFilterPlace"
-                                   aria-label="Username" aria-describedby="basic-addon1"
-                                   style="--bs-border-width:0;">
+                            <input aria-describedby="basic-addon1" aria-label="Username"
+                                   class="form-control form-control-sm noOutline ms-2" id="txtFilterPlace"
+                                   placeholder="Search Location" style="--bs-border-width:0;"
+                                   type="text">
                         </div>
                     </div>
 
                     <h6 class="h6 ms-3 fs-6 fw-bold">Job type</h6>
                     <div class="col-11 ms-3 mb-4 p-2 rounded-2">
                         <div class="form-check form-switch mt-3 mb-2">
-                            <input class="form-check-input" type="checkbox" role="switch"
-                                   id="txtFilterFullTime">
+                            <input class="form-check-input" id="txtFilterFullTime" role="switch"
+                                   type="checkbox">
                             <label class="form-check-label" for="txtFilterFullTime">Full time</label>
                         </div>
 
                         <div class="form-check form-switch mb-2">
-                            <input class="form-check-input" type="checkbox" role="switch"
-                                   id="txtFilterPartTime">
+                            <input class="form-check-input" id="txtFilterPartTime" role="switch"
+                                   type="checkbox">
                             <label class="form-check-label" for="txtFilterFullTime">Part time</label>
                         </div>
 
                         <div class="form-check form-switch mb-2">
-                            <input class="form-check-input" type="checkbox" role="switch"
-                                   id="txtFilterIntern">
+                            <input class="form-check-input" id="txtFilterIntern" role="switch"
+                                   type="checkbox">
                             <label class="form-check-label" for="txtFilterIntern">Intern</label>
                         </div>
 
@@ -645,29 +694,29 @@
                     <h6 class="h6 ms-3 fs-6 fw-bold">Posted</h6>
                     <div class="col-11 ms-3 mb-4 p-2 rounded-2">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                   id="txtFilterAll" checked>
+                            <input checked class="form-check-input" id="txtFilterAll"
+                                   name="flexRadioDefault" type="radio">
                             <label class="form-check-label" for="txtFilterAll">
                                 All
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                   id="txtFilterDay">
+                            <input class="form-check-input" id="txtFilterDay" name="flexRadioDefault"
+                                   type="radio">
                             <label class="form-check-label" for="txtFilterDay">
                                 Day
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                   id="txtFilterWeek">
+                            <input class="form-check-input" id="txtFilterWeek" name="flexRadioDefault"
+                                   type="radio">
                             <label class="form-check-label" for="txtFilterWeek">
                                 Week
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                   id="txtFilterMonth">
+                            <input class="form-check-input" id="txtFilterMonth" name="flexRadioDefault"
+                                   type="radio">
                             <label class="form-check-label" for="txtFilterMonth">
                                 Month
                             </label>
@@ -683,18 +732,20 @@
                             <h5 class="h5 fw-bold w-auto col-4">
                                 Found 10 Jobs
                                 <span class="ps-2">
-                                    <button id="btnRefreshFilter" class="rotate fs-6 bi bi-arrow-clockwise p-0 noOutline bg-body-tertiary text-success"
+                                    <button class="rotate fs-6 bi bi-arrow-clockwise p-0 noOutline bg-body-tertiary text-success"
+                                            id="btnRefreshFilter"
                                             style="background-color: #ffffff"></button>
                                 </span>
                             </h5>
                         </div>
 
                         <span class="col-1 d-flex justify-content-end align-items-center">
-                                <i id="toggleButton" class="btn bi bi-funnel"></i>
+                                <i class="btn bi bi-funnel" id="toggleButton"></i>
                             </span>
                     </div>
 
-                    <div id="job-card-container" class="card-scale row p-0 m-0 w-100 pt-3 gap-3 overflow-y-scroll no-scroll"
+                    <div class="card-scale row p-0 m-0 w-100 pt-3 gap-3 overflow-y-scroll no-scroll"
+                         id="job-card-container"
                          style="height: max-content;max-height: 100vh;">
 
 
@@ -709,32 +760,32 @@
 
 </main>
 
-<main id="employer-home-frame" class="d-none vh-100 vw-100 overflow-x-hidden d-flex overflow-y-scroll no-scroll">
+<main class="d-none vh-100 vw-100 overflow-x-hidden d-flex overflow-y-scroll no-scroll" id="employer-home-frame">
 
     <!--Dashboard Menu-->
     <div class="d-flex flex-column flex-shrink-0 p-3 box-shadow" style="width: 280px;">
-        <a href="#"
-           class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+           href="#">
             <span class="fs-4">Employer Dashboard</span>
         </a>
         <hr>
-        <ul id="sidebar-menu" class="nav nav-pills flex-column mb-auto">
+        <ul class="nav nav-pills flex-column mb-auto" id="sidebar-menu">
             <li class="nav-item">
-                <a href="#" class="nav-link active" aria-current="page" onclick="showDB()">
+                <a aria-current="page" class="nav-link active" href="#" onclick="showDB()">
                     <i class="bi bi-speedometer me-2"></i>
 
                     Dashboard
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link link-body-emphasis" onclick="showPosts()">
+                <a class="nav-link link-body-emphasis" href="#" onclick="showPosts()">
                     <i class="bi bi-file-earmark-text me-2"></i>
 
                     Manage Posts
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link link-body-emphasis" onclick="showProfile()">
+                <a class="nav-link link-body-emphasis" href="#" onclick="showProfile()">
                     <i class="bi bi-person me-2"></i>
 
                     Manage Profile
@@ -743,9 +794,10 @@
         </ul>
         <hr>
         <div class="dropdown">
-            <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
-               data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+            <a aria-expanded="false"
+               class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
+               data-bs-toggle="dropdown" href="#">
+                <img alt="" class="rounded-circle me-2" height="32" src="https://github.com/mdo.png" width="32">
                 <strong>Name</strong>
             </a>
             <ul class="dropdown-menu text-small shadow" style="">
@@ -761,7 +813,7 @@
     </div>
 
     <!--Dashboard Frame-->
-    <main id="dashboard-frame" class="vh-100 vw-100 bg-body-tertiary">
+    <main class="vh-100 vw-100 bg-body-tertiary" id="dashboard-frame">
 
         <h3 class="ms-2 mt-3 pb-1 border-bottom border-black mb-4 fw-bold text-primary" style="width: max-content">
             Dashboard</h3>
@@ -847,7 +899,7 @@
 
     </main>
     <!--Post Frame-->
-    <main id="post-frame" class="vh-100 bg-body-tertiary vw-100 overflow-hidden">
+    <main class="vh-100 bg-body-tertiary vw-100 overflow-hidden" id="post-frame">
         <h3 class="ms-2 mt-3 pb-1 border-bottom border-danger mb-4 fw-bold text-danger" style="width: max-content">
             Posts</h3>
 
@@ -856,20 +908,20 @@
 
                 <ul class="nav nav-tabs" id="post-tab-pane">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Active</a>
+                        <a aria-current="page" class="nav-link active" href="#">Active</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Requests</a>
+                        <a aria-disabled="true" class="nav-link disabled">Requests</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">N/A</a>
+                        <a aria-disabled="true" class="nav-link disabled">N/A</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">N/A</a>
+                        <a aria-disabled="true" class="nav-link disabled">N/A</a>
                     </li>
                 </ul>
 
-                <section class="w-100 h-100 bg-white overflow-y-scroll no-scroll d-flex justify-content-center">
+                <section class="w-100 h-100 bg-white d-flex justify-content-center">
 
                     <div class="col-11 p-0 ">
 
@@ -886,16 +938,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="add-post-accordion" class="row p-0 d-none">
+                            <div class="row p-0 d-none" id="add-post-accordion">
                                 <div class="col-md-8">
-                                    <label for="txtJobTitle" class="form-label">Job title</label>
-                                    <input type="text" class="form-control" id="txtJobTitle" required>
+                                    <label class="form-label" for="txtJobTitle">Job title</label>
+                                    <input class="form-control" id="txtJobTitle" required type="text">
                                 </div>
 
                                 <div class="col-md-3">
-                                    <label for="txtSelectType" class="form-label">Type</label>
+                                    <label class="form-label" for="txtSelectType">Type</label>
                                     <select class="form-select" id="txtSelectType" required>
-                                        <option selected disabled value="1">Choose...</option>
+                                        <option disabled selected value="1">Choose...</option>
                                         <option value="Full time">Full time</option>
                                         <option value="Part time">Part time</option>
                                         <option value="Intern">Intern</option>
@@ -903,14 +955,14 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label for="txtSalary" class="form-label">Salary Per Year</label>
-                                    <input type="text" class="form-control" id="txtSalary" required>
+                                    <label class="form-label" for="txtSalary">Salary Per Year</label>
+                                    <input class="form-control" id="txtSalary" required type="text">
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label for="txtSelectIndustry" class="form-label">Industry</label>
+                                    <label class="form-label" for="txtSelectIndustry">Industry</label>
                                     <select class="form-select" id="txtSelectIndustry" required>
-                                        <option selected disabled value="1">Choose...</option>
+                                        <option disabled selected value="1">Choose...</option>
                                         <option value="IT Industry">IT Industry</option>
                                         <option value="Health & Care Industry">Health & Care Industry</option>
                                         <option value="Engineering Industry">Engineering Industry</option>
@@ -920,26 +972,29 @@
                                 </div>
 
                                 <div class="col-md-12 py-2">
-                                    <label for="txtJobDescription" class="form-label col-12">
+                                    <label class="form-label col-12" for="txtJobDescription">
                                         Job description
-                                        <textarea id="txtJobDescription" class="form-control"></textarea>
+                                        <textarea class="form-control" id="txtJobDescription"></textarea>
                                     </label>
                                 </div>
 
                                 <div class="col-12">
-                                    <button id="btnAddPost" class="btn btn-success btn-sm mt-2 me-2" type="button">
+                                    <button class="btn btn-success btn-sm mt-2 me-2" id="btnAddPost" type="button">
                                         Add Post
                                         <i class="bi bi-file-earmark-plus ms-2"></i>
                                     </button>
-                                    <button id="btnUpdatePost" class="d-none btn btn-warning btn-sm mt-2 me-2" type="button">
+                                    <button class="d-none btn btn-warning btn-sm mt-2 me-2" id="btnUpdatePost"
+                                            type="button">
                                         Update Post
                                         <i class="bi bi-file-earmark-arrow-up ms-2"></i>
                                     </button>
-                                    <button id="btnDeletePost" class="d-none btn btn-danger btn-sm mt-2 me-2" type="button">
+                                    <button class="d-none btn btn-danger btn-sm mt-2 me-2" id="btnDeletePost"
+                                            type="button">
                                         Delete Post
                                         <i class="bi bi-file-earmark-minus ms-2"></i>
                                     </button>
-                                    <button id="btnRefreshPost" class="d-none btn btn-secondary btn-sm mt-2 me-2" type="button">
+                                    <button class="d-none btn btn-secondary btn-sm mt-2 me-2" id="btnRefreshPost"
+                                            type="button">
                                         Clear
                                         <i class="bi bi-file-earmark-minus ms-2"></i>
                                     </button>
@@ -981,13 +1036,73 @@
 
     </main>
     <!--Profile Frame-->
-    <main id="profile-frame" class="vh-100 bg-success vw-100">
+    <main class="vh-100 vw-100" id="profile-frame">
+
+        <h3 class="ms-2 mt-3 pb-1 border-bottom border-black mb-4 fw-bold text-primary" style="width: max-content">
+            Profile</h3>
+
+        <h4 class="ms-2 mt-3 pb-1 mb-4 fw-bold text-primary" style="width: max-content">
+            Edit your account profile</h4>
+
+        <div class="row w-100 p-0 m-0">
+
+            <div class="col-6 p-3 m-0">
+                <h4 class="h4 fw-light mb-2">Public details</h4>
+                <div class="row p-0">
+
+                    <div class="row m-0 p-0">
+                        <span class="pb-2">Add your Profile image</span>
+                        <div class="col-md-8 align-items-end d-flex">
+                            <label class="form-label p-5 text-center m-0 border border-black border-2"
+                                   for="txtPfpCompany"
+                                   id="lblPfpCompany">
+
+                            </label>
+                            <input accept="image/*" class="form-control d-none" id="txtPfpCompany" required type="file">
+                        </div>
+
+                        <div class="col-4 align-items-end d-flex">
+                            <button class="btn btn-success" id="btnSavePfp" style="height: max-content" type="button">
+                                Save
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row p-0 m-0">
+                        <span class="pt-5">Add your Location</span>
+                        <div class="col-8 align-items-end d-flex">
+                            <div class="input-group h-auto">
+                                <label class="input-group-text" id="lblLocation"><i
+                                        class="bi bi-geo-alt ms-2"></i></label>
+                                <input aria-describedby="lblLocation" class="form-control" disabled
+                                       placeholder="Mark Location" type="text">
+                            </div>
+                        </div>
+
+                        <div class="col-4 align-items-end d-flex mt-3">
+                            <button class="btn btn-success" id="btnCompLocation" style="height: max-content"
+                                    type="button">
+                                Save
+
+                            </button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-6 bg-warning p-3 m-0">
+                <h4 class="h4 fw-light ">Account details</h4>
+            </div>
+
+        </div>
 
     </main>
 
 </main>
 
-<footer id="footer" class="mt-5">
+<footer class="mt-5" id="footer">
     <main id="contact-frame" style="box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;">
         <div class="container">
             <div class="py-5">
@@ -995,17 +1110,17 @@
                     <div class="col-6 col-md-2 mb-3">
                         <h5 class="text-dark">Section</h5>
                         <ul class="nav flex-column">
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" href="#">Home</a>
                             </li>
-                            <li class="nav-item mb-2"><a href="#"
-                                                         class="nav-link p-0 text-body-secondary">Features</a>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary"
+                                                         href="#">Features</a>
                             </li>
-                            <li class="nav-item mb-2"><a href="#"
-                                                         class="nav-link p-0 text-body-secondary">Pricing</a>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary"
+                                                         href="#">Pricing</a>
                             </li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" href="#">FAQs</a>
                             </li>
-                            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a>
+                            <li class="nav-item mb-2"><a class="nav-link p-0 text-body-secondary" href="#">About</a>
                             </li>
                         </ul>
                     </div>
@@ -1015,9 +1130,9 @@
                             <h5 class="text-dark">Need to know anything</h5>
                             <p class="text-dark">Just enter your email.</p>
                             <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                                <label for="newsletter1" class="visually-hidden">Email address</label>
-                                <input id="newsletter1" type="text" class="form-control"
-                                       placeholder="Email address">
+                                <label class="visually-hidden" for="newsletter1">Email address</label>
+                                <input class="form-control" id="newsletter1" placeholder="Email address"
+                                       type="text">
                                 <button class="btn btn-success" type="button">Subscribe</button>
                             </div>
                         </form>
@@ -1044,10 +1159,10 @@
 
 <main class="position-relative col-10 d-none" style="height: 90vw">
 
-    <section id="map-frame" class="w-100 overflow-hidden vh-100 container-fluid bg-warning">
+    <section class="w-100 overflow-hidden vh-100 container-fluid bg-warning" id="map-frame">
 
     </section>
-    <button id="current-location" class="btn btn-sm btn-success p-2 position-absolute top-0 end-0 m-2">Current
+    <button class="btn btn-sm btn-success p-2 position-absolute top-0 end-0 m-2" id="current-location">Current
         location
     </button>
 
@@ -1056,22 +1171,22 @@
 
 <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 2500">
 
-    <div id="1" class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="z-index: 2500">
+    <div aria-atomic="true" aria-live="assertive" class="toast" id="1" role="alert" style="z-index: 2500">
         <div class="toast-header">
             <strong class="me-auto">Job-Junction</strong>
             <small>now</small>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            <button aria-label="Close" class="btn-close" data-bs-dismiss="toast" type="button"></button>
         </div>
         <div class="toast-body 1">
             Hello, world! This is a toast message.
         </div>
     </div>
 
-    <div id="2" class="toast" role="alert" aria-live="assertive" aria-atomic="true" style="z-index: 2500">
+    <div aria-atomic="true" aria-live="assertive" class="toast" id="2" role="alert" style="z-index: 2500">
         <div class="toast-header">
             <strong class="me-auto">Job-Junction</strong>
             <small>now</small>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            <button aria-label="Close" class="btn-close" data-bs-dismiss="toast" type="button"></button>
         </div>
         <div class="toast-body 2">
         </div>
@@ -1108,6 +1223,7 @@
 <script src="controllers/loginController.js"></script>
 <script src="controllers/companyPostController.js"></script>
 <script src="controllers/employeePostController.js"></script>
+<script src="controllers/companyPfController.js"></script>
 
 
 <script>
@@ -1259,11 +1375,11 @@
         });
     });
 
-    $(document).ready(function() {
-        $('#btnRefreshFilter').click(function() {
+    $(document).ready(function () {
+        $('#btnRefreshFilter').click(function () {
             $(this).addClass('rotate');
 
-            setTimeout(function() {
+            setTimeout(function () {
                 $('#btnRefreshFilter').removeClass('rotate');
             }, 1000);
         });
@@ -1292,6 +1408,14 @@
 
     });
 
+    $('#btnForgotPass').click(function () {
+        $('#forgotPassword').removeClass('d-none');
+    });
+
+    $('#btnForgotPassClose').click(function () {
+        $('#forgotPassword').addClass('d-none');
+    });
+
     $('#btn-login-second').click(function () {
         $('#login').toggleClass('d-none');
         $('#register').toggleClass('d-none');
@@ -1299,7 +1423,7 @@
 
     $(document).ready(function () {
         $('.btn-fav').click(function () {
-            console.log('fav')
+            console.log('fav');
             $(this).toggleClass('bi-bookmark-fill');
             $(this).toggleClass('bi-bookmark');
         });
