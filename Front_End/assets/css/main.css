@@ -114,6 +114,10 @@ body {
     transform: rotate(360deg);
 }
 
+#lblPfpCompany {
+    background-size: cover; /* Image will cover the entire background */
+    background-repeat: no-repeat; /* Image will not repeat */
+}
 
 @media (min-width:993px){
     #toggleButton{
