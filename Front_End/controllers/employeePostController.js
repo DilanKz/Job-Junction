@@ -12,15 +12,15 @@ function getAllPosts() {
         url: baseURL + 'job-posts',
         method: 'GET',
         success: function (response) {
-            jobPosts = response;
 
-
-            for (let i = 0; i < jobPosts.length; i++) {
-                jobPosts[i].createdAt=getPostValidity(jobPosts[i].createdAt).posted;
+            for (let i = 0; i < response.length; i++) {
+                response[i].timed = getPostValidity(response[i].createdAt).posted;
             }
 
-            console.log(jobPosts);
-            bindCards(jobPosts);
+            jobPosts = response;
+
+            console.log(response);
+            bindCards(response);
         },
         error: function (e) {
             toastShower('1', 'bg-danger', 'text-light', 'Try again');
@@ -72,9 +72,10 @@ function addSwitches(filter, isChecked) {
         selectedJobTypes = jobPosts;
     } else {
         selectedJobTypes = [];
+        loadCards();
     }
 
-    loadCards()
+    bindCards(selectedJobTypes);
 }
 
 function loadCards() {
@@ -83,35 +84,31 @@ function loadCards() {
         let postValidity = getPostValidity(jobPosts[i].createdAt);
 
         if (!ifExists(jobPosts[i].id)) {
-            if (search.type.length !== 0) {
 
-                for (let j = 0; j < search.type.length; j++) {
+            if (postValidity.isValid) {
 
-                    if (jobPosts[i].type === search.type[j]) {
+                if (search.type.length !== 0) {
 
+                    for (let j = 0; j < search.type.length; j++) {
 
-                        if (postValidity.isValid) {
+                        if (jobPosts[i].type === search.type[j]) {
+
                             selectedJobTypes.push(jobPosts[i]);
+
                         }
 
                     }
 
-                }
-
-            }else {
-                if (postValidity.isValid) {
-                    selectedJobTypes.push(jobPosts[i]);
                 }else {
                     selectedJobTypes.push(jobPosts[i]);
                 }
+
             }
         }
 
     }
 
     console.log(selectedJobTypes);
-
-    bindCards(selectedJobTypes);
 }
 
 
@@ -126,8 +123,9 @@ function updateSearchTime(time) {
     search.time = time;
     console.log(search);
 
+    selectedJobTypes=[];
     loadCards()
-
+    bindCards(selectedJobTypes);
 }
 
 $('input[name="flexRadioDefault"]').change(function () {
@@ -164,10 +162,10 @@ function jobCard(post) {
 
     let time;
 
-    if (post.createdAt.daysAgo>0){
-        time=post.createdAt.daysAgo+' D '+post.createdAt.hoursAgo+' H'
-    }else {
-        time=post.createdAt.hoursAgo+' H'
+    if (post.timed.daysAgo > 0) {
+        time = post.timed.daysAgo + ' d-' + post.timed.hoursAgo + ' h'
+    } else {
+        time = post.timed.hoursAgo + ' h'
     }
 
     let card = `<div class="col-10 bg-body-tertiary p-3 w-100 rounded-2" style="height: max-content" jobOB='${JSON.stringify(post)}'>
@@ -247,15 +245,18 @@ function getPostValidity(createdAt) {
     const days = Math.floor(hours / 24);
 
     const isValid =
-        (search.time === 'All' )||
-        (search.time === 'Day' && days <= 1) ||
-        (search.time === 'Week'&&  days <= 7) ||
-        (search.time === 'Month' &&  days <= 30);
+        (search.time === 'All') ||
+        (search.time === 'Day' && days < 1) ||
+        (search.time === 'Week' && days < 7) ||
+        (search.time === 'Month' && days < 30);
 
     const posted = {
         daysAgo: days,
         hoursAgo: hours % 24,
     };
+
+    console.log(isValid +' : '+createdAt);
+    console.log(createdAt);
 
     return {
         isValid,
