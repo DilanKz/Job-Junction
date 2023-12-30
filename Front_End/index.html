@@ -285,7 +285,7 @@
                 <li class="nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
                     <a aria-current="page" class="nav-link" href="#" onclick="showJobs()">Find a job</a>
                 </li>
-                <li class="d-none nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0" id="link-DB">
+                <li class=" nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0" id="link-DB">
                     <a aria-current="page" class="nav-link" href="#" onclick="showDashboard()">Dashboard</a>
                 </li>
                 <li class="d-none nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0" id="link-Pro">
@@ -1070,12 +1070,13 @@
 
                     <div class="row p-0 m-0">
                         <span class="pt-5">Add your Location</span>
-                        <div class="col-8 align-items-end d-flex">
+                        <div class="col-8 align-items-end d-flex" id="map-button">
                             <div class="input-group h-auto">
-                                <label class="input-group-text" id="lblLocation"><i
-                                        class="bi bi-geo-alt ms-2"></i></label>
-                                <input aria-describedby="lblLocation" class="form-control" disabled
-                                       placeholder="Mark Location" type="text">
+                                <label class="input-group-text" id="lblLocation">
+                                    <i class="bi bi-geo-alt ms-2"></i>
+                                </label>
+                                <input id="txtAddress" aria-describedby="lblLocation" class="form-control" disabled
+                                       placeholder="Mark Location" type="text" style="z-index: -1;">
                             </div>
                         </div>
 
@@ -1083,7 +1084,6 @@
                             <button class="btn btn-success" id="btnCompLocation" style="height: max-content"
                                     type="button">
                                 Save
-
                             </button>
                         </div>
 
@@ -1157,15 +1157,21 @@
 </footer>
 
 
-<main class="position-relative col-10 d-none" style="height: 90vw">
-
-    <section class="w-100 overflow-hidden vh-100 container-fluid bg-warning" id="map-frame">
+<main id="g-map-frame" class="vh-100 vw-100 position-fixed top-0 start-0 d-none justify-content-center align-items-center" style="z-index: 2000">
+    <section id="g-map-bg" class="bg-blur-1 vw-100 vh-100 position-absolute top-0 start-0" style="background-color: rgba(26,29,32,0.24)">
 
     </section>
-    <button class="btn btn-sm btn-success p-2 position-absolute top-0 end-0 m-2" id="current-location">Current
-        location
-    </button>
 
+    <section class="position-relative box-shadow-2" style="height: 60vh;width: 60vw">
+
+        <section class="w-100 h-100 overflow-hidden container-fluid bg-warning" id="map-frame">
+
+        </section>
+        <button class="btn btn-sm btn-success p-2 position-absolute top-0 end-0 m-2" id="current-location">Current
+            location
+        </button>
+
+    </section>
 </main>
 
 
@@ -1216,6 +1222,14 @@
         const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
         toastBootstrap.show();
     }
+
+    let userLocation={
+        cord:{
+            lat:'',
+            lang:''
+        },
+        address:null
+    };
 </script>
 
 <script src="forms/loginForm.js"></script>
@@ -1240,7 +1254,7 @@
             rotateControl: true
         });
 
-        if (navigator.permissions) {
+        /*if (navigator.permissions) {
             navigator.permissions.query({name: 'geolocation'}).then(function (permissionStatus) {
                 if (permissionStatus.state === 'granted') {
                     // User has granted permission, proceed to get location
@@ -1256,7 +1270,7 @@
         } else {
             // Browser doesn't support Geolocation
             handleLocationError(false, map.getCenter());
-        }
+        }*/
 
         map.setOptions({draggableCursor: 'default'});
 
@@ -1265,7 +1279,8 @@
             const clickedLat = event.latLng.lat();
             const clickedLng = event.latLng.lng();
 
-            console.log(`Latitude: ${clickedLat}, Longitude: ${clickedLng}`);
+            userLocation.cord.lat=clickedLat;
+            userLocation.cord.lang=clickedLng;
 
             addMarker(event.latLng);
 
@@ -1273,9 +1288,23 @@
             geocoder.geocode({location: event.latLng}, (results, status) => {
                 if (status === "OK") {
                     if (results[0]) {
-                        const address = results[0].formatted_address;
+                        /*const address = results[0].formatted_address;
                         console.log(`Address: ${address}`);
-                        // Do something with the address if needed
+                        console.log(`Address: ${results[0].address_components}`);
+                        userLocation.address=address;*/
+
+                        const addressComponents = results[0].address_components;
+
+                        for (let i = 0; i < addressComponents.length; i++) {
+                            const types = addressComponents[i].types;
+
+                            if (types.includes("locality") || types.includes("administrative_area_level_2")) {
+                                userLocation.address=addressComponents[i].long_name;
+                                break;
+                            }
+                        }
+
+
                     } else {
                         console.error("No results found");
                     }
@@ -1297,8 +1326,7 @@
             const customIcon = {
                 url: 'assets/images/user-pin.png',
                 scaledSize: new google.maps.Size(50, 50),
-                origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(15, 30)
+                origin: new google.maps.Point(0, 0)
             };
 
             const marker = new google.maps.Marker({
@@ -1360,6 +1388,7 @@
 
     window.initMap = initMap;
 </script>
+
 <script async
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZNZQO6dL8olaDj8R6qNYv7ZsywV1Dwk8&callback=initMap">
 </script>
@@ -1394,6 +1423,16 @@
         $('#login-frame').addClass('d-none');
         $('#register').addClass('d-none');
         $('#login').addClass('d-none');
+    });
+    $('#btnCompLocation').prop('disabled',true)
+
+    $('#g-map-bg').click(function () {
+        $('#g-map-frame').toggleClass('d-none');
+        $('#g-map-frame').toggleClass('d-flex');
+        $('#txtAddress').val(userLocation.address);
+        if (userLocation.address!==null){
+            $('#btnCompLocation').prop('disabled',false);
+        }
     });
 
     $('#btn-login-main').click(function () {
