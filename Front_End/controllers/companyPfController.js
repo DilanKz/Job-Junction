@@ -13,3 +13,12 @@ $(document).ready(function () {
         }
     });
 });
+
+$('#map-button').click(function () {
+    $('#g-map-frame').toggleClass('d-none');
+    $('#g-map-frame').toggleClass('d-flex');
+});
+
+$('#btnCompLocation').click(function () {
+    console.log(userLocation);
+});
