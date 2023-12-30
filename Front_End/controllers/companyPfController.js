@@ -21,4 +21,16 @@ $('#map-button').click(function () {
 
 $('#btnCompLocation').click(function () {
     console.log(userLocation);
+
+    let location={
+        city:userLocation.address,
+        coordinates:{
+            latitude:userLocation.cord.lat,
+            longitude:userLocation.cord.lang
+        }
+    }
+
+    userAccount.user.companyId.location=location;
+    userAccount.company.location=location;
+
 });
