@@ -42,7 +42,11 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public CompanyDTO saveCompany(CompanyDTO companyDTO) {
         Company company = modelMapper.map(companyDTO, Company.class);
-        company.setId(generateNextID());
+
+        if (company.getId().length()<2){
+            company.setId(generateNextID());
+        }
+
         company = repo.save(company);
         return modelMapper.map(company, CompanyDTO.class);
     }
