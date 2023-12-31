@@ -121,6 +121,12 @@ function loginIn(user,password) {
                         userAccount.company=response.company;
                         userAccount.employee="";
 
+                        $('#lblPfpCompany').css('background-image', 'url(' +byteArrayToImage(response.company.profilePicture)+ ')');
+                        $('#txtAddress').val(response.company.location.city);
+
+                        /*const newMarkerPosition = { lat: parseFloat(stringNumber), lng: parseFloat(stringNumber) };
+                        addMarker(newMarkerPosition);*/
+
                         $('#btn-login-main').toggleClass('d-none');
                         let button=`<button id="btn-profile" class="btn btn-sm btn-primary me-3">
                                     ${response.username}
@@ -134,6 +140,7 @@ function loginIn(user,password) {
                     }else if (response.type==='employees'){
                         userAccount.employee=response.employee;
                         userAccount.company="";
+
                         $('#link-Pro').removeClass('d-none');
                         $('#link-DB').addClass('d-none');
 
