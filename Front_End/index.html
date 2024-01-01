@@ -1245,13 +1245,13 @@
     let map;
 
     let previousMarker = null;
-    function addMarker(position) {
+    function addMarker(position,url) {
         if (previousMarker) {
             previousMarker.setMap(null);
         }
 
         const customIcon = {
-            url: 'assets/images/user-pin.png',
+            url: url,
             scaledSize: new google.maps.Size(50, 50),
             origin: new google.maps.Point(0, 0)
         };
@@ -1262,6 +1262,29 @@
             icon: customIcon
         });
         previousMarker = marker;
+    }
+
+
+    function addInfoWindow(position, imageUrl) {
+        const content = `<div style="text-align: center;">
+                        <div style="border: 2px solid green; border-radius: 50%; overflow: hidden; width: 50px; height: 50px;">
+                            <img src="${imageUrl}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+                        </div>
+                    </div>`;
+
+        const infoWindow = new google.maps.InfoWindow({
+            content: content,
+            pixelOffset: new google.maps.Size(0, -25), // Adjust the offset as needed
+            disableAutoPan: true, // Disable automatic panning to keep the InfoWindow in place
+        });
+
+        infoWindow.setPosition(position);
+        infoWindow.open(map);
+
+        google.maps.event.addListener(infoWindow, 'domready', function () {
+            const closeBtn = document.querySelector('.gm-style-iw-c > button');
+            closeBtn.style.display = 'none';
+        });
     }
 
     function initMap() {
@@ -1303,7 +1326,7 @@
             userLocation.cord.lat=clickedLat;
             userLocation.cord.lang=clickedLng;
 
-            addMarker(event.latLng);
+            addMarker(event.latLng,'assets/images/user-pin.png');
 
             const geocoder = new google.maps.Geocoder();
             geocoder.geocode({location: event.latLng}, (results, status) => {
@@ -1352,7 +1375,7 @@
                 map.setCenter(userLocation);
 
                 // Add a blue dot marker for the user's location
-                addMarker(userLocation);
+                addMarker(userLocation,'assets/images/user-pin.png');
 
                 const geocoder = new google.maps.Geocoder();
                 geocoder.geocode({location: userLocation}, (results, status) => {
