@@ -124,8 +124,11 @@ function loginIn(user,password) {
                         $('#lblPfpCompany').css('background-image', 'url(' +byteArrayToImage(response.company.profilePicture)+ ')');
                         $('#txtAddress').val(response.company.location.city);
 
-                        /*const newMarkerPosition = { lat: parseFloat(stringNumber), lng: parseFloat(stringNumber) };
-                        addMarker(newMarkerPosition);*/
+                        /*const newMarkerPosition = {
+                            lat: parseFloat(response.company.location.coordinates.latitude),
+                            lng: parseFloat(response.company.location.coordinates.longitude)
+                        };
+                        addInfoWindow(newMarkerPosition,byteArrayToImage(response.company.profilePicture));*/
 
                         $('#btn-login-main').toggleClass('d-none');
                         let button=`<button id="btn-profile" class="btn btn-sm btn-primary me-3">
