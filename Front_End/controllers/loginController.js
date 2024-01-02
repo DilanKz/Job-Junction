@@ -121,9 +121,6 @@ function loginIn(user,password) {
                         userAccount.company=response.company;
                         userAccount.employee="";
 
-                        $('#lblPfpCompany').css('background-image', 'url(' +byteArrayToImage(response.company.profilePicture)+ ')');
-                        $('#txtAddress').val(response.company.location.city);
-
                         /*const newMarkerPosition = {
                             lat: parseFloat(response.company.location.coordinates.latitude),
                             lng: parseFloat(response.company.location.coordinates.longitude)
@@ -139,6 +136,8 @@ function loginIn(user,password) {
 
                         $('#link-DB').removeClass('d-none');
                         $('#link-Pro').addClass('d-none');
+
+                        setDataToDashboard(userAccount.company.profilePicture,userAccount.company.name);
 
                     }else if (response.type==='employees'){
                         userAccount.employee=response.employee;
@@ -179,4 +178,12 @@ function loginIn(user,password) {
         }
     });
 
+}
+
+function setDataToDashboard() {
+    $('#imgPfp').prop('src',byteArrayToImage(userAccount.company.profilePicture))
+    $('#lblCompName').text(userAccount.company.name);
+
+    $('#lblPfpCompany').css('background-image', 'url(' +byteArrayToImage(userAccount.company.profilePicture)+ ')');
+    $('#txtAddress').val(userAccount.company.location.city);
 }
