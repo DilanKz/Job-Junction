@@ -69,7 +69,8 @@
                                                 </button>
                                             </div>
 
-                                            <a id="btnForgotPass" class="small text-muted" href="#!">Forgot password?</a>
+                                            <a class="small text-muted" href="#!" id="btnForgotPass">Forgot
+                                                password?</a>
                                             <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account?
                                                 <a href="#!" id="btn-register-second" style="color: #393f81;">Register
                                                     here</a>
@@ -218,15 +219,19 @@
             </div>
         </div>
     </section>
-    <section id="forgotPassword" class="d-none bg-blur-1 top-0 vh-100 vw-100 position-fixed d-flex justify-content-center align-items-center"
-         style="z-index: 2200">
+    <section
+            class="d-none bg-blur-1 top-0 vh-100 vw-100 position-fixed d-flex justify-content-center align-items-center"
+            id="forgotPassword"
+            style="z-index: 2200">
         <div class="bg-white col-5 box-shadow-3 rounded-4">
             <div class="tab-content">
                 <form class="row p-0 m-0">
 
                     <div class="col-12 bg-success p-2 text-light text-center position-relative rounded-top-4">
-                        <p class="pt-3">Enter your username, and you will get an otp code to your email address of your account</p>
-                        <button id="btnForgotPassClose" type="button" class="btn position-absolute bottom-100 p-0 m-0 start-100 fs-1">
+                        <p class="pt-3">Enter your username, and you will get an otp code to your email address of your
+                            account</p>
+                        <button class="btn position-absolute bottom-100 p-0 m-0 start-100 fs-1" id="btnForgotPassClose"
+                                type="button">
                             <i class="bi bi-x text-secondary"></i>
                         </button>
                     </div>
@@ -248,7 +253,8 @@
 
                         <div class="col-12 d-flex justify-content-center">
                             <div class="form-outline mb-4 col-10">
-                                <input class="form-control" id="loginPassword" placeholder="New password" type="password"/>
+                                <input class="form-control" id="loginPassword" placeholder="New password"
+                                       type="password"/>
                                 <label class="form-label" for="loginPassword"></label>
                             </div>
                         </div>
@@ -286,7 +292,7 @@
                     <a aria-current="page" class="nav-link" href="#" onclick="showJobs()">Find a job</a>
                 </li>
                 <li class="nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0" id="link-DB">
-                    <a aria-current="page" class="nav-link" href="#" >Companies</a>
+                    <a aria-current="page" class="nav-link" href="#">Companies</a>
                 </li>
             </ul>
 
@@ -295,7 +301,7 @@
                 <i class="bi bi-person-fill ps-2"></i>
             </button>
 
-            <button id="btn-profile" class="d-none btn btn-sm me-3">
+            <button class="d-none btn btn-sm me-3" id="btn-profile">
                 <i class="bi bi-person-fill ps-2"></i>
             </button>
 
@@ -798,16 +804,10 @@
             <a aria-expanded="false"
                class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
                data-bs-toggle="dropdown" href="#">
-                <img alt="" class="rounded-circle me-2" height="32" src="" width="32">
-                <strong>Name</strong>
+                <img id="imgPfp" alt="" class="rounded-circle me-2" height="32" src="" width="32">
+                <strong id="lblCompName"></strong>
             </a>
             <ul class="dropdown-menu text-small shadow" style="">
-                <li><a class="dropdown-item" href="#">New project...</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
                 <li><a class="dropdown-item" href="#">Sign out</a></li>
             </ul>
         </div>
@@ -1037,7 +1037,7 @@
 
     </main>
     <!--Profile Frame-->
-    <main class="vh-100 vw-100" id="profile-frame">
+    <main class="vh-100 vw-100 " id="profile-frame">
 
         <h3 class="ms-2 mt-3 pb-1 border-bottom border-black mb-4 fw-bold text-primary" style="width: max-content">
             Profile</h3>
@@ -1045,58 +1045,180 @@
         <h4 class="ms-2 mt-3 pb-1 mb-4 fw-bold text-primary" style="width: max-content">
             Edit your account profile</h4>
 
-        <div class="row w-100 p-0 m-0">
+        <div class="container">
+            <div class="row flex-lg-nowrap">
 
-            <div class="col-6 p-3 m-0">
-                <h4 class="h4 fw-light mb-2">Public details</h4>
-                <div class="row p-0">
+                <div class="col">
+                    <div class="row">
+                        <div class="col mb-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="e-profile">
+                                        <div class="row">
+                                            <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
 
-                    <div class="row m-0 p-0">
-                        <span class="pb-2">Add your Profile image</span>
-                        <div class="col-md-8 align-items-end d-flex">
-                            <label class="form-label p-5 text-center m-0 border border-black border-2"
-                                   for="txtPfpCompany"
-                                   id="lblPfpCompany">
+                                                <div class="col-12 col-sm-auto mb-3">
+                                                    <div class="row p-0 m-0">
+                                                        <div class="col-md-8 align-items-end d-flex p-0">
+                                                            <label class="form-label p-5 text-center m-0 border border-black border-2"
+                                                                   id="lblPfpCompany">
 
-                            </label>
-                            <input accept="image/*" class="form-control d-none" id="txtPfpCompany" required type="file">
-                        </div>
+                                                            </label>
+                                                            <input accept="image/*" class="form-control d-none"
+                                                                   id="txtPfpCompany" required type="file">
+                                                        </div>
 
-                        <div class="col-4 align-items-end d-flex">
-                            <button class="btn btn-success" id="btnSavePfp" style="height: max-content" type="button">
-                                Save
-                            </button>
-                        </div>
-                    </div>
+                                                        <div class="col-4 align-items-start p-0 d-flex flex-column gap-3">
+                                                            <label class="p-1 bi bi-pencil-square btn"
+                                                                   for="txtPfpCompany"
+                                                                   id="btnAddPfp"></label>
+                                                            <button class="btn btn-primary" id="btnSavePfp"
+                                                                    style="height: max-content" type="button">
+                                                                Save
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                    <div class="row p-0 m-0">
-                        <span class="pt-5">Add your Location</span>
-                        <div class="col-8 align-items-end d-flex" id="map-button">
-                            <div class="input-group h-auto">
-                                <label class="input-group-text" id="lblLocation">
-                                    <i class="bi bi-geo-alt ms-2"></i>
-                                </label>
-                                <input id="txtAddress" aria-describedby="lblLocation" class="form-control" disabled
-                                       placeholder="Mark Location" type="text" style="z-index: -1;">
+                                                <div class="text-center text-sm-left mb-2 mb-sm-0">
+                                                    <div class="row p-0 flex-row gap-3">
+                                                        <div class="col-12">
+                                                            <div class="form-group">
+                                                                <label class="text-start w-100">Full Name</label>
+                                                                <input class="form-control" name="name" placeholder=""
+                                                                       type="text">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="form-group">
+                                                                <label class="text-start w-100">Username</label>
+                                                                <input class="form-control" name="username"
+                                                                       placeholder=""
+                                                                       type="text">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mt-4 bg-transparent">
+                                <div class="card-body bg-transparent">
+                                    <form class="form" novalidate="">
+                                        <!--<div class="row">
+                                            <div class="col">
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Email</label>
+                                                            <input class="form-control" type="text" placeholder="user@example.com">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>-->
+                                        <div class="row">
+                                            <div class="col-12 col-sm-6 mb-3">
+                                                <div class="mb-2"><b>Change Password</b></div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Current Password</label>
+                                                            <input class="form-control" placeholder=""
+                                                                   type="password">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>New Password</label>
+                                                            <input class="form-control" placeholder=""
+                                                                   type="password">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="form-group">
+                                                            <label>Confirm <span
+                                                                    class="d-none d-xl-inline">Password</span></label>
+                                                            <input class="form-control" placeholder=""
+                                                                   type="password"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-sm-5 offset-sm-1 mb-3">
+                                                <div class="mb-2"><b>Add your Location</b></div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="custom-controls-stacked px-2">
+                                                            <div class="row p-0">
+                                                                <div class="p-0 w-100">
+                                                                    Your location
+                                                                </div>
+
+                                                                <div class="col-8 align-items-end d-flex"
+                                                                     id="map-button">
+                                                                    <div class="input-group h-auto">
+                                                                        <label class="input-group-text"
+                                                                               id="lblLocation">
+                                                                            <i class="bi bi-geo-alt ms-2"></i>
+                                                                        </label>
+                                                                        <input aria-describedby="lblLocation"
+                                                                               class="form-control"
+                                                                               disabled id="txtAddress"
+                                                                               placeholder="Mark Location"
+                                                                               style="z-index: -1;"
+                                                                               type="text">
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-4 align-items-end d-flex mt-3">
+                                                                    <button class="btn btn-primary"
+                                                                            id="btnCompLocation"
+                                                                            style="height: max-content"
+                                                                            type="button">
+                                                                        Save
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col d-flex justify-content-end">
+                                                <button class="btn btn-primary" type="submit">Save Changes
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                </div>
                             </div>
                         </div>
 
-                        <div class="col-4 align-items-end d-flex mt-3">
-                            <button class="btn btn-success" id="btnCompLocation" style="height: max-content"
-                                    type="button">
-                                Save
-                            </button>
-                        </div>
 
+                        <div class="col-12 col-md-3 mb-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="card-title font-weight-bold">Support</h6>
+                                    <p class="card-text">Get fast, free help from our friendly assistants.</p>
+                                    <button class="btn btn-primary" type="button">Contact Us</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
             </div>
-
-            <div class="col-6 bg-warning p-3 m-0">
-                <h4 class="h4 fw-light ">Account details</h4>
-            </div>
-
         </div>
 
     </main>
@@ -1158,8 +1280,11 @@
 </footer>
 
 
-<main id="g-map-frame" class="vh-100 vw-100 position-fixed top-0 start-0 d-none justify-content-center align-items-center" style="z-index: 2000">
-    <section id="g-map-bg" class="bg-blur-1 vw-100 vh-100 position-absolute top-0 start-0" style="background-color: rgba(26,29,32,0.24)">
+<main class="vh-100 vw-100 position-fixed top-0 start-0 d-none justify-content-center align-items-center"
+      id="g-map-frame"
+      style="z-index: 2000">
+    <section class="bg-blur-1 vw-100 vh-100 position-absolute top-0 start-0" id="g-map-bg"
+             style="background-color: rgba(26,29,32,0.24)">
 
     </section>
 
@@ -1224,12 +1349,12 @@
         toastBootstrap.show();
     }
 
-    let userLocation={
-        cord:{
-            lat:'',
-            lang:''
+    let userLocation = {
+        cord: {
+            lat: '',
+            lang: ''
         },
-        address:null
+        address: null
     };
 </script>
 <script src="assets/utils/utils.js"></script>
@@ -1245,7 +1370,8 @@
     let map;
 
     let previousMarker = null;
-    function addMarker(position,url) {
+
+    function addMarker(position, url) {
         if (previousMarker) {
             previousMarker.setMap(null);
         }
@@ -1298,24 +1424,6 @@
             rotateControl: true
         });
 
-        /*if (navigator.permissions) {
-            navigator.permissions.query({name: 'geolocation'}).then(function (permissionStatus) {
-                if (permissionStatus.state === 'granted') {
-                    // User has granted permission, proceed to get location
-                    getUserLocation(map);
-                } else {
-                    // User has not granted permission, handle accordingly
-                    handleLocationError(false, map.getCenter());
-                }
-            });
-        } else if (navigator.geolocation) {
-            // Browser supports geolocation, proceed to get location
-            getUserLocation(map);
-        } else {
-            // Browser doesn't support Geolocation
-            handleLocationError(false, map.getCenter());
-        }*/
-
         map.setOptions({draggableCursor: 'default'});
 
         map.addListener("click", (event) => {
@@ -1323,10 +1431,10 @@
             const clickedLat = event.latLng.lat();
             const clickedLng = event.latLng.lng();
 
-            userLocation.cord.lat=clickedLat;
-            userLocation.cord.lang=clickedLng;
+            userLocation.cord.lat = clickedLat;
+            userLocation.cord.lang = clickedLng;
 
-            addMarker(event.latLng,'assets/images/user-pin.png');
+            addMarker(event.latLng, 'assets/images/user-pin.png');
 
             const geocoder = new google.maps.Geocoder();
             geocoder.geocode({location: event.latLng}, (results, status) => {
@@ -1339,14 +1447,27 @@
 
                         const addressComponents = results[0].address_components;
 
+                        let district;
+                        let town;
+
                         for (let i = 0; i < addressComponents.length; i++) {
                             const types = addressComponents[i].types;
 
-                            if (types.includes("locality") || types.includes("administrative_area_level_2")) {
-                                userLocation.address=addressComponents[i].long_name;
-                                break;
+                            console.log(types+':'+ addressComponents[i].long_name);
+
+                            if (types.includes("administrative_area_level_2")) {
+                                district = addressComponents[i].long_name;
+                            }
+
+                            if (types.includes("locality")) {
+                                town = addressComponents[i].long_name;
                             }
                         }
+
+                        console.log(district+' , '+town);
+                        userLocation.address=district+' , '+town;
+
+                        $('#txtAddress').val(userLocation.address);
 
 
                     } else {
@@ -1375,7 +1496,7 @@
                 map.setCenter(userLocation);
 
                 // Add a blue dot marker for the user's location
-                addMarker(userLocation,'assets/images/user-pin.png');
+                addMarker(userLocation, 'assets/images/user-pin.png');
 
                 const geocoder = new google.maps.Geocoder();
                 geocoder.geocode({location: userLocation}, (results, status) => {
@@ -1418,9 +1539,10 @@
 <script>
 
     $(document).on('click', '#btn-profile', function () {
-        if (userAccount.user.type==='companies'){
+        if (userAccount.user.type === 'companies') {
             showDashboard()
-        } else if (userAccount.user.type==='employees'){
+            setDataToDashboard()
+        } else if (userAccount.user.type === 'employees') {
 
         }
     });
@@ -1448,21 +1570,21 @@
     $('#dashboard-frame').css('display', 'block');
     $('#post-frame').css('display', 'none');
     $('#profile-frame').css('display', 'none');
-    $('#employer-home-frame').addClass('d-none');
+    // $('#employer-home-frame').addClass('d-none');
 
     $('#login-back-ground').click(function () {
         $('#login-frame').addClass('d-none');
         $('#register').addClass('d-none');
         $('#login').addClass('d-none');
     });
-    $('#btnCompLocation').prop('disabled',true)
+    $('#btnCompLocation').prop('disabled', true)
 
     $('#g-map-bg').click(function () {
         $('#g-map-frame').toggleClass('d-none');
         $('#g-map-frame').toggleClass('d-flex');
         $('#txtAddress').val(userLocation.address);
-        if (userLocation.address!==null){
-            $('#btnCompLocation').prop('disabled',false);
+        if (userLocation.address !== null) {
+            $('#btnCompLocation').prop('disabled', false);
         }
     });
 
