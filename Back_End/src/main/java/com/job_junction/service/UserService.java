@@ -16,6 +16,8 @@ public interface UserService {
 
     UserDTO getUserByUsername(String username);
 
+    String resetPassword(String username);
+
     UserDTO saveUser(UserDTO userDTO);
 
     void deleteUser(String id);
