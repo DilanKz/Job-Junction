@@ -22,6 +22,7 @@ $('#map-button').click(function () {
 });
 
 
+
 $('#btnCompLocation').click(function () {
 
     let location={
@@ -31,12 +32,6 @@ $('#btnCompLocation').click(function () {
             longitude:userLocation.cord.lang
         }
     }
-
-    let requestData = {
-        dto: location,
-        id: userAccount.company.id,
-        uid: userAccount.user.id
-    };
 
     $.ajax({
         url: baseURL + 'companies/location?id='+userAccount.company.id+'&uid='+userAccount.user.id,
