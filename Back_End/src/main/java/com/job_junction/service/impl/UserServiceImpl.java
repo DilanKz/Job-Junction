@@ -78,6 +78,11 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    public void updateUserPass(String id, String password){
+        userRepository.updatePasswordById(id, password);
+    }
+
+    @Override
     public String generateNextID() {
         User user = userRepository.findTopByOrderByIdDesc();
 
@@ -98,8 +103,8 @@ public class UserServiceImpl implements UserService{
 
         return prefix + String.format("%04d", lastNumber);
     }
-
-    public static String generateOTP() {
+    @Override
+    public String generateOTP() {
         Random random = new Random();
         int otp = 100000 + random.nextInt(900000);
         return String.valueOf(otp);
