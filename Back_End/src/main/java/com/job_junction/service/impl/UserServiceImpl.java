@@ -8,10 +8,12 @@ import com.job_junction.dto.UserDTO;
 import com.job_junction.model.User;
 import com.job_junction.repo.UserRepo;
 import com.job_junction.service.UserService;
+import com.job_junction.utils.SendMail;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 @Service
@@ -21,6 +23,8 @@ public class UserServiceImpl implements UserService{
     UserRepo userRepository;
     @Autowired
     ModelMapper modelMapper;
+    @Autowired
+    SendMail mail;
 
     @Override
     public List<UserDTO> getAllUsers() {
@@ -40,6 +44,21 @@ public class UserServiceImpl implements UserService{
     public UserDTO getUserByUsername(String username) {
         User user = userRepository.findByUsername(username).orElse(null);
         return modelMapper.map(user, UserDTO.class);
+    }
+    @Override
+    public String resetPassword(String username) {
+        User user = userRepository.findByUsername(username).orElse(null);
+        String otp=generateOTP();
+
+        if (user!=null){
+            if (user.getType().equals("employees")){
+                mail.sendEmail(user.getEmployee().getEmail(),otp);
+            }else if (user.getType().equals("companies")){
+                mail.sendEmail(user.getCompany().getEmail(),otp);
+            }
+        }
+
+        return otp;
     }
 
     @Override
@@ -78,6 +97,12 @@ public class UserServiceImpl implements UserService{
         lastNumber++;
 
         return prefix + String.format("%04d", lastNumber);
+    }
+
+    public static String generateOTP() {
+        Random random = new Random();
+        int otp = 100000 + random.nextInt(900000);
+        return String.valueOf(otp);
     }
 }
 
