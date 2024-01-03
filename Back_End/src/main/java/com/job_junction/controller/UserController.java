@@ -39,5 +39,11 @@ public class UserController {
     public String reset(String user){
         return userService.resetPassword(user);
     }
+
+    @PutMapping("/changePass")
+    public String restPassword(String id,String password){
+        userService.updateUserPass(id, password);
+        return "updated";
+    }
 }
 
