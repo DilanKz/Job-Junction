@@ -22,7 +22,11 @@ public interface UserService {
 
     void deleteUser(String id);
 
+    void updateUserPass(String id, String password);
+
     String generateNextID();
 
     String generateNextId(User user);
+
+    String generateOTP();
 }
