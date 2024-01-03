@@ -34,5 +34,10 @@ public class UserController {
     public UserDTO loginUser(String user){
         return userService.getUserByUsername(user);
     }
+
+    @GetMapping("/reset")
+    public String reset(String user){
+        return userService.resetPassword(user);
+    }
 }
 
