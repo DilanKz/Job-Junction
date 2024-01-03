@@ -41,8 +41,8 @@ public class UserController {
     }
 
     @PutMapping("/changePass")
-    public String restPassword(String id,String password){
-        userService.updateUserPass(id, password);
+    public String restPassword(String user,String password){
+        userService.updateUserPass(user, password);
         return "updated";
     }
 }
