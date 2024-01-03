@@ -199,7 +199,7 @@ $("#txtLoginPOTP").click(function () {
             contentType: 'application/json',
             async: false,
             success: function (response) {
-
+                otp=response;
             },
             error: function (error) {
             }
@@ -214,10 +214,27 @@ $("#txtLoginName").click(function () {
 });
 
 $('#btnChangePass').click(function () {
-
-    if (validateField($("#txtLoginPassword").val(), passwordRegex)) {
+    let pass = $("#txtLoginPassword").val();
+    let username = $("#txtLoginName").val();
+    if (validateField(pass, passwordRegex)) {
         //user change pass
+        if ($("#txtLoginPOTP").val() === otp) {
 
+            $.ajax({
+                url: baseURL + 'users/changePass?user=' + username+'&password='+pass,
+                contentType: 'application/json',
+                async: false,
+                success: function (response) {
+                    otp=response;
+                },
+                error: function (error) {
+                }
+
+            });
+
+        }else {
+            toastShower('1', 'bg-danger', 'text-light', 'OTP mismatch');
+        }
 
     }
 
