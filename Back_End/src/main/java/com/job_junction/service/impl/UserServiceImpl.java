@@ -78,8 +78,10 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public void updateUserPass(String id, String password){
-        userRepository.updatePasswordById(id, password);
+    public void updateUserPass(String username, String password){
+        User user = userRepository.findByUsername(username).get();
+        user.setPassword(password);
+        userRepository.save(user);
     }
 
     @Override
