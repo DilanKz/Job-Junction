@@ -200,8 +200,10 @@ $("#txtLoginPOTP").click(function () {
             async: false,
             success: function (response) {
                 otp=response;
+                toastShower('1', 'bg-success', 'text-light', 'A OTP code is sent to your account email address');
             },
             error: function (error) {
+                toastShower('1', 'bg-danger', 'text-light', 'OTP mismatch');
             }
 
         });
@@ -223,9 +225,12 @@ $('#btnChangePass').click(function () {
             $.ajax({
                 url: baseURL + 'users/changePass?user=' + username+'&password='+pass,
                 contentType: 'application/json',
-                async: false,
+                method:"PUT",
                 success: function (response) {
-                    otp=response;
+                    $("#txtLoginPassword").val("");
+                    $("#txtLoginName").val("");
+                    $("#txtLoginPOTP").val("");
+                    $('#forgotPassword').addClass('d-none');
                 },
                 error: function (error) {
                 }
