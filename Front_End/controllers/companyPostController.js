@@ -11,8 +11,8 @@ addPost.click(function () {
 
     if (allFieldsValid) {
         if (userAccount.company.state === 'approved') {
-            savePost(postData());
             console.log(postData());
+            savePost(postData());
         }
     } else {
         toastShower('1', 'bg-danger', 'text-light', 'Invalid Data');
@@ -22,7 +22,7 @@ addPost.click(function () {
 function savePost(post) {
 
     $.ajax({
-        url: baseURL + 'job-posts/save',
+        url: baseURL + 'job-posts/save?id='+userAccount.company.id,
         data: JSON.stringify(post),
         method: 'POST',
         contentType: 'application/json',
