@@ -48,6 +48,15 @@ $('#g-map-bg').click(function () {
     }
 });
 
+$('#g-map-bg1').click(function () {
+    $('#g-map-frame1').toggleClass('d-none');
+    $('#g-map-frame1').toggleClass('d-flex');
+    $('#txtAddress').val(userLocation.address);
+    if (userLocation.address !== null) {
+        $('#btnCompLocation').prop('disabled', false);
+    }
+});
+
 $('#btn-login-main').click(function () {
     $('#login-frame').removeClass('d-none');
     $('#login').removeClass('d-none');
