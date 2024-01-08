@@ -36,8 +36,8 @@ public class JobPostController {
     }
 
     @PostMapping("/save")
-    public JobPostDTO saveJobPost(@RequestBody JobPostDTO jobPostDTO) {
-        return jobPostService.saveJobPost(jobPostDTO);
+    public JobPostDTO saveJobPost(@RequestBody JobPostDTO jobPostDTO ,String id) {
+        return jobPostService.saveJobPost(jobPostDTO,id);
     }
 
     @DeleteMapping("/{id}")
