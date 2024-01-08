@@ -291,7 +291,7 @@
                 <li class="nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0">
                     <a aria-current="page" class="nav-link" href="#" onclick="showJobs()">Find a job</a>
                 </li>
-                <li class="nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0" id="link-DB">
+                <li class="d-none nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0" id="link-Comp">
                     <a aria-current="page" class="nav-link" href="#">Companies</a>
                 </li>
             </ul>
@@ -767,7 +767,7 @@
 
 </main>
 
-<main class=" vh-100 vw-100 overflow-x-hidden d-flex overflow-y-scroll no-scroll" id="employer-home-frame">
+<main class="d-none vh-100 vw-100 overflow-x-hidden d-flex overflow-y-scroll no-scroll" id="employer-home-frame">
 
     <!--Dashboard Menu-->
     <div class="d-flex flex-column flex-shrink-0 p-3 box-shadow" style="width: 280px;">
@@ -1282,6 +1282,31 @@
     </section>
 </main>
 
+<main class="vh-100 vw-100 position-fixed top-0 start-0 d-none justify-content-center align-items-center"
+      id="g-map-frame1"
+      style="z-index: 2000">
+
+    <section class="bg-blur-1 vw-100 vh-100 position-absolute top-0 start-0" id="g-map-bg1"
+             style="background-color: rgba(26,29,32,0.24)">
+
+    </section>
+
+    <section class="position-relative box-shadow-2" style="height: 60vh;width: 60vw">
+
+        <section class="w-100 h-100 overflow-hidden container-fluid bg-warning" id="displayMap">
+
+        </section>
+
+    </section>
+</main>
+
+<main class="vh-100 vw-100">
+    <section class="w-100 h-100 bg-success d-flex justify-content-end flex-column ">
+
+        <div class="w-100 h-75 bg-white"></div>
+
+    </section>
+</main>
 
 <div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 2500">
 
@@ -1351,6 +1376,9 @@
 
 
 <script>
+
+    let displayMap;
+
     let previousMarker = null;
 
     function addMarker(position, url) {
@@ -1373,7 +1401,9 @@
     }
 
 
-    function addInfoWindow(position, imageUrl) {
+    function addInfoWindow(position, imageUrl,mapFrame) {
+
+        console.log('added');
 
         const content = `<div style="text-align: center;">
                         <div style="border: 2px solid green; border-radius: 50%; overflow: hidden; width: 50px; height: 50px;">
@@ -1381,24 +1411,47 @@
                         </div>
                     </div>`;
 
-        const infoWindow = new google.maps.InfoWindow({
+        let infoWindow = new google.maps.InfoWindow({
             content: content,
             pixelOffset: new google.maps.Size(0, -25), // Adjust the offset as needed
             disableAutoPan: true, // Disable automatic panning to keep the InfoWindow in place
         });
 
         infoWindow.setPosition(position);
-        infoWindow.open(map);
+        infoWindow.open(mapFrame);
+
+
 
         google.maps.event.addListener(infoWindow, 'domready', function () {
             const closeBtn = document.querySelector('.gm-style-iw-c > button');
             closeBtn.style.display = 'none';
+            $('.gm-ui-hover-effect').css('display','none');
         });
+
+        return infoWindow;
+
+        /*infoWindowsArray.forEach((infoWindow) => {
+            google.maps.event.addListener(infoWindow, 'domready', function () {
+                const closeBtn = document.querySelector('.gm-style-iw-c > button');
+                closeBtn.style.display = 'none';
+            });
+        });*/
+
     }
 
     function initMap() {
         map = new google.maps.Map(document.getElementById("map-frame"), {
             center: {lat: 6.0422, lng: 80.2204},
+            zoom: 14,
+            mapId: "db10ffe6d52d340b",
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true,
+            zoomControl: true,
+            rotateControl: true
+        });
+
+
+        displayMap=new google.maps.Map(document.getElementById("displayMap"), {
             zoom: 14,
             mapId: "db10ffe6d52d340b",
             mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -1515,6 +1568,7 @@
 
     window.initMap = initMap;
 </script>
+<script></script>
 <script async
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZNZQO6dL8olaDj8R6qNYv7ZsywV1Dwk8&callback=initMap">
 </script>
