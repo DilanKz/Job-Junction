@@ -26,7 +26,7 @@ function postData() {
         type:$('#txtSelectType').val(),
         industry:$('#txtSelectIndustry').val(),
         totalPositions:'',
-        createdAt:'',
+        createdAt:"2024-01-08T12:00:00Z",
         favoriteBy:[],
     }
 }
