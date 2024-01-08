@@ -16,7 +16,7 @@ public interface JobPostService {
 
     JobPostDTO getJobPostById(String id);
 
-    JobPostDTO saveJobPost(JobPostDTO jobPostDTO);
+    JobPostDTO saveJobPost(JobPostDTO jobPostDTO ,String id);
 
     void deleteJobPost(String id);
 
