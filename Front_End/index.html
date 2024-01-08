@@ -767,7 +767,7 @@
 
 </main>
 
-<main class="d-none vh-100 vw-100 overflow-x-hidden d-flex overflow-y-scroll no-scroll" id="employer-home-frame">
+<main class=" vh-100 vw-100 overflow-x-hidden d-flex overflow-y-scroll no-scroll" id="employer-home-frame">
 
     <!--Dashboard Menu-->
     <div class="d-flex flex-column flex-shrink-0 p-3 box-shadow" style="width: 280px;">
@@ -1057,7 +1057,7 @@
                                         <div class="row">
                                             <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
 
-                                                <div class="col-12 col-sm-auto mb-3">
+                                                <div class="col-6 col-sm-auto mb-3">
                                                     <div class="row p-0 m-0">
                                                         <div class="col-md-8 align-items-end d-flex p-0">
                                                             <label class="form-label p-5 text-center m-0 border border-black border-2"
@@ -1080,25 +1080,44 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="text-center text-sm-left mb-2 mb-sm-0">
-                                                    <div class="row p-0 flex-row gap-3">
-                                                        <div class="col-12">
-                                                            <div class="form-group">
-                                                                <label class="text-start w-100">Full Name</label>
-                                                                <input class="form-control" name="name" placeholder=""
-                                                                       type="text">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-12">
-                                                            <div class="form-group">
-                                                                <label class="text-start w-100">Username</label>
-                                                                <input class="form-control" name="username"
-                                                                       placeholder=""
-                                                                       type="text">
+                                                <div class="col-6">
+                                                    <div class="mb-2"><b>Add your Location</b></div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="custom-controls-stacked px-2">
+                                                                <div class="row p-0">
+                                                                    <div class="p-0 w-100">
+                                                                        Your location
+                                                                    </div>
+
+                                                                    <div class="col-8 align-items-end d-flex"
+                                                                         id="map-button">
+                                                                        <div class="input-group h-auto">
+                                                                            <label class="input-group-text"
+                                                                                   id="lblLocation">
+                                                                                <i class="bi bi-geo-alt ms-2"></i>
+                                                                            </label>
+                                                                            <input aria-describedby="lblLocation"
+                                                                                   class="form-control"
+                                                                                   disabled id="txtAddress"
+                                                                                   placeholder="Mark Location"
+                                                                                   style=""
+                                                                                   type="text">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="col-4 align-items-end d-flex mt-3">
+                                                                        <button class="w-100 btn btn-primary"
+                                                                                id="btnCompLocation"
+                                                                                style="height: max-content"
+                                                                                type="button">
+                                                                            Save
+                                                                        </button>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                 </div>
 
                                             </div>
@@ -1107,97 +1126,60 @@
                                     </div>
                                 </div>
                             </div>
+
+
                             <div class="card mt-4 bg-transparent">
                                 <div class="card-body bg-transparent">
                                     <form class="form" novalidate="">
-                                        <!--<div class="row">
-                                            <div class="col">
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="form-group">
-                                                            <label>Email</label>
-                                                            <input class="form-control" type="text" placeholder="user@example.com">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>-->
-                                        <div class="row">
-                                            <div class="col-12 col-sm-6 mb-3">
-                                                <div class="mb-2"><b>Change Password</b></div>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="form-group">
-                                                            <label>Current Password</label>
-                                                            <input class="form-control" placeholder=""
-                                                                   type="password">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="form-group">
-                                                            <label>New Password</label>
-                                                            <input class="form-control" placeholder=""
-                                                                   type="password">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="form-group">
-                                                            <label>Confirm <span
-                                                                    class="d-none d-xl-inline">Password</span></label>
-                                                            <input class="form-control" placeholder=""
-                                                                   type="password"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-12 col-sm-5 offset-sm-1 mb-3">
-                                                <div class="mb-2"><b>Add your Location</b></div>
-                                                <div class="row">
-                                                    <div class="col">
-                                                        <div class="custom-controls-stacked px-2">
-                                                            <div class="row p-0">
-                                                                <div class="p-0 w-100">
-                                                                    Your location
-                                                                </div>
 
-                                                                <div class="col-8 align-items-end d-flex"
-                                                                     id="map-button">
-                                                                    <div class="input-group h-auto">
-                                                                        <label class="input-group-text"
-                                                                               id="lblLocation">
-                                                                            <i class="bi bi-geo-alt ms-2"></i>
-                                                                        </label>
-                                                                        <input aria-describedby="lblLocation"
-                                                                               class="form-control"
-                                                                               disabled id="txtAddress"
-                                                                               placeholder="Mark Location"
-                                                                               style="z-index: -1;"
-                                                                               type="text">
-                                                                    </div>
-                                                                </div>
+                                        <div class="row ps-3 gap-5">
 
-                                                                <div class="col-4 align-items-end d-flex mt-3">
-                                                                    <button class="btn btn-primary"
-                                                                            id="btnCompLocation"
-                                                                            style="height: max-content"
-                                                                            type="button">
-                                                                        Save
-                                                                    </button>
-                                                                </div>
+
+
+                                            <div class=" col-12 col-sm-6 mb-3">
+                                                <div class="">
+                                                    <div class="row justify-content-between mb-3">
+                                                        <div class="mb-2 w-auto"><b>Change Password</b></div>
+                                                        <div class="mb-2 w-auto text-primary" style="cursor: pointer">Forgot Password</div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Current Password</label>
+                                                                <input class="form-control" placeholder=""
+                                                                       type="password">
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>New Password</label>
+                                                                <input class="form-control" placeholder=""
+                                                                       type="password">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <div class="form-group">
+                                                                <label>Confirm <span
+                                                                        class="d-none d-xl-inline">Password</span></label>
+                                                                <input class="form-control" placeholder=""
+                                                                       type="password"></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row mt-2">
+                                                        <div class="col d-flex justify-content-end">
+                                                            <button class="btn btn-primary" type="submit" disabled>Change Password
+                                                            </button>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col d-flex justify-content-end">
-                                                <button class="btn btn-primary" type="submit">Save Changes
-                                                </button>
-                                            </div>
+
                                         </div>
                                     </form>
 
@@ -1356,6 +1338,8 @@
         },
         address: null
     };
+
+    let map;
 </script>
 <script src="assets/utils/utils.js"></script>
 <script src="forms/loginForm.js"></script>
@@ -1367,8 +1351,6 @@
 
 
 <script>
-    let map;
-
     let previousMarker = null;
 
     function addMarker(position, url) {
@@ -1392,6 +1374,7 @@
 
 
     function addInfoWindow(position, imageUrl) {
+
         const content = `<div style="text-align: center;">
                         <div style="border: 2px solid green; border-radius: 50%; overflow: hidden; width: 50px; height: 50px;">
                             <img src="${imageUrl}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
