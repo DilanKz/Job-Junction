@@ -1303,7 +1303,7 @@
 <main class="vh-100 vw-100">
     <section class="w-100 h-100 bg-success d-flex justify-content-end flex-column ">
 
-        <div class="w-100 h-75 bg-white"></div>
+        <div id="allCompanies" class="w-100 h-75 bg-white"></div>
 
     </section>
 </main>
@@ -1378,6 +1378,7 @@
 <script>
 
     let displayMap;
+    let allMap;
 
     let previousMarker = null;
 
@@ -1453,6 +1454,16 @@
 
         displayMap=new google.maps.Map(document.getElementById("displayMap"), {
             zoom: 14,
+            mapId: "db10ffe6d52d340b",
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true,
+            zoomControl: true,
+            rotateControl: true
+        });
+
+        allMap=new google.maps.Map(document.getElementById("allCompanies"), {
+            center: {lat: 7.2906, lng: 80.6337},
+            zoom: 10,
             mapId: "db10ffe6d52d340b",
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             disableDefaultUI: true,
