@@ -139,8 +139,6 @@ function loginIn(user, password) {
                                 </button>`
                         $('#navbar-content').append(button);
 
-                        $('#link-DB').removeClass('d-none');
-                        $('#link-Pro').addClass('d-none');
 
                         setDataToDashboard(userAccount.company.profilePicture, userAccount.company.name);
 
@@ -149,7 +147,7 @@ function loginIn(user, password) {
                         userAccount.company = "";
 
                         $('#link-Pro').removeClass('d-none');
-                        $('#link-DB').addClass('d-none');
+                        $('#link-DB').removeClass('d-none');
 
                         $('#btn-login-main').toggleClass('d-none');
                         let button = `<button id="btn-profile" class="btn btn-sm btn-success me-3">
