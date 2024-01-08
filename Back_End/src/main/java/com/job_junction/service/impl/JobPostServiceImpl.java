@@ -6,6 +6,7 @@ package com.job_junction.service.impl;
  */
 import com.job_junction.dto.JobPostDTO;
 import com.job_junction.model.JobPost;
+import com.job_junction.repo.CompanyRepo;
 import com.job_junction.repo.JobPostRepo;
 import com.job_junction.service.JobPostService;
 import org.modelmapper.ModelMapper;
@@ -23,6 +24,9 @@ public class JobPostServiceImpl implements JobPostService {
 
     @Autowired
     JobPostRepo repo;
+
+    @Autowired
+    CompanyRepo companyRepo;
 
     @Autowired
     ModelMapper modelMapper;
@@ -50,13 +54,12 @@ public class JobPostServiceImpl implements JobPostService {
     }
 
     @Override
-    public JobPostDTO saveJobPost(JobPostDTO jobPostDTO) {
+    public JobPostDTO saveJobPost(JobPostDTO jobPostDTO,String id) {
         JobPost jobPost = modelMapper.map(jobPostDTO, JobPost.class);
+        jobPost.setCompanyId(companyRepo.findById(id).get());
 
         if (jobPost.getId().length()<2){
             jobPost.setId(generateNextID());
-        }
-        if (jobPost.getCreatedAt().toString().length()<2){
             jobPost.setCreatedAt(Instant.now());
         }
 
