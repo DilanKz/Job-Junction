@@ -99,7 +99,7 @@ function loadCards() {
 
                     }
 
-                }else {
+                } else {
                     selectedJobTypes.push(jobPosts[i]);
                 }
 
@@ -123,7 +123,7 @@ function updateSearchTime(time) {
     search.time = time;
     console.log(search);
 
-    selectedJobTypes=[];
+    selectedJobTypes = [];
     loadCards()
     bindCards(selectedJobTypes);
 }
@@ -191,7 +191,7 @@ function jobCard(post) {
                                         <div class="col-3"
                                              style="font-size: 15px ;cursor: pointer;user-select: none">
                                             <i class="bi bi-building pe-2"></i>
-                                            <span class="company fw-bold">${post.companyId.name}</span>
+                                            <span class="company comp-name fw-bold" jobOB='${JSON.stringify(post)}' > ${post.companyId.name}</span>
                                         </div>
 
                                         <div class="col-3" style="font-size: 15px">
@@ -255,7 +255,7 @@ function getPostValidity(createdAt) {
         hoursAgo: hours % 24,
     };
 
-    console.log(isValid +' : '+createdAt);
+    console.log(isValid + ' : ' + createdAt);
     console.log(createdAt);
 
     return {
@@ -263,3 +263,23 @@ function getPostValidity(createdAt) {
         posted,
     };
 }
+
+$(document).ready(function () {
+    $('.comp-name').click(function () {
+        let prop = JSON.parse($(this).attr('jobOB'));
+
+        console.log(prop);
+
+        const newMarkerPosition = {
+            lat: parseFloat(prop.companyId.location.coordinates.latitude),
+            lng: parseFloat(prop.companyId.location.coordinates.longitude)
+        }
+
+        displayMap.setCenter(newMarkerPosition);
+
+        $('#g-map-frame1').toggleClass('d-none');
+        $('#g-map-frame1').toggleClass('d-flex');
+
+        addInfoWindow(newMarkerPosition, byteArrayToImage(prop.companyId.profilePicture), displayMap);
+    });
+})
