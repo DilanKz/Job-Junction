@@ -118,11 +118,19 @@ function loginIn(user, password) {
                         userAccount.company = response.company;
                         userAccount.employee = "";
 
-                        /*const newMarkerPosition = {
+                        const newMarkerPosition = {
                             lat: parseFloat(response.company.location.coordinates.latitude),
                             lng: parseFloat(response.company.location.coordinates.longitude)
                         };
-                        addInfoWindow(newMarkerPosition,byteArrayToImage(response.company.profilePicture));*/
+                        /*addInfoWindow(newMarkerPosition,byteArrayToImage(response.company.profilePicture));*/
+
+                        userLocation.cord=newMarkerPosition;
+
+                        if (userLocation.cord.lat > 0 || userLocation.cord.lat < 0) {
+                            map.setCenter(newMarkerPosition);
+                        }
+
+                        addMarker(newMarkerPosition,'assets/images/user-pin.png')
 
                         $('#btn-login-main').toggleClass('d-none');
                         let button = `<button id="btn-profile" class="btn btn-sm btn-primary me-3">
@@ -183,6 +191,8 @@ function setDataToDashboard() {
 
     $('#lblPfpCompany').css('background-image', 'url(' + byteArrayToImage(userAccount.company.profilePicture) + ')');
     $('#txtAddress').val(userAccount.company.location.city);
+    $('#txtCompFullName').val(userAccount.company.name);
+    $('#txtCompUsername').val(userAccount.user.username);
 }
 
 /*Change password*/
