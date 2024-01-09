@@ -40,6 +40,11 @@ public class UserController {
         return userService.resetPassword(user);
     }
 
+    @GetMapping("/otp")
+    public String getOTP(String email){
+        return userService.sendOTP(email);
+    }
+
     @PutMapping("/changePass")
     public String restPassword(String user,String password){
         userService.updateUserPass(user, password);
