@@ -11,6 +11,7 @@ import com.job_junction.service.UserService;
 import com.job_junction.utils.SendMail;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Random;
@@ -25,6 +26,9 @@ public class UserServiceImpl implements UserService{
     ModelMapper modelMapper;
     @Autowired
     SendMail mail;
+
+    @Autowired
+    SendMail mail1;
 
     @Override
     public List<UserDTO> getAllUsers() {
@@ -57,6 +61,15 @@ public class UserServiceImpl implements UserService{
                 mail.sendEmail(user.getCompany().getEmail(),otp);
             }
         }
+
+        return otp;
+    }
+
+    @Override
+    public String sendOTP(String email) {
+        String otp=generateOTP();
+
+        mail.sendEmail(email,otp);
 
         return otp;
     }
