@@ -292,7 +292,7 @@
                     <a aria-current="page" class="nav-link" href="#" onclick="showJobs()">Find a job</a>
                 </li>
                 <li class="d-none nav-item  ps-xxl-5  ps-xl-5  ps-lg-5  ps-md-0  ps-sm-0  ps-0" id="link-Comp">
-                    <a aria-current="page" class="nav-link" href="#">Companies</a>
+                    <a aria-current="page" class="nav-link" href="#" onclick="showCompanies()">Companies</a>
                 </li>
             </ul>
 
@@ -1300,7 +1300,7 @@
     </section>
 </main>
 
-<main class="vh-100 vw-100">
+<main class="d-none vh-100 vw-100" id="all-companies-frame">
     <section class="w-100 h-100 bg-success d-flex justify-content-end flex-column ">
 
         <div id="allCompanies" class="w-100 h-75 bg-white"></div>
@@ -1373,6 +1373,7 @@
 <script src="controllers/companyPostController.js"></script>
 <script src="controllers/employeePostController.js"></script>
 <script src="controllers/companyPfController.js"></script>
+<script src="controllers/employeeFullMap.js"></script>
 
 
 <script>
@@ -1402,11 +1403,12 @@
     }
 
 
-    function addInfoWindow(position, imageUrl,mapFrame) {
+    function addInfoWindow(position, imageUrl,mapFrame,name) {
 
         console.log('added');
 
         const content = `<div style="text-align: center;">
+                           <span style="margin-bottom: 4px">${name}</span>
                         <div style="border: 2px solid green; border-radius: 50%; overflow: hidden; width: 50px; height: 50px;">
                             <img src="${imageUrl}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
                         </div>
@@ -1463,7 +1465,7 @@
 
         allMap=new google.maps.Map(document.getElementById("allCompanies"), {
             center: {lat: 7.2906, lng: 80.6337},
-            zoom: 10,
+            zoom: 8,
             mapId: "db10ffe6d52d340b",
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             disableDefaultUI: true,
