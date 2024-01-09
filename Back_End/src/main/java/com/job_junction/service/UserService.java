@@ -18,6 +18,8 @@ public interface UserService {
 
     String resetPassword(String username);
 
+    String sendOTP(String email);
+
     UserDTO saveUser(UserDTO userDTO);
 
     void deleteUser(String id);
