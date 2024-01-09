@@ -118,19 +118,26 @@ function loginIn(user, password) {
                         userAccount.company = response.company;
                         userAccount.employee = "";
 
-                        const newMarkerPosition = {
-                            lat: parseFloat(response.company.location.coordinates.latitude),
-                            lng: parseFloat(response.company.location.coordinates.longitude)
-                        };
-                        /*addInfoWindow(newMarkerPosition,byteArrayToImage(response.company.profilePicture));*/
+                        let newMarkerPosition;
 
-                        userLocation.cord=newMarkerPosition;
+                        if (response.company.location !== null) {
+                            newMarkerPosition = {
+                                lat: parseFloat(response.company.location.coordinates.latitude),
+                                lng: parseFloat(response.company.location.coordinates.longitude)
+                            }
 
-                        if (userLocation.cord.lat > 0 || userLocation.cord.lat < 0) {
-                            map.setCenter(newMarkerPosition);
+                            userLocation.cord = newMarkerPosition;
+
+                            if (userLocation.cord.lat > 0 || userLocation.cord.lat < 0) {
+                                map.setCenter(newMarkerPosition);
+                            }
+
+                            addMarker(newMarkerPosition, 'assets/images/user-pin.png')
+
                         }
 
-                        addMarker(newMarkerPosition,'assets/images/user-pin.png')
+                        /*addInfoWindow(newMarkerPosition,byteArrayToImage(response.company.profilePicture));*/
+
 
                         $('#btn-login-main').toggleClass('d-none');
                         let button = `<button id="btn-profile" class="btn btn-sm btn-primary me-3">
@@ -140,14 +147,14 @@ function loginIn(user, password) {
                         $('#navbar-content').append(button);
 
 
-                        setDataToDashboard(userAccount.company.profilePicture, userAccount.company.name);
+                        setDataToDashboard(userAccount.company.profilePicture, userAccount.company.name)
 
                     } else if (response.type === 'employees') {
                         userAccount.employee = response.employee;
                         userAccount.company = "";
 
                         $('#link-Pro').removeClass('d-none');
-                        $('#link-DB').removeClass('d-none');
+                        $('#link-Comp').removeClass('d-none');
 
                         $('#btn-login-main').toggleClass('d-none');
                         let button = `<button id="btn-profile" class="btn btn-sm btn-success me-3">
@@ -184,11 +191,23 @@ function loginIn(user, password) {
 }
 
 function setDataToDashboard() {
-    $('#imgPfp').prop('src', byteArrayToImage(userAccount.company.profilePicture))
-    $('#lblCompName').text(userAccount.company.name);
 
-    $('#lblPfpCompany').css('background-image', 'url(' + byteArrayToImage(userAccount.company.profilePicture) + ')');
-    $('#txtAddress').val(userAccount.company.location.city);
+    if (userAccount.company.profilePicture != null) {
+        $('#imgPfp').prop('src', byteArrayToImage(userAccount.company.profilePicture));
+        $('#lblPfpCompany').css('background-image', 'url(' + byteArrayToImage(userAccount.company.profilePicture) + ')');
+    } else {
+        $('#imgPfp').prop('src', 'assets/images/pfpBg.jpg');
+    }
+
+
+    if (userAccount.company.location != null) {
+        $('#txtAddress').val(userAccount.company.location.city);
+    } else {
+        $('#txtAddress').val("Select your location");
+    }
+
+
+    $('#lblCompName').text(userAccount.company.name);
     $('#txtCompFullName').val(userAccount.company.name);
     $('#txtCompUsername').val(userAccount.user.username);
 }
@@ -207,7 +226,7 @@ $("#txtLoginPOTP").click(function () {
             contentType: 'application/json',
             async: false,
             success: function (response) {
-                otp=response;
+                otp = response;
                 toastShower('1', 'bg-success', 'text-light', 'A OTP code is sent to your account email address');
             },
             error: function (error) {
@@ -231,9 +250,9 @@ $('#btnChangePass').click(function () {
         if ($("#txtLoginPOTP").val() === otp) {
 
             $.ajax({
-                url: baseURL + 'users/changePass?user=' + username+'&password='+pass,
+                url: baseURL + 'users/changePass?user=' + username + '&password=' + pass,
                 contentType: 'application/json',
-                method:"PUT",
+                method: "PUT",
                 success: function (response) {
                     $("#txtLoginPassword").val("");
                     $("#txtLoginName").val("");
@@ -245,7 +264,7 @@ $('#btnChangePass').click(function () {
 
             });
 
-        }else {
+        } else {
             toastShower('1', 'bg-danger', 'text-light', 'OTP mismatch');
         }
 
