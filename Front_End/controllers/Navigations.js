@@ -83,13 +83,10 @@ $('#btn-login-second').click(function () {
     $('#register').toggleClass('d-none');
 });
 
-$(document).ready(function () {
-    $('.btn-fav').click(function () {
-        console.log('fav');
-        $(this).toggleClass('bi-bookmark-fill');
-        $(this).toggleClass('bi-bookmark');
-    });
+$(document).on('click', '.btn-fav', function () {
+    $(this).toggleClass('bi-bookmark-fill bi-bookmark');
 });
+
 
 $(document).ready(function () {
     let prevScrollPos = $(window).scrollTop();
@@ -116,6 +113,7 @@ function showHome() {
     $('#jobs-frame').css('display', 'none');
     $('#footer').removeClass('d-none');
     $('#employer-home-frame').addClass('d-none');
+    $('#all-companies-frame').addClass('d-none');
 }
 
 function showJobs() {
@@ -123,6 +121,7 @@ function showJobs() {
     $('#jobs-frame').css('display', 'block');
     $('#footer').removeClass('d-none');
     $('#employer-home-frame').addClass('d-none');
+    $('#all-companies-frame').addClass('d-none');
 }
 
 function showDashboard() {
@@ -130,12 +129,21 @@ function showDashboard() {
     $('#jobs-frame').css('display', 'none');
     $('#employer-home-frame').removeClass('d-none');
     $('#footer').addClass('d-none');
+    $('#all-companies-frame').addClass('d-none');
+}
+function showCompanies() {
+    $('#home-page').css('display', 'none');
+    $('#jobs-frame').css('display', 'none');
+    $('#all-companies-frame').removeClass('d-none');
+    $('#footer').addClass('d-none');
+    getAllCompanies();
 }
 
 function showDB() {
     $('#dashboard-frame').css('display', 'block');
     $('#post-frame').css('display', 'none');
     $('#profile-frame').css('display', 'none');
+    $('#all-companies-frame').addClass('d-none');
     clearPostFields()
 }
 
@@ -143,6 +151,7 @@ function showPosts() {
     $('#dashboard-frame').css('display', 'none');
     $('#post-frame').css('display', 'block');
     $('#profile-frame').css('display', 'none');
+    $('#all-companies-frame').addClass('d-none');
     clearPostFields()
 }
 
@@ -150,6 +159,7 @@ function showProfile() {
     $('#dashboard-frame').css('display', 'none');
     $('#post-frame').css('display', 'none');
     $('#profile-frame').css('display', 'block');
+    $('#all-companies-frame').addClass('d-none');
     clearPostFields()
 }
 
