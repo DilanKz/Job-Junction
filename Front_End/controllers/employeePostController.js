@@ -264,22 +264,20 @@ function getPostValidity(createdAt) {
     };
 }
 
-$(document).ready(function () {
-    $('.comp-name').click(function () {
-        let prop = JSON.parse($(this).attr('jobOB'));
+$(document).on('click', '.comp-name', function () {
+    let prop = JSON.parse($(this).attr('jobOB'));
 
-        console.log(prop);
+    console.log(prop);
 
-        const newMarkerPosition = {
-            lat: parseFloat(prop.companyId.location.coordinates.latitude),
-            lng: parseFloat(prop.companyId.location.coordinates.longitude)
-        }
+    const newMarkerPosition = {
+        lat: parseFloat(prop.companyId.location.coordinates.latitude),
+        lng: parseFloat(prop.companyId.location.coordinates.longitude)
+    }
 
-        displayMap.setCenter(newMarkerPosition);
+    displayMap.setCenter(newMarkerPosition);
 
-        $('#g-map-frame1').toggleClass('d-none');
-        $('#g-map-frame1').toggleClass('d-flex');
+    $('#g-map-frame1').toggleClass('d-none');
+    $('#g-map-frame1').toggleClass('d-flex');
 
-        addInfoWindow(newMarkerPosition, byteArrayToImage(prop.companyId.profilePicture), displayMap);
-    });
-})
+    addInfoWindow(newMarkerPosition, byteArrayToImage(prop.companyId.profilePicture), displayMap,prop.companyId.name);
+});
