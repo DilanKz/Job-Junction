@@ -1,54 +1,70 @@
 $("#btnCustomerReg").click(function () {
-    let selectedRadioButton = $("input[name='options-outlined']:checked");
 
     if (validateRegisterFields()) {
 
-        if (selectedRadioButton) {
-
-            let selectedText = selectedRadioButton.next('label').text();
-
-            if (selectedText === 'Employee') {
-
-                let employee = employeeData();
-                employee.id = '';
-                employee.name = $('#txtName').val();
-                employee.email = $('#txtEmail').val();
-                employee.industry = $("#txtIndustry").val();
+        let company = companyData();
+        company.id = '';
+        company.name = $('#txtName').val();
+        company.email = $('#txtEmail').val();
+        company.industry = $("#txtIndustry").val();
+        company.state = 'new';
 
 
-                let data = userData();
-                data.id = '';
-                data.username = $('#txtUsername').val();
-                data.password = $('#txtPass').val();
-                data.type = 'employees';
-                data.entityid = '';
+        let data = userData();
+        data.id = '';
+        data.username = $('#txtUsername').val();
+        data.password = $('#txtPass').val();
+        data.type = 'companies';
+        data.entityid = '';
 
-                makeAccount('employees', data, employee);
+        makeAccount('companies', data, company);
 
-            } else if (selectedText === 'Company') {
-
-                let company = companyData();
-                company.id = '';
-                company.name = $('#txtName').val();
-                company.email = $('#txtEmail').val();
-                company.industry = $("#txtIndustry").val();
-                company.state = 'new';
+        /*if (selectedRadioButton) {
 
 
-                let data = userData();
-                data.id = '';
-                data.username = $('#txtUsername').val();
-                data.password = $('#txtPass').val();
-                data.type = 'companies';
-                data.entityid = '';
 
-                makeAccount('companies', data, company);
-            }
+            // if (selectedText === 'Employee') {
+            //
+            //     let employee = employeeData();
+            //     employee.id = '';
+            //     employee.name = $('#txtName').val();
+            //     employee.email = $('#txtEmail').val();
+            //     employee.industry = $("#txtIndustry").val();
+            //
+            //
+            //     let data = userData();
+            //     data.id = '';
+            //     data.username = $('#txtUsername').val();
+            //     data.password = $('#txtPass').val();
+            //     data.type = 'employees';
+            //     data.entityid = '';
+            //
+            //     makeAccount('employees', data, employee);
+            //
+            // } else if (selectedText === 'Company') {
+            //
+            //     let company = companyData();
+            //     company.id = '';
+            //     company.name = $('#txtName').val();
+            //     company.email = $('#txtEmail').val();
+            //     company.industry = $("#txtIndustry").val();
+            //     company.state = 'new';
+            //
+            //
+            //     let data = userData();
+            //     data.id = '';
+            //     data.username = $('#txtUsername').val();
+            //     data.password = $('#txtPass').val();
+            //     data.type = 'companies';
+            //     data.entityid = '';
+            //
+            //     makeAccount('companies', data, company);
+            // }
 
 
         } else {
             console.log("No radio button selected.");
-        }
+        }*/
 
     } else {
         console.log("invalid")
@@ -61,7 +77,22 @@ $("#btnLogin").click(function () {
     loginIn(username, password);
 
 });
+let otp;
+function sendValidationCode() {
+    $.ajax({
+        url: baseURL + 'users/otp?email='+$('#txtEmail').val(),
+        contentType: 'application/json',
+        async: false,
+        success: function (response) {
+            otp = response;
+            toastShower('1', 'bg-success', 'text-light', 'A OTP code is sent to your email address');
+        },
+        error: function (error) {
+            toastShower('1', 'bg-danger', 'text-light', 'OTP mismatch');
+        }
 
+    });
+}
 
 function makeAccount(url, user, account) {
     $.ajax({
@@ -99,7 +130,6 @@ function makeAccount(url, user, account) {
     });
 }
 
-
 function loginIn(user, password) {
 
     $.ajax({
@@ -113,6 +143,10 @@ function loginIn(user, password) {
                 if (response.password === password) {
 
                     userAccount.user = response
+
+                    if (response.type==='admin'){
+                        window.location.href = '../pages/admin.html';
+                    }
 
                     if (response.type === 'companies') {
                         userAccount.company = response.company;
@@ -213,7 +247,6 @@ function setDataToDashboard() {
 }
 
 /*Change password*/
-let otp;
 $("#txtLoginPOTP").click(function () {
     let username = $("#txtLoginName").val();
 
