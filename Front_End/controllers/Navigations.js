@@ -152,7 +152,8 @@ function showPosts() {
     $('#post-frame').css('display', 'block');
     $('#profile-frame').css('display', 'none');
     $('#all-companies-frame').addClass('d-none');
-    clearPostFields()
+    clearPostFields();
+    getPosts();
 }
 
 function showProfile() {
@@ -199,6 +200,15 @@ $('.accordion-c-button').click(function () {
     $('.accordion-c-button').toggleClass('bi-chevron-double-down bi-chevron-double-up');
     $('#add-post-accordion').toggleClass('d-none');
     clearPostFields();
+
+    let addPost = $('#btnAddPost');
+    let deletePost = $('#btnDeletePost');
+    let updatePost = $('#btnUpdatePost');
+
+    deletePost.addClass('d-none')
+    updatePost.addClass('d-none')
+    addPost.removeClass('d-none')
+
 });
 
 
