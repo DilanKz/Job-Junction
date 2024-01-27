@@ -38,7 +38,7 @@ function savePost(post) {
 
 
 $('#link-DB').click(function () {
-    getPosts()
+    getPosts();
 });
 
 function getPosts() {
