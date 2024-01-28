@@ -200,7 +200,7 @@ $('.accordion-c-button').click(function () {
     $('.accordion-c-button').toggleClass('bi-chevron-double-down bi-chevron-double-up');
     $('#add-post-accordion').toggleClass('d-none');
     clearPostFields();
-
+    refreshPost.css('display','none');
     let addPost = $('#btnAddPost');
     let deletePost = $('#btnDeletePost');
     let updatePost = $('#btnUpdatePost');
