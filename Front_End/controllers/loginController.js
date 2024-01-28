@@ -144,9 +144,9 @@ function loginIn(user, password) {
 
                     userAccount.user = response
 
-                    if (response.type==='admin'){
+                    /*if (response.type==='admin'){
                         window.location.href = '../pages/admin.html';
-                    }
+                    }*/
 
                     if (response.type === 'companies') {
                         userAccount.company = response.company;
