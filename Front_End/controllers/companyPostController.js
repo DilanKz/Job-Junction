@@ -87,11 +87,15 @@ $(document).on('click', '.post-tr', function () {
 
     selectedPost = parseOB;
 
-    $('#txtJobTitle').val(parseOB.title)
-    $('#txtJobDescription').val(parseOB.description)
-    $('#txtSalary').val(parseOB.salary)
-    $('#txtSelectType').val(parseOB.type)
-    $('#txtSelectIndustry').val(parseOB.industry)
+    $('#txtJobTitle').val(parseOB.title);
+    $('#txtJobDescription').val(parseOB.description);
+    $('#txtSalary').val(parseOB.salary);
+    $('#txtSelectType').val(parseOB.type);
+    $('#txtSelectIndustry').val(parseOB.industry);
+
+    $('.accordion-c-button').addClass('bi-chevron-double-up');
+    $('.accordion-c-button').removeClass('bi-chevron-double-down ');
+    $('#add-post-accordion').removeClass('d-none');
 
 });
 
@@ -144,6 +148,7 @@ deletePost.click(function () {
 
 refreshPost.click(function () {
     clearPostFields()
+    refreshPost.css('display','none');
     deletePost.addClass('d-none')
     updatePost.addClass('d-none')
     addPost.removeClass('d-none')
